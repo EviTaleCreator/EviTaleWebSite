@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Nuskaitome visas pasakas iš content/stories katalogo
+const allStories = await Astro.glob('../content/stories/*.md');
+// Rikiuojame nuo naujausios pagal datą
+const sortedStories = allStories.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+---
+
+<BaseLayout title="Pasakos su gilesniu sluoksniu">
+  <!-- Navigacija (fiksuota, švari, rodanti į vieno puslapio skiltis) -->
+  <header class="border-b border-[#E8E1D5] bg-[#FAF7F2]/95 backdrop-blur-md sticky top-0 z-50 transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="#" class="group flex flex-col">
+        <span class="font-cinzel text-2xl font-bold tracking-wider text-[#1D2520] group-hover:text-[#D96B43] transition-colors">EviTale</span>
+        <span class="font-sans text-[10px] tracking-widest uppercase text-[#7A736E] -mt-1">Creator</span>
+      </a>
+
+      <!-- Vieno puslapio inkarinės nuorodos (#) -->
+      <nav class="flex items-center space-x-6 sm:space-x-10 font-sans text-sm font-medium text-[#4A4540]">
+        <a href="#lentyna" class="hover:text-[#D96B43] transition-colors">Lentyna</a>
+        <a href="#apie" class="hover:text-[#D96B43] transition-colors">Apie</a>
+        <a href="#kontaktai" class="hover:text-[#D96B43] transition-colors">Kontaktai</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero sekcija: Paslaptinga miško dvasia, globa ir skaitymas -->
+  <section class="relative bg-[#0B1510] text-[#FAF7F2] py-20 sm:py-28 px-4 overflow-hidden border-b border-[#1E3328]">
+    <div class="absolute inset-0 opacity-45 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#244E3B] via-[#0E1E16] to-[#070D0A]"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+      <span class="inline-block px-4 py-1 rounded-full border border-[#446E5A]/50 bg-[#162D23]/70 font-sans text-xs uppercase tracking-widest text-[#BEE5D2] mb-6">
+        Virtuali rašytoja &bull; Skaitmeninė biblioteka
+      </span>
+
+      <h1 class="text-4xl sm:text-6xl font-cinzel leading-tight tracking-wide mb-6 text-[#FBF8F3]">
+        EviTale Creator
+      </h1>
+
+      <p class="text-xl sm:text-2xl text-[#D0E2D8] font-serif italic max-w-2xl mb-8 leading-relaxed font-normal">
+        „Pasakos vaikams, kurios prieš miegą sušildo, ir gilesnis psichologinis sluoksnis suaugusiems, kviečiantis sustoti.“
+      </p>
+
+      <p class="text-sm sm:text-base font-sans text-[#A4C2B4] max-w-xl mb-10 leading-relaxed">
+        Čia kiekviena istorija pritaikyta keturiems skaitymo etapams. Pasirinkite vaiko amžių arba pažvelkite į pasakos šerdį suaugusiojo akimis.
+      </p>
+
+      <div class="flex flex-wrap gap-4 justify-center font-sans text-sm">
+        <a href="#lentyna" class="px-7 py-3 rounded-full bg-[#FAF7F2] text-[#1D2520] font-semibold hover:bg-[#EAE4D8] transition-all shadow-md">
+          Atsiversti lentyną
+        </a>
+        <a href="#apie" class="px-7 py-3 rounded-full border border-[#FAF7F2]/30 hover:border-[#FAF7F2] hover:bg-[#FAF7F2]/10 transition-all text-[#FAF7F2]">
+          Kaip veikia sluoksniai?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amžiaus grupių greitoji juosta -->
+  <aside class="border-b border-[#E8E1D5] bg-[#F4EFE6] py-4 sticky top-20 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-center gap-2 sm:gap-4 flex-wrap font-sans text-xs sm:text-sm">
+      <span class="text-[#7A736E] font-medium mr-1 sm:mr-2">Rodyti amžiaus grupę:</span>
+      <button class="filter-pill active-pill px-4 py-1.5 rounded-full border border-[#DED7CB] bg-[#1D2520] text-[#FAF7F2] font-medium transition-all" data-filter="all">Visi</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-[#DED7CB] text-[#666059] hover:bg-[#EAE4D8] transition-all" data-filter="2-4">2–4 m.</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-[#DED7CB] text-[#666059] hover:bg-[#EAE4D8] transition-all" data-filter="5-8">5–8 m.</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-[#DED7CB] text-[#666059] hover:bg-[#EAE4D8] transition-all" data-filter="9-12">9–12 m.</button>
+      <button class="filter-pill px-4 py-1.5 rounded-full border border-[#DED7CB] text-[#666059] hover:bg-[#EAE4D8] transition-all" data-filter="vyresniems">Vyresniems</button>
+    </div>
+  </aside>
+
+  <!-- SKILTIS #1: LENTYNA -->
+  <section id="lentyna" class="max-w-6xl mx-auto px-4 sm:px-6 py-20 scroll-mt-28">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 border-b border-[#E8E1D5] pb-6 gap-4">
+      <div>
+        <p class="font-sans text-xs uppercase tracking-widest text-[#7A736E] mb-1">Biblioteka</p>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-[#1D2520]">Pasakų lentyna</h2>
+      </div>
+      <p class="font-sans text-sm text-[#7A736E]">
+        Surūšiuota nuo naujausių kūrinių &bull; {sortedStories.length} istorija(-os)
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="stories-grid">
+      {sortedStories.map((story) => {
+        const ages = story.frontmatter.hasAges || [];
+        return (
+          <article 
+            class="story-card group bg-[#FAF7F2] border border-[#E8E1D5] rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
+            data-ages={JSON.stringify(ages)}
+          >
+            <div class="h-60 bg-[#E8E1D5] overflow-hidden relative">
+              <img 
+                src={story.frontmatter.coverImage || "/hero-banner.jpg"} 
+                alt={story.frontmatter.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1D2520]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            
+            <div class="p-6 sm:p-7 flex flex-col flex-grow">
+              <div class="flex items-center justify-between text-xs font-sans text-[#7A736E] mb-3">
+                <span class="uppercase tracking-wider">{story.frontmatter.date}</span>
+                <span class="italic font-serif">Keli sluoksniai</span>
+              </div>
+              
+              <h3 class="font-cinzel text-2xl text-[#1D2520] group-hover:text-[#D96B43] transition-colors mb-3 leading-snug">
+                <a href={`/istorija/${story.frontmatter.slug}`}>
+                  {story.frontmatter.title}
+                </a>
+              </h3>
+              
+              <p class="text-base font-serif text-[#554F49] line-clamp-3 mb-6 flex-grow leading-relaxed">
+                {story.frontmatter.excerpt}
+              </p>
+
+              <div class="pt-4 border-t border-[#E8E1D5]/70 flex items-center justify-between">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  {ages.map((age: string) => (
+                    <span class="font-sans text-[11px] px-2.5 py-0.5 rounded-full bg-[#EFE9DF] text-[#4A4540]">
+                      {age === 'vyresniems' ? 'Vyresniems' : `${age} m.`}
+                    </span>
+                  ))}
+                </div>
+                <a href={`/istorija/${story.frontmatter.slug}`} class="font-sans text-xs font-semibold text-[#D96B43] group-hover:translate-x-1 transition-transform inline-flex items-center">
+                  Skaityti &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- SKILTIS #2: APIE -->
+  <section id="apie" class="bg-[#F4EFE6] border-y border-[#E8E1D5] py-20 px-4 sm:px-6 scroll-mt-28">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="font-sans text-xs uppercase tracking-widest text-[#7A736E] mb-2">Filosofija &bull; Idėja</p>
+        <h2 class="font-cinzel text-3xl sm:text-4xl text-[#1D2520] mb-4">Apie EviTale Creator</h2>
+        <div class="w-12 h-0.5 bg-[#D96B43] mx-auto"></div>
+      </div>
+
+      <div class="space-y-6 text-[#35302C] text-lg leading-relaxed">
+        <p class="first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:font-cinzel first-letter:text-[#1D2520] first-letter:leading-none">
+          EviTale gimė iš paprasto, bet gilaus vakarinio ritualo. Vakare, kai namuose nutyla triukšmas, ekranas arba knyga tarp tėvų ir vaikų neturėtų būti tik būdas greičiau užmigti. Tai retai pasitaikanti, ypatinga erdvė nuoširdžiam pokalbiui, kurio dieną dažnai pritrūksta.
+        </p>
+        <p>
+          Kaip virtuali rašytoja, Evi kuria pasakas, kurios auga kartu su skaitytoju. Viena ir ta pati istorija turi skirtingus atverties lygius:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 font-sans text-sm">
+          <div class="p-5 rounded-xl bg-[#FAF7F2] border border-[#E0D8CB]">
+            <span class="block font-bold text-[#1D2520] mb-1">2–4 metai: Švelnumas ir ritmas</span>
+            <span class="text-[#666059]">Paprasti žodžiai, saugumo jausmas, lengvai atpažįstami gamtos garsai ir judantys vaizdiniai akcentai.</span>
+          </div>
+          <div class="p-5 rounded-xl bg-[#FAF7F2] border border-[#E0D8CB]">
+            <span class="block font-bold text-[#1D2520] mb-1">5–8 metai: Vaizduotė ir emocijos</span>
+            <span class="text-[#666059]">Metaforos apie draugystę, pirmąsias baimes, kantrybę ir smalsumą pažįstant pasaulį.</span>
+          </div>
+          <div class="p-5 rounded-xl bg-[#FAF7F2] border border-[#E0D8CB]">
+            <span class="block font-bold text-[#1D2520] mb-1">9–12 metų: Nuotykis ir pasirinkimai</span>
+            <span class="text-[#666059]">Gilesni siužeto vingiai, savarankiškumo paieškos, dilemos ir autentiško kelio atradimas.</span>
+          </div>
+          <div class="p-5 rounded-xl bg-[#FAF7F2] border border-[#E0D8CB]">
+            <span class="block font-bold text-[#1D2520] mb-1">Vyresniems / Tėvams: Psichologinis šydas</span>
+            <span class="text-[#666059]">Komentarai apie archetipus, prieraišumą ir tiksliniai klausimai giliam vakariniam pokalbiui su vaiku.</span>
+          </div>
+        </div>
+
+        <p class="font-serif italic text-center text-[#5C564E] pt-4">
+          „Pasaka baigiasi, bet tikrasis pokalbis tik prasideda.“
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILTIS #3: KONTAKTAI -->
+  <section id="kontaktai" class="max-w-3xl mx-auto px-4 sm:px-6 py-20 text-center scroll-mt-28">
+    <p class="font-sans text-xs uppercase tracking-widest text-[#7A736E] mb-2">Grįžtamasis ryšys</p>
+    <h2 class="font-cinzel text-3xl sm:text-4xl text-[#1D2520] mb-4">Kontaktai</h2>
+    <div class="w-12 h-0.5 bg-[#D96B43] mx-auto mb-8"></div>
+
+    <p class="font-sans text-[#554F49] max-w-lg mx-auto text-base mb-10 leading-relaxed">
+      Kilus minčių, norint pasiūlyti temą būsimai pasakai ar tiesiog pasidalinti, kaip istorijos suskambėjo jūsų namuose, susisiekite:
+    </p>
+
+    <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 bg-[#FAF7F2] border border-[#E8E1D5] rounded-2xl p-6 sm:px-10 shadow-sm">
+      <div class="w-10 h-10 rounded-full bg-[#EFE9DF] flex items-center justify-center text-[#1D2520]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div class="text-left">
+        <span class="block font-sans text-xs uppercase tracking-wider text-[#7A736E]">Elektroninis paštas</span>
+        <a href="mailto:evi.tale.creator@gmail.com" class="font-cinzel text-xl sm:text-2xl text-[#1D2520] hover:text-[#D96B43] transition-colors font-semibold">
+          evi.tale.creator@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poraštė -->
+  <footer class="border-t border-[#E8E1D5] bg-[#EFE9DF] py-10 font-sans text-xs text-[#7A736E] text-center">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-cinzel text-sm font-semibold text-[#1D2520]">EviTale Creator &bull; 2026</p>
+      <div class="flex items-center space-x-6">
+        <a href="#lentyna" class="hover:text-[#1D2520]">Lentyna</a>
+        <a href="#apie" class="hover:text-[#1D2520]">Apie mane</a>
+        <a href="#kontaktai" class="hover:text-[#1D2520]">Kontaktai</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  // Amžiaus filtrų veikimas pagrindinio puslapio lentynoje
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.story-card');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.getAttribute('data-filter');
+
+      // Mygtukų aktyvavimo stiliai
+      pills.forEach(p => {
+        p.classList.remove('bg-[#1D2520]', 'text-[#FAF7F2]', 'active-pill');
+        p.classList.add('text-[#666059]');
+      });
+      pill.classList.add('bg-[#1D2520]', 'text-[#FAF7F2]', 'active-pill');
+      pill.classList.remove('text-[#666059]');
+
+      // Kortelių filtravimas
+      cards.forEach(card => {
+        const rawAges = card.getAttribute('data-ages') || '[]';
+        const ages = JSON.parse(rawAges);
+
+        if (filter === 'all' || ages.includes(filter)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
