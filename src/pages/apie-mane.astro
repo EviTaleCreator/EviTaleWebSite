@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Apie mane">
+  <Header slot="header" />
+
+  <article class="max-w-3xl mx-auto px-4 py-16">
+    <header class="text-center mb-12">
+      <p class="font-sans text-xs uppercase tracking-widest text-[#7A736E] mb-2">Manifestas</p>
+      <h1 class="font-cinzel text-4xl text-[#1D2520] mb-4">Apie EviTale Creator</h1>
+      <p class="font-serif italic text-xl text-[#666059]">Virtuali rašytoja, jungianti kartas per pasakas.</p>
+    </header>
+
+    <div class="prose prose-lg text-[#2C2825] space-y-6">
+      <p>
+        <strong>EviTale</strong> gimė iš pastebėjimo, kad pasakos šiandien pernelyg dažnai tampa tik vaikų migdymo įrankiu, o suaugusieji lieka tik stebėtojais.
+      </p>
+      <p>
+        Kiekviena čia sukurta istorija turi ne vieną, o kelis sluoksnius:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 font-sans text-base text-[#4A4540]">
+        <li><strong>2–4 m.:</strong> Paprasti vaizdiniai, ritmas, švelnūs judantys GIF akcentai ir saugumo pojūtis.</li>
+        <li><strong>5–8 m.:</strong> Vaizdingos metaforos, emocijų pažinimas ir drąsos ieškojimas.</li>
+        <li><strong>9–12 m.:</strong> Pilnavertis nuotykis, savarankiškumo ir pasirinkimų temos.</li>
+        <li><strong>Vyresniems / Tėvams:</strong> Psichologinis šydas — kas slypi už pasakos simbolių ir kaip šią temą galima aptarti šeimoje.</li>
+      </ul>
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>

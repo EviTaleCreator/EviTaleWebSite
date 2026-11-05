@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Nuskaitome visas pasakas iš content/stories
+const allStories = await Astro.glob('../content/stories/*.md');
+// Rikiuojame pagal datą nuo naujausios
+const sortedStories = allStories.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+const latestStories = sortedStories.slice(0, 3);
+---
+
+<BaseLayout title="Pradžia">
+  <Header slot="header" />
+
+  <!-- Hero Blokas su Evi dvasia ir šviečiančiu medžiu -->
+  <section class="relative bg-[#0E1B15] text-[#FAF7F2] py-20 md:py-28 px-4 overflow-hidden">
+    <div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_40%,#2C5D47_0%,transparent_70%)]"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+      <div class="inline-block px-4 py-1 rounded-full border border-[#446E5A]/40 bg-[#162D23]/60 font-sans text-xs uppercase tracking-widest text-[#B4E0CA] mb-6">
+        Virtuali rašytoja
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-cinzel leading-tight tracking-wide mb-6">
+        EviTale Creator
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-[#D0E2D8] font-serif italic max-w-2xl mb-8 leading-relaxed">
+        „Pasakos mažiems, atveriančios gilius pokalbius suaugusiems.“
+      </h1>
+      
+      <p class="text-sm md:text-base font-sans text-[#A4C2B4] max-w-xl mb-10">
+        Istorijos, kurias patogu skaityti telefone ar planšetėje prieš miegą, su atskirais lygiais vaikams ir psichologiniu šydu suaugusiems.
+      </p>
+
+      <div class="flex flex-wrap gap-4 justify-center font-sans text-sm">
+        <a href="#naujausios" class="px-6 py-3 rounded-full bg-[#FAF7F2] text-[#1D2520] font-semibold hover:bg-[#EAE4D8] transition-all shadow-md">
+          Pradėti skaityti
+        </a>
+        <a href="/apie-mane" class="px-6 py-3 rounded-full border border-[#FAF7F2]/30 hover:border-[#FAF7F2] transition-all">
+          Kaip skaityti sluoksnius?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Greiti amžiaus filtrai -->
+  <section class="border-b border-[#E8E1D5] bg-[#F7F2E9] py-4">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-center gap-2 sm:gap-4 flex-wrap font-sans text-xs sm:text-sm">
+      <span class="text-[#7A736E] font-medium mr-2">Filtruoti pagal amžių:</span>
+      <a href="/lentyna?amzius=2-4" class="px-3.5 py-1.5 rounded-full border border-[#DED7CB] hover:bg-[#1D2520] hover:text-[#FAF7F2] transition-all">2–4 m.</a>
+      <a href="/lentyna?amzius=5-8" class="px-3.5 py-1.5 rounded-full border border-[#DED7CB] hover:bg-[#1D2520] hover:text-[#FAF7F2] transition-all">5–8 m.</a>
+      <a href="/lentyna?amzius=9-12" class="px-3.5 py-1.5 rounded-full border border-[#DED7CB] hover:bg-[#1D2520] hover:text-[#FAF7F2] transition-all">9–12 m.</a>
+      <a href="/lentyna?amzius=vyresniems" class="px-3.5 py-1.5 rounded-full border border-[#DED7CB] hover:bg-[#1D2520] hover:text-[#FAF7F2] transition-all">Vyresniems</a>
+    </div>
+  </section>
+
+  <!-- Naujausios istorijos -->
+  <section id="naujausios" class="max-w-6xl mx-auto px-4 py-16">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p class="font-sans text-xs uppercase tracking-widest text-[#7A736E]">Ką tik parašyta</p>
+        <h2 class="font-cinzel text-3xl text-[#1D2520]">Naujausios istorijos</h2>
+      </div>
+      <a href="/lentyna" class="font-sans text-sm text-[#D96B43] hover:underline">Visos pasakos &rarr;</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {latestStories.map((story) => (
+        <a href={`/istorija/${story.frontmatter.slug}`} class="group bg-[#FAF7F2] border border-[#E8E1D5] rounded-2xl overflow-hidden hover:shadow-lg transition-all flex flex-col">
+          <div class="h-56 bg-[#EBE4D8] overflow-hidden">
+            <img src={story.frontmatter.coverImage || "/hero-banner.jpg"} alt={story.frontmatter.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <p class="font-sans text-xs uppercase tracking-wider text-[#7A736E] mb-2">{story.frontmatter.date}</p>
+            <h3 class="font-cinzel text-xl text-[#1D2520] group-hover:text-[#D96B43] transition-colors mb-3">
+              {story.frontmatter.title}
+            </h3>
+            <p class="text-sm font-sans text-[#666059] line-clamp-3 mb-6 flex-grow">
+              {story.frontmatter.excerpt}
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-4 border-t border-[#E8E1D5]/60">
+              {story.frontmatter.hasAges?.map((age: string) => (
+                <span class="font-sans text-[11px] px-2.5 py-0.5 rounded-full bg-[#EFE9DF] text-[#4A4540]">
+                  {age === 'vyresniems' ? 'Vyresniems' : `${age} m.`}
+                </span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
