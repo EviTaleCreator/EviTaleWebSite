@@ -27,7 +27,8 @@ const sortedStories = allStories.sort((a, b) => new Date(b.frontmatter.date).get
 
   <!-- Hero sekcija: Paslaptinga miško dvasia, globa ir skaitymas -->
   <section class="relative bg-[#0B1510] text-[#FAF7F2] py-20 sm:py-28 px-4 overflow-hidden border-b border-[#1E3328]">
-    <div class="absolute inset-0 opacity-45 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#244E3B] via-[#0E1E16] to-[#070D0A]"></div>
+    <img src="/hero-banner.jpg" alt="" aria-hidden="true" fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-20 pointer-events-none" />
     
     <div class="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
       <span class="inline-block px-4 py-1 rounded-full border border-[#446E5A]/50 bg-[#162D23]/70 font-sans text-xs uppercase tracking-widest text-[#BEE5D2] mb-6">
@@ -215,33 +216,36 @@ const sortedStories = allStories.sort((a, b) => new Date(b.frontmatter.date).get
 </BaseLayout>
 
 <script>
-  // Amžiaus filtrų veikimas pagrindinio puslapio lentynoje
-  const pills = document.querySelectorAll('.filter-pill');
+  const pills = Array.from(document.querySelectorAll('.filter-pill'));
   const cards = document.querySelectorAll('.story-card');
 
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const filter = pill.getAttribute('data-filter');
-
-      // Mygtukų aktyvavimo stiliai
-      pills.forEach(p => {
-        p.classList.remove('bg-[#1D2520]', 'text-[#FAF7F2]', 'active-pill');
-        p.classList.add('text-[#666059]');
-      });
-      pill.classList.add('bg-[#1D2520]', 'text-[#FAF7F2]', 'active-pill');
-      pill.classList.remove('text-[#666059]');
-
-      // Kortelių filtravimas
-      cards.forEach(card => {
-        const rawAges = card.getAttribute('data-ages') || '[]';
-        const ages = JSON.parse(rawAges);
-
-        if (filter === 'all' || ages.includes(filter)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
+  function applyFilter(requested) {
+    const filter = pills.some(p => p.getAttribute('data-filter') === requested) ? requested : 'all';
+    pills.forEach(p => {
+      const active = p.getAttribute('data-filter') === filter;
+      ['bg-[#1D2520]', 'text-[#FAF7F2]', 'active-pill'].forEach(c => p.classList.toggle(c, active));
+      p.classList.toggle('text-[#666059]', !active);
+      p.setAttribute('aria-pressed', String(active));
+    });
+    cards.forEach(card => {
+      const ages = JSON.parse(card.getAttribute('data-ages') || '[]');
+      card.classList.toggle('hidden', filter !== 'all' && !ages.includes(filter));
+      card.querySelectorAll('a').forEach(link => {
+        const url = new URL(link.getAttribute('href') || '/', window.location.origin);
+        if (filter === 'all') url.searchParams.delete('age');
+        else url.searchParams.set('age', filter);
+        link.setAttribute('href', url.pathname + url.search + url.hash);
       });
     });
-  });
+    const url = new URL(window.location.href);
+    if (filter === 'all') url.searchParams.delete('age');
+    else url.searchParams.set('age', filter);
+    window.history.replaceState(null, '', url);
+  }
+
+  pills.forEach(pill => pill.addEventListener('click', () => applyFilter(pill.getAttribute('data-filter'))));
+  const restoreFilter = () => applyFilter(new URLSearchParams(window.location.search).get('age'));
+  restoreFilter();
+  window.addEventListener('pageshow', restoreFilter);
+  window.addEventListener('popstate', restoreFilter);
 </script>
