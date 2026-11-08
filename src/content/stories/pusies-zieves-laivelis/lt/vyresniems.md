@@ -8,6 +8,8 @@ Kol vieną popietę prie lieptelio sustojo du keliautojai. Jie nusiplovė rankas
 
 Jie nuėjo ir po valandos tikriausiai nebeprisiminė nei to, ką sakė, nei upės, kurioje plovėsi rankas. O Alanta prisiminė.
 
+![Du keliautojai prie lieptelio: vienas plauna rankas upėje, kitas susižavėjęs rodo už kalvos, kur šniokščia Žvelsa, o į ramią upę po jais nė vienas nežiūri](../img/scene-07.jpg)
+
 Pirmą kartą ji pažiūrėjo į save svetimomis akimis. Maurai, lėtai linguojantys kaip pavargusios rankos. Karosai, snaudžiantys dumble. Vingis, kuris niekur neskuba. Viskas, kas vakar buvo jos, šiandien atrodė kaip trūkumų sąrašas.
 
 Nuo tos dienos Žvelsos ūžesys, anksčiau buvęs tik kaimynės balsas, virto priekaištu. Kaskart, kai vėjas jį atnešdavo, Alantai sugeldavo šonus. Ji pyko ant savo posūkių, ant gluosnio šaknų, kurios, rodos, tyčia kabinosi į srovę ir stabdė. Kartą ji visa jėga bloškėsi į vienintelį pakrantės akmenį, tikėdamasi bent vieno balto purslo, ir pakėlė tik kelis drumzlinus lašus. Tai buvo dar blogiau nei nieko. O rudenį, kai berniukas paleido nuo lieptelio laivelį, ji nė nepažvelgė į jį. Stumtelėjo piktai, kaip stumiama tai, kas trukdo, ir laivelis įstrigo nendrėse. Berniukas ilgai stovėjo ant lieptelio. Paskui nuėjo.
