@@ -4,11 +4,14 @@ date: 2026-11-05
 
 title:
   lt: Pušies žievės laivelis
+  en: The Pine Bark Boat
 
 excerpt:
   lt: Apie lėtą upę Alantą, kuri užsimanė šniokšti kaip kaimynė Žvelsa, ir apie tai, ką ji prarado, kai pagaliau pradėjo.
+  en: About Alanta, a slow river who wanted to roar like her neighbour Zvelsa, and what she lost when she finally did.
 
 # Pagrindinė iliustracija, šalia šio failo.
 cover: ./cover.jpg
 coverAlt:
   lt: Lėta upė vingiuoja per pievą po senu gluosniu, prie medinio lieptelio trys vaikai leidžia į vandenį pušies žievės laivelius su plunksnų burėmis
+  en: A slow river winds through a meadow under an old willow, and by a wooden footbridge three children float pine bark boats with feather sails
