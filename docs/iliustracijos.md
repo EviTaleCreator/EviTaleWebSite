@@ -5,7 +5,8 @@
 - Vienas stilius visai svetainei: kaip `public/hero-banner.jpg`. Generuojant visada pridėk jį kaip stiliaus pavyzdį.
 - Proporcijos 4:3, horizontalūs. Į repozitoriją kelk iki 1600 px pločio JPG (Astro pats paverčia WebP ir sumažina).
 - Pagrindinė iliustracija: `src/content/stories/<adresas>/cover.jpg`, aprašymas `coverAlt` faile `story.yaml`.
-- Papildomos: `src/content/stories/<adresas>/lt/img/scene-01.jpg`, `scene-02.jpg` ir t. t.
+- Papildomos: `src/content/stories/<adresas>/img/scene-01.jpg`, `scene-02.jpg` ir t. t. Aplankas bendras visoms kalboms ir sluoksniams.
+- Į tekstą įterpiamos atskira eilute po norimos pastraipos: `![Ką vaizduoja paveikslėlis](../img/scene-01.jpg)`. Kiekvienas sluoksnis pats pasirenka, kurias scenas rodyti.
 - Didelius originalus laikyk ne čia, o diske.
 - Kai veikėjas jau nupieštas, vėlesnėms scenoms pridėk du paveikslėlius: hero (stilius) ir veikėjo iliustraciją, su prierašu „keep the main character exactly as in the second image".
 
@@ -41,4 +42,5 @@ AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo l
 
 - Čiūta: small male common chaffinch (Fringilla coelebs): blue-grey cap and nape, warm rusty-pink cheeks and breast, chestnut-brown back, dark wings with two bold white wing bars, short conical beak, big round shining dark eyes. Slightly fluffed up, child-friendly proportions.
 - Guoda: female chaffinch: soft olive-brown and buff plumage, the same white wing bars, lively bright eyes, a little slimmer than Čiūta.
+- Scenos: 01 Čiūta randa siūlą, 02 visi išskrenda, Čiūta apkabina siūlą, 03 Guoda priglaudžia sparnu (lietus), 04 skrydis virš debesų. 2–4 m. naudoja visas keturias.
 - Daiktai: raudonas vilnonis siūlas, gintariniai sakų lašeliai ant lizdo krašto (šviečia kaip jonvabaliai), tamsiai raudonos gudobelės uogos.

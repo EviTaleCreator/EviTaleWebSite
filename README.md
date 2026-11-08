@@ -26,13 +26,13 @@ Viskas vienoje vietoje: `src/content/stories/<pasakos-adresas>/`. Adresas rašom
 src/content/stories/raudona-gija/
   story.yaml        pavadinimas, data, trumpas aprašymas, viršelis
   cover.jpg         pagrindinė iliustracija
+  img/              papildomos iliustracijos (bendros visoms kalboms)
   lt/
     2-4.md
     5-8.md
     9-12.md
     vyresniems.md
     giliau.md
-    img/            papildomos iliustracijos (nebūtina)
   en/
     ... tie patys failai angliškai
 ```
@@ -68,12 +68,12 @@ Pastraipos atskiriamos tuščia eilute. Iliustracija įterpiama taip:
 ```md
 Čir-vir-vir! Ant šakos tupi mažas paukštelis.
 
-![Paukštelis ant šakos](./img/paukstelis.jpg)
+![Paukštelis ant šakos](../img/scene-01.jpg)
 
 Krūme sužibo minkštas raudonas siūlas.
 ```
 
-Paveikslėliai automatiškai sumažinami ir paverčiami lengvesniu formatu, tad gali kelti ir didelius.
+Paveikslėliai laikomi pasakos aplanke `img/` (bendri visoms kalboms), todėl kelias prasideda `../img/`. Jie automatiškai paverčiami lengvesniu formatu, bet kelk iki 1600 px pločio.
 
 ### Giliau
 
