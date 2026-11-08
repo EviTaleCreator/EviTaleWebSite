@@ -52,4 +52,5 @@ AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo l
 - Mergaitė: little girl about 4 years old, round rosy face with red cheeks, big bright happy eyes, light brown hair in two short braids with loose strands, a simple light linen dress and a knitted mustard-yellow cardigan with buttons, bare feet. Pavyzdys: `img/scene-04.jpg`.
 - Laiveliai: flat piece of pine bark shaped like a little boat, a thin twig mast, a bird feather as a sail. Mergaitės laivelis kreivas, su tamsiai raudonu siūlu ant stiebo.
 - Vieta: lėtas vingis per pievą, senas medinis lieptelis, didelis gluosnis (viršelis).
-- Scenos: 01 dvi upės (Alanta ir Žvelsa), 02 Alanta lekia nuo kalno, 03 tuščia upė rūke, 04 mergaitė bėga paskui laivelį. 2–4 m.: 01, 02, 03, 04.
+- Scenos: 01 dvi upės (Alanta ir Žvelsa), 02 Alanta lekia nuo kalno, 03 tuščia upė rūke, 04 mergaitė bėga paskui laivelį, 05 rudenį berniukas ant lieptelio, laivelis įstrigęs nendrėse, 06 sausas lieptelis virš išdžiūvusios vagos (be žmonių). 2–4 m.: 01, 02, 03, 04. 5–8 m.: 01, 05, 02, 04, 06. 9–12 m.: 01, 05, 02, 03, 04, 06. Vyresniems: 05, 06.
+- Berniukas: about 6 to 7 years old, short brown hair, a beige knitted cardigan over a collared shirt, blue trousers rolled up, bare feet. Pavyzdys: `img/scene-05.jpg`.

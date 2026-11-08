@@ -12,6 +12,8 @@ Pirmą kartą ji pažiūrėjo į save svetimomis akimis. Maurai, lėtai linguoja
 
 Nuo tos dienos Žvelsos ūžesys, anksčiau buvęs tik kaimynės balsas, virto priekaištu. Kaskart, kai vėjas jį atnešdavo, Alantai sugeldavo šonus. Ji pyko ant savo posūkių, ant gluosnio šaknų, kurios, rodos, tyčia kabinosi į srovę ir stabdė. Kartą ji visa jėga bloškėsi į vienintelį pakrantės akmenį, tikėdamasi bent vieno balto purslo, ir pakėlė tik kelis drumzlinus lašus. Tai buvo dar blogiau nei nieko. O rudenį, kai berniukas paleido nuo lieptelio laivelį, ji nė nepažvelgė į jį. Stumtelėjo piktai, kaip stumiama tai, kas trukdo, ir laivelis įstrigo nendrėse. Berniukas ilgai stovėjo ant lieptelio. Paskui nuėjo.
 
+![Rudenį berniukas vienas stovi ant lieptelio po pageltusiu gluosniu ir liūdnai žiūri į savo laivelį, įstrigusį nendrėse](../img/scene-05.jpg)
+
 Prieš pat ilgąją kilpą per pievą ėjo senas sausas griovys. Alanta jį žinojo visą gyvenimą ir niekada apie jį negalvojo. Dabar galvojo kasdien. Griovys kirto šlaitą tiesiai, be jokių vingių, ir žemiau vėl susitikdavo su jos vaga. Trumpesnis kelias. Statesnis. Toks, kokiu tekėtų Žvelsa.
 
 Pavasarį, kai ištirpo sniegas ir vandens buvo daugiau nei bet kada, Alanta apsisprendė. Ji nepasuko į savo kilpą. Ji užgulė griovio šlaitą visu svoriu, graužė velėną, plėšė šaknis, vertė molio grumstus, ir griovys, ilgus metus buvęs tik įdubimas žolėje, pasidavė. Visa srovė su trenksmu šovė nauju keliu.
@@ -25,3 +27,5 @@ Praėjo kelios savaitės. Vieną rytą prie naujojo molėto kranto nedrąsiai pr
 Ji švelniai pagavo laivelį. Leido jam apsisukti mažame sūkuryje, kad mergaitė nusijuoktų, ir nešė jį lėtai, pakrante, taikydamasi prie pėdų, bėgančių per žolę. Juokas skambėjo skardžiai, lyg varpelis. Ir Alanta pajuto tai, ko nebuvo jautusi nuo tos popietės prie lieptelio: kad ji kažkam reikalinga tokia, kokia yra.
 
 Tik aukščiau slėnyje, ten, kur anksčiau vinguriavo senoji kilpa, dabar telkšojo kelios džiūstančios balutės. Senasis lieptelis po gluosniu stovėjo tylus ir sausas, pakibęs virš dugno, kuris pamažu želia žolėmis. Kai kurie keliai, kartą išgraužti, atgal nebeužželia. O kai kurie užželia visam laikui.
+
+![Senasis lieptelis po gluosniu stovi virš išdžiūvusios upės vagos, kurioje liko tik kelios balutės ir pradeda želti žolė](../img/scene-06.jpg)
