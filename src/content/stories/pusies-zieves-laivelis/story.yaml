@@ -1,0 +1,15 @@
+# Pasakos informacija. Data rašoma metai-mėnuo-diena.
+# Lentynoje naujausia pasaka rodoma pirma.
+date: 2026-11-08T16:40:00
+
+title:
+  lt: Pušies žievės laivelis
+
+excerpt:
+  lt: Apie lėtą upę Alantą, kuri užsimanė šniokšti kaip kaimynė Žvelsa, ir apie tai, ką ji prarado, kai pagaliau pradėjo.
+
+# Pagrindinė iliustracija bus įkelta vėliau.
+# Kai ji bus, įdėk cover.jpg šalia šio failo ir atkomentuok eilutes žemiau.
+# cover: ./cover.jpg
+# coverAlt:
+#   lt: Ką vaizduoja iliustracija
