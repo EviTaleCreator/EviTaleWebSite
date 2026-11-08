@@ -8,8 +8,7 @@ title:
 excerpt:
   lt: Apie notrelę, kuri taip ilgai apsimetinėjo dilgėle, kad pati pamiršo savo baltus, saldžius žiedus.
 
-# Pagrindinė iliustracija bus įkelta vėliau.
-# Kai ji bus, įdėk cover.jpg šalia šio failo ir atkomentuok eilutes žemiau.
-# cover: ./cover.jpg
-# coverAlt:
-#   lt: Ką vaizduoja iliustracija
+# Pagrindinė iliustracija, šalia šio failo.
+cover: ./cover.jpg
+coverAlt:
+  lt: Prie senos daržinės akmeninio pamato tarp tamsių dilgėlių auga notrelė su baltais žiedais, šalia surūdijusios akėčios, o saulėtame pakraštyje žydi ramunėlė

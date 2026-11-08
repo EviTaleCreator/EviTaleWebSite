@@ -54,3 +54,11 @@ AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo l
 - Vieta: lėtas vingis per pievą, senas medinis lieptelis, didelis gluosnis (viršelis).
 - Scenos: 01 dvi upės (Alanta ir Žvelsa), 02 Alanta lekia nuo kalno, 03 tuščia upė rūke, 04 mergaitė bėga paskui laivelį, 05 rudenį berniukas ant lieptelio, laivelis įstrigęs nendrėse, 06 sausas lieptelis virš išdžiūvusios vagos (be žmonių), 07 du keliautojai prie lieptelio rodo į Žvelsą. 2–4 m.: 01, 07, 02, 03, 04. 5–8 m.: 01, 07, 05, 02, 04, 06. 9–12 m.: 01, 07, 05, 02, 03, 04, 06. Vyresniems: 07, 05, 06.
 - Berniukas: about 6 to 7 years old, short brown hair, a beige knitted cardigan over a collared shirt, blue trousers rolled up, bare feet. Pavyzdys: `img/scene-05.jpg`.
+
+### Notrelė
+
+- Notrelė: white dead-nettle (Lamium album): square stem, pairs of heart-shaped, toothed, wrinkled leaves very similar to nettle leaves, whorls of small white two-lipped hooded flowers around the stem. Žiedai visada balti. Be veido.
+- Dilgėlės: tall, dark green, toothed pointed leaves, fine hairs on stems, thin hanging flower strings. Ramunėlė: viena balta ramunė saulėtame dilgyno pakraštyje. Kamanė: stora, rudai dryžuota.
+- Vieta: dilgynas prie senos medinės daržinės akmeniniu pamatu, surūdijusios akėčios (viršelis).
+- Mergaitė: about 9 to 10 years old, sun-tanned, freckles, long light blond loose hair, a simple faded light blue sleeveless summer dress, bare feet. Pavyzdys: `img/scene-02.jpg`. Svarbu nurodyti mastelį: notrelė jai iki kelių, dilgėlės iki juosmens.
+- Scenos: 01 kamanė prie notrelės žiedų, 02 mergaitė pritūpusi randa baltus žiedus, 03 mergaitė su vainikėliu ir raudonu siūlu bėga per pievą. 2–4 m.: 01, 02, 03.
