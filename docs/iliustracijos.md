@@ -44,3 +44,12 @@ AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo l
 - Guoda: female chaffinch: soft olive-brown and buff plumage, the same white wing bars, lively bright eyes, a little slimmer than Čiūta.
 - Scenos: 01 Čiūta randa siūlą, 02 visi išskrenda, Čiūta apkabina siūlą, 03 Guoda priglaudžia sparnu (lietus), 04 skrydis virš debesų, 05 audra, Guoda kapoja siūlą nuo Čiūtos kojelės, 06 audra, Čiūta vienas bando pakilti su pririšta kojele, 07 rytas po audros: tuščias lizdas, plunksnelė, siūlas į tamsą (be paukščių), 08 Čiūta vienas virš audros į saulę. 2–4 m.: 01, 02, 03, 04. 5–8 m.: 01, 02, 05, 04. 9–12 m.: 01, 02, 06, 08. Vyresniems: 02, 07.
 - Daiktai: raudonas vilnonis siūlas, gintariniai sakų lašeliai ant lizdo krašto (šviečia kaip jonvabaliai), tamsiai raudonos gudobelės uogos.
+
+### Pušies žievės laivelis
+
+- Alanta: lėta upė, be veido. Jos nuotaiką rodo šviesa ir vanduo: rami ir auksinė, kai gera; puta, kai lekia; blyški ir rūke, kai liūdi.
+- Žvelsa: greita upė už kalvos, šokinėja per pilkus akmenis, balta puta.
+- Mergaitė: little girl about 4 years old, round rosy face with red cheeks, big bright happy eyes, light brown hair in two short braids with loose strands, a simple light linen dress and a knitted mustard-yellow cardigan with buttons, bare feet. Pavyzdys: `img/scene-04.jpg`.
+- Laiveliai: flat piece of pine bark shaped like a little boat, a thin twig mast, a bird feather as a sail. Mergaitės laivelis kreivas, su tamsiai raudonu siūlu ant stiebo.
+- Vieta: lėtas vingis per pievą, senas medinis lieptelis, didelis gluosnis (viršelis).
+- Scenos: 01 dvi upės (Alanta ir Žvelsa), 02 Alanta lekia nuo kalno, 03 tuščia upė rūke, 04 mergaitė bėga paskui laivelį. 2–4 m.: 01, 02, 03, 04.

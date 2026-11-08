@@ -8,8 +8,7 @@ title:
 excerpt:
   lt: Apie lėtą upę Alantą, kuri užsimanė šniokšti kaip kaimynė Žvelsa, ir apie tai, ką ji prarado, kai pagaliau pradėjo.
 
-# Pagrindinė iliustracija bus įkelta vėliau.
-# Kai ji bus, įdėk cover.jpg šalia šio failo ir atkomentuok eilutes žemiau.
-# cover: ./cover.jpg
-# coverAlt:
-#   lt: Ką vaizduoja iliustracija
+# Pagrindinė iliustracija, šalia šio failo.
+cover: ./cover.jpg
+coverAlt:
+  lt: Lėta upė vingiuoja per pievą po senu gluosniu, prie medinio lieptelio trys vaikai leidžia į vandenį pušies žievės laivelius su plunksnų burėmis
