@@ -41,6 +41,8 @@ Per GitHub svetainę: atsidaryk `src/content/stories`, spausk **Add file → Upl
 
 Lengviausia nukopijuoti `raudona-gija` aplanką ir pakeisti tekstus.
 
+Iliustracijų taisyklės, promptas ir veikėjų aprašymai: [docs/iliustracijos.md](docs/iliustracijos.md).
+
 ### story.yaml
 
 ```yaml
