@@ -1,5 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { LAYER_IDS, DEFAULT_LAYER, type Lang, type LayerId } from './i18n';
+// Laikinas viršelis pasakoms, kurios dar neturi savo iliustracijos.
+import placeholderCover from '../assets/cover-placeholder.jpg';
 
 export interface StoryLayer {
   id: LayerId;
@@ -11,7 +13,7 @@ export interface Story {
   date: Date;
   title: string;
   excerpt: string;
-  cover?: ImageMetadata;
+  cover: ImageMetadata;
   coverAlt: string;
   layers: StoryLayer[];
   defaultLayer: LayerId;
@@ -40,8 +42,8 @@ export async function getStories(lang: Lang): Promise<Story[]> {
       date: meta.data.date,
       title,
       excerpt: meta.data.excerpt?.[lang] ?? '',
-      cover: meta.data.cover,
-      coverAlt: meta.data.coverAlt?.[lang] ?? '',
+      cover: meta.data.cover ?? placeholderCover,
+      coverAlt: meta.data.cover ? meta.data.coverAlt?.[lang] ?? '' : '',
       layers,
       defaultLayer: layers.some((l) => l.id === DEFAULT_LAYER) ? DEFAULT_LAYER : layers[0].id,
     });

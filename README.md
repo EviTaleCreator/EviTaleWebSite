@@ -59,6 +59,8 @@ coverAlt:
   en: What the illustration shows
 ```
 
+Jei pasaka dar neturi savo iliustracijos, tiesiog nerašyk `cover:` ir `coverAlt:` eilučių. Tada lentynoje ir pasakoje bus rodomas laikinas viršelis `src/assets/cover-placeholder.jpg`. Kai iliustracija bus, įkelk ją kaip `cover.jpg` ir įrašyk tas eilutes.
+
 Jei angliško vertimo dar nėra, tiesiog nerašyk `en:` eilučių ir nekurk `en/` aplanko. Tada pasaka rodysis tik lietuviškoje lentynoje.
 
 ### Tekstas su iliustracijomis
