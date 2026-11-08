@@ -1,7 +1,7 @@
 export const LANGS = ['lt', 'en'] as const;
 export type Lang = (typeof LANGS)[number];
 
-export const LAYER_IDS = ['2-4', '5-8', '9-12', 'komiksas', 'giliau'] as const;
+export const LAYER_IDS = ['2-4', '5-8', '9-12', 'vyresniems', 'giliau'] as const;
 export type LayerId = (typeof LAYER_IDS)[number];
 
 /** Sluoksnis, kuris atsidaro pirmas, jei skaitytojas dar nieko nepasirinko. */
@@ -34,12 +34,12 @@ export const LAYERS: Record<LayerId, { label: T; short: T; about: T }> = {
       en: 'A longer plot, choices and a real adventure.',
     },
   },
-  komiksas: {
-    label: { lt: 'Komiksas', en: 'Comic' },
-    short: { lt: 'Istorija kadrais', en: 'The story in panels' },
+  vyresniems: {
+    label: { lt: 'Vyresniems', en: 'Older readers' },
+    short: { lt: 'Paaugliams ir suaugusiems', en: 'Teens and adults' },
     about: {
-      lt: 'Ta pati istorija kadrais su trumpais užrašais.',
-      en: 'The same story in panels with short captions.',
+      lt: 'Ta pati istorija vyresniems skaitytojams: paaugliams ir suaugusiems.',
+      en: 'The same story for older readers: teens and adults.',
     },
   },
   giliau: {
@@ -55,12 +55,12 @@ export const LAYERS: Record<LayerId, { label: T; short: T; about: T }> = {
 export const UI = {
   lt: {
     siteDescription:
-      'Virtualios rašytojos Evi pasakos vaikams ir tėvams. Kiekviena istorija turi kelis skaitymo sluoksnius: pagal amžių, komiksą ir gilesnį skaitinį.',
+      'Virtualios rašytojos Evi pasakos vaikams ir tėvams. Kiekviena istorija turi kelis skaitymo sluoksnius: pagal amžių, vyresniems ir gilesnį skaitinį tėvams.',
     homeTitle: 'Pasakos, kurios auga kartu su vaiku',
     eyebrow: 'Virtualios rašytojos Evi pasakos',
     heroTitle: 'Viena pasaka, keli skaitymo sluoksniai',
     heroSub:
-      'Išsirink vaiko amžių ir skaityk tą pačią istoriją jam suprantama kalba, arba žiūrėk ją kaip komiksą. Skiltyje „Giliau“ – psichologinis sluoksnis ir klausimai vakaro pokalbiui.',
+      'Išsirink vaiko amžių ir skaityk tą pačią istoriją jam suprantama kalba. Skiltyje „Giliau“ – psichologinis sluoksnis ir klausimai vakaro pokalbiui.',
     latest: 'Naujausia pasaka',
     read: 'Skaityti',
     shelf: 'Lentyna',
@@ -86,12 +86,12 @@ export const UI = {
   },
   en: {
     siteDescription:
-      'Stories for children and parents by the virtual author Evi. Every story has several reading layers: by age, as a comic, and a deeper read.',
+      'Stories for children and parents by the virtual author Evi. Every story has several reading layers: by age, for older readers, and a deeper read for parents.',
     homeTitle: 'Stories that grow with your child',
     eyebrow: 'Stories by the virtual author Evi',
     heroTitle: 'One story, many ways to read it',
     heroSub:
-      'Pick your child’s age and read the same story in words they understand, or flip through it as a comic. Under “Deeper”: a psychological layer and questions for a bedtime talk.',
+      'Pick your child’s age and read the same story in words they understand. Under “Deeper”: a psychological layer and questions for a bedtime talk.',
     latest: 'Newest story',
     read: 'Read',
     shelf: 'Bookshelf',

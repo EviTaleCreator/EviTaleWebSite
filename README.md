@@ -13,7 +13,7 @@ Kiekviena pasaka gali turėti iki penkių sluoksnių:
 | `2-4.md` | 2–4 m. |
 | `5-8.md` | 5–8 m. |
 | `9-12.md` | 9–12 m. |
-| `komiksas.md` | Komiksas |
+| `vyresniems.md` | Vyresniems (paaugliams ir suaugusiems) |
 | `giliau.md` | Giliau (tėvams) |
 
 Nebūtina turėti visų. Svetainė pati rodo tik tuos sluoksnius, kurių failai yra.
@@ -30,7 +30,7 @@ src/content/stories/raudona-gija/
     2-4.md
     5-8.md
     9-12.md
-    komiksas.md
+    vyresniems.md
     giliau.md
     img/            papildomos iliustracijos (nebūtina)
   en/
@@ -72,20 +72,6 @@ Krūme sužibo minkštas raudonas siūlas.
 ```
 
 Paveikslėliai automatiškai sumažinami ir paverčiami lengvesniu formatu, tad gali kelti ir didelius.
-
-### Komiksas
-
-Kiekvienas kadras yra paveikslėlis ir po juo užrašas, be tuščios eilutės tarp jų. Kadrus atskiria tuščia eilutė:
-
-```md
-![](./img/kadras-1.jpg)
-Rytas miške. Paukštelis gudobelėje.
-
-![](./img/kadras-2.jpg)
-Kiti paukščiai bijo spyglių.
-```
-
-Telefone kadrai išdėliojami po du eilėje. Jei kadrų nelyginis skaičius, paskutinis būna per visą plotį.
 
 ### Giliau
 

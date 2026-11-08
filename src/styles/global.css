@@ -28,7 +28,7 @@
 .l-2-4 { --tint: #f5e2ae; --dot: #c9962a; }
 .l-5-8 { --tint: #d5e7cc; --dot: #5e8a50; }
 .l-9-12 { --tint: #cfe0f0; --dot: #3f6f9e; }
-.l-komiksas { --tint: #f6d5c6; --dot: #b4492a; }
+.l-vyresniems { --tint: #f6d5c6; --dot: #b4492a; }
 .l-giliau { --tint: #e6d9eb; --dot: #7e5a8e; }
 .l-all { --tint: #ede6da; --dot: transparent; }
 
@@ -355,24 +355,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 .prose ul, .prose ol { padding-left: 1.3em; }
 .layer-2-4 .prose { font-size: 22px; line-height: 1.65; }
 
-/* Komiksas: kiekviena pastraipa = kadras (paveikslėlis + užrašas) */
-.layer-komiksas .prose { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.layer-komiksas .prose > * + * { margin-top: 0; }
-.layer-komiksas .prose > p {
-  border: 2px solid var(--ink);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--surface);
-  font-family: var(--font-display);
-  font-size: 16px;
-  line-height: 1.35;
-  font-weight: 600;
-  padding: 0 12px 10px;
-}
-.layer-komiksas .prose > p img { width: calc(100% + 24px); max-width: none; margin: 0 -12px 10px; border-radius: 0; border-bottom: 2px solid var(--ink); }
-.layer-komiksas .prose > p:last-child:nth-child(odd) { grid-column: span 2; }
-.layer-komiksas .prose > :not(p) { grid-column: 1 / -1; }
-
 /* Giliau: tėvų sluoksnis */
 .layer-giliau .prose {
   background: #efe6f2;
@@ -437,7 +419,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   :root { --gutter: 28px; }
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   .layer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .layer-komiksas .prose { gap: 14px; }
   .layer-giliau .prose { padding: 30px 32px; }
 }
 
