@@ -29,7 +29,9 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
     <meta name="theme-color" content="#f7f3ec" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {canonical && <link rel="canonical" href={canonical} />}
     {site && <link rel="alternate" hreflang="lt" href={new URL(alternates.lt, site).href} />}
     {site && <link rel="alternate" hreflang="en" href={new URL(alternates.en, site).href} />}
@@ -55,9 +57,12 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
           )
         }
         <a class="logo" href={homeUrl(lang)}>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <circle cx="14" cy="14" r="12" stroke="#17251E" stroke-width="1.5"></circle>
-            <path d="M6 17c3-6 6 2 9-3s5-3 7 0" stroke="#B4492A" stroke-width="2" stroke-linecap="round"></path>
+          <svg width="30" height="31" viewBox="10 6 100 104" aria-hidden="true">
+            <path d="M26 104 C34 98 36 88 36 72 C36 40 42 14 60 14 C78 14 84 40 84 72 C84 88 86 98 94 104 Z" fill="#2f5a43"></path>
+            <path d="M46 104 C46 80 50 62 60 62 C70 62 74 80 74 104 Z" fill="#f7f3ec"></path>
+            <circle cx="60" cy="88" r="11" fill="#e0a83a" opacity="0.3"></circle>
+            <circle cx="60" cy="88" r="6" fill="#e0a83a"></circle>
+            <path d="M18 104 L102 104" stroke="#17251e" stroke-width="5" stroke-linecap="round"></path>
           </svg>
           EviTale
         </a>
