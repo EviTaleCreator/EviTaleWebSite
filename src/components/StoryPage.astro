@@ -1,0 +1,135 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import LayerPicker from './LayerPicker.astro';
+import { getStories, type Story } from '../lib/stories';
+import { UI, homeUrl, storyUrl, formatDate, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  story: Story;
+}
+
+const { lang, story } = Astro.props;
+const t = UI[lang];
+const other: Lang = lang === 'lt' ? 'en' : 'lt';
+
+const all = await getStories(lang);
+const index = all.findIndex((s) => s.slug === story.slug);
+const newer = index > 0 ? all[index - 1] : undefined;
+const older = index >= 0 && index < all.length - 1 ? all[index + 1] : undefined;
+
+// Jei pasaka išversta, kalbos jungiklis veda į tą pačią pasaką, jei ne – į kitos kalbos lentyną.
+const otherStories = await getStories(other);
+const otherHref = otherStories.some((s) => s.slug === story.slug) ? storyUrl(other, story.slug) : homeUrl(other);
+
+const rendered = await Promise.all(
+  story.layers.map(async (l) => ({ id: l.id, Content: (await render(l.entry)).Content })),
+);
+---
+
+<Base
+  lang={lang}
+  title={story.title}
+  description={story.excerpt}
+  back
+  alternates={lang === 'lt' ? { lt: storyUrl('lt', story.slug), en: otherHref } : { lt: otherHref, en: storyUrl('en', story.slug) }}
+>
+  <main class="story">
+    <div class="wrap narrow">
+      {
+        story.cover && (
+          <figure class="story-cover">
+            <Image src={story.cover} alt={story.coverAlt} widths={[480, 800, 1200]} sizes="(min-width: 720px) 690px, 100vw" loading="eager" fetchpriority="high" />
+          </figure>
+        )
+      }
+      <div class="story-head">
+        <span class="date">{formatDate(story.date, lang)}</span>
+        <h1>{story.title}</h1>
+      </div>
+    </div>
+
+    <div class="sticky-bar">
+      <div class="wrap narrow">
+        <LayerPicker lang={lang} layers={story.layers.map((l) => l.id)} selected={story.defaultLayer} caption={t.layer} id="story-picker" />
+      </div>
+    </div>
+
+    <div class="wrap narrow" data-default-layer={story.defaultLayer}>
+      {
+        rendered.map(({ id, Content }) => (
+          <section class={`layer layer-${id} l-${id}`} data-layer={id} hidden={id !== story.defaultLayer}>
+            <div class="prose">
+              <Content />
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <nav class="wrap narrow story-nav" aria-label={t.otherStories}>
+      {
+        older && (
+          <a class="btn btn-light" href={storyUrl(lang, older.slug)} data-keep-layer>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {t.older}
+          </a>
+        )
+      }
+      {
+        newer && (
+          <a class="btn btn-dark" href={storyUrl(lang, newer.slug)} data-keep-layer>
+            {t.newer}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        )
+      }
+      {
+        !older && !newer && (
+          <a class="btn btn-dark" href={`${homeUrl(lang)}#lentyna`} data-keep-layer>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {t.toShelf}
+          </a>
+        )
+      }
+    </nav>
+  </main>
+</Base>
+
+<script>
+  import { initPicker, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
+
+  const root = document.getElementById('story-picker');
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-layer]'));
+  const fallback = document.querySelector<HTMLElement>('[data-default-layer]')?.dataset.defaultLayer ?? '';
+
+  function show(value: string) {
+    sections.forEach((s) => (s.hidden = s.dataset.layer !== value));
+    syncLayerEverywhere(value);
+  }
+
+  if (root) {
+    const picker = initPicker(root, (value) => {
+      saveLayer(value);
+      show(value);
+    });
+    const pick = () => {
+      const fromUrl = layerFromUrl();
+      if (fromUrl && picker.values.includes(fromUrl)) saveLayer(fromUrl);
+      const wanted = [fromUrl, loadLayer()].find((v) => v && picker.values.includes(v));
+      const value = wanted ?? fallback;
+      picker.set(value);
+      show(value);
+    };
+    pick();
+    window.addEventListener('pageshow', pick);
+  }
+</script>

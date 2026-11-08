@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import { UI, homeUrl, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Tos pačios lentynos ar pasakos adresai abiem kalbomis */
+  alternates: Record<Lang, string>;
+  /** Pasakos puslapyje rodoma nuoroda „← Lentyna“ */
+  back?: boolean;
+}
+
+const { lang, title, description, alternates, back = false } = Astro.props;
+const t = UI[lang];
+const desc = description || t.siteDescription;
+const fullTitle = title === 'EviTale' ? title : `${title} · EviTale`;
+const site = Astro.site;
+const ogImage = site ? new URL('/hero-banner.jpg', site).href : undefined;
+const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="#f7f3ec" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {site && <link rel="alternate" hreflang="lt" href={new URL(alternates.lt, site).href} />}
+    {site && <link rel="alternate" hreflang="en" href={new URL(alternates.en, site).href} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EviTale" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:locale" content={lang === 'lt' ? 'lt_LT' : 'en_GB'} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:card" content="summary_large_image" />}
+  </head>
+  <body>
+    <header class:list={['site-header', { 'with-back': back }]}>
+      <div class="wrap">
+        {
+          back && (
+            <a class="back-link" href={`${homeUrl(lang)}#lentyna`} data-keep-layer>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M12.5 4.5L7 10l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {t.back}
+            </a>
+          )
+        }
+        <a class="logo" href={homeUrl(lang)}>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <circle cx="14" cy="14" r="12" stroke="#17251E" stroke-width="1.5"></circle>
+            <path d="M6 17c3-6 6 2 9-3s5-3 7 0" stroke="#B4492A" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          EviTale
+        </a>
+        <nav class="lang" aria-label={t.language}>
+          <a href={alternates.lt} hreflang="lt" lang="lt" aria-current={String(lang === 'lt')} data-keep-layer>LT</a>
+          <a href={alternates.en} hreflang="en" lang="en" aria-current={String(lang === 'en')} data-keep-layer>EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span class="brand">EviTale · {new Date().getFullYear()}</span>
+        <nav aria-label="EviTale">
+          <a href={`${homeUrl(lang)}#lentyna`}>{t.shelf}</a>
+          <a href={`${homeUrl(lang)}#sluoksniai`}>{t.layersNav}</a>
+          <a href={`${homeUrl(lang)}#kontaktai`}>{t.contactNav}</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

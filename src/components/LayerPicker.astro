@@ -1,0 +1,56 @@
+---
+import { LAYERS, UI, type Lang, type LayerId } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  layers: LayerId[];
+  /** true – pirmas pasirinkimas „Visi“ (lentynos filtras) */
+  withAll?: boolean;
+  selected: string;
+  caption: string;
+  id: string;
+}
+
+const { lang, layers, withAll = false, selected, caption, id } = Astro.props;
+const t = UI[lang];
+
+const options = [
+  ...(withAll ? [{ value: 'all', label: t.all, desc: t.allShort }] : []),
+  ...layers.map((l) => ({ value: l, label: LAYERS[l].label[lang], desc: LAYERS[l].short[lang] })),
+];
+const current = options.find((o) => o.value === selected) ?? options[0];
+---
+
+<div class="picker" data-picker id={id}>
+  <button type="button" class="picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls={`${id}-list`}>
+    <span class="picker-caption">{caption}</span>
+    <span class={`dot l-${current.value}`} aria-hidden="true"></span>
+    <span class="picker-value">{current.label}</span>
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <div class="picker-list" role="listbox" id={`${id}-list`} aria-label={t.layer} hidden>
+    {
+      options.map((o) => (
+        <button
+          type="button"
+          role="option"
+          class={`picker-opt l-${o.value}`}
+          data-value={o.value}
+          data-label={o.label}
+          aria-selected={String(o.value === current.value)}
+        >
+          <span class={`dot l-${o.value}`} aria-hidden="true" />
+          <span class="opt-text">
+            <span class="opt-label">{o.label}</span>
+            <span class="opt-desc">{o.desc}</span>
+          </span>
+          <svg class="check" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4.5 10.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      ))
+    }
+  </div>
+</div>
