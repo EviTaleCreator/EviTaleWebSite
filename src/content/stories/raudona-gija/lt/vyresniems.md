@@ -16,6 +16,8 @@ Guoda gūžtelėjo sparnais ir nuskrido. Čiūta žiūrėjo, kol ji virto taške
 
 Spalis, lapkritis. Krūmas nusimetė lapus ir pajuodo. Sakų lašelius nupūtė vėjas, bet Čiūta to nepastebėjo. Jis nebeskraidė net iki pušies, nes pušis buvo per toli nuo siūlo. Siūlas nuo drėgmės patamsėjo, susivėlė, nebešildė. Čiūta tai žinojo. Ir vis tiek kiekvieną rytą jį taisė, glostė snapu, kaišiojo tarp smilgų, nes jei paleistų, tektų pripažinti, kad šalta ir su juo. Būriai seniai išskrido. Liko vėjas.
 
+![Čiūta sėdi lizde ir sparneliais apkabinęs saugo raudoną siūlą, o toli danguje išskrenda kiti paukščiai](../img/scene-02.jpg)
+
 Tą naktį dangus nusileido ant pat krūmo. Vėtra blaškė šakas, ir šios daužė lizdą kaip kumščiai. Čiūta pašoko, bet laisvasis siūlo galas, kurį jis tiek kartų taisė, apsivijo jam kojelę. Jis trūktelėjo. Šlapia vilna, kurią jis buvo išmokęs laikytis, laikėsi.
 
 Vėjo gūsis apvertė lizdą. Sunkus, permirkęs samanų gniužulas užgriuvo ant Čiūtos ir prispaudė jį prie dyglių. Kiekvienas sparnų mostas tik labiau veržė kilpą, o kitas siūlo galas, apvyniotas tris kartus, nė nekrustelėjo. Šaltis ir tamsa užgniaužė kvapą. Kojelę nudiegė skausmas, paskui viskas aptirpo.
@@ -23,3 +25,5 @@ Vėjo gūsis apvertė lizdą. Sunkus, permirkęs samanų gniužulas užgriuvo an
 Ir tada Čiūta suplasnojo paskutinį kartą. Jam pasigirdo tylus pokštelėjimas, tarsi trūktų įtempta styga. Sunkumas dingo. Jis šovė aukštyn pro šlapias šakas, pro juodus debesis, nebejausdamas nei vėjo, nei šlapdribos, kol išniro ten, kur audros nebuvo. Plytėjo vaiskus dangus, ir didelė vasaros saulė, ta pati, kurią jis kadaise gaudydavo sakų lašeliais, šildė jo plunksnas. Nieko nebereikėjo saugoti. Čiūta išskleidė sparnus ir nuskrido ten, kur kvepėjo sakais ir upelio vandeniu.
 
 O apačioje vėtra pamažu rimo. Gudobelės krūme kabojo apvirtęs, nuo vandens sunkus lizdas. Iš po jo žemyn driekėsi raudonas vilnonis siūlas, tvirtai prikabintas prie šakos ir įsitempęs lyg styga, tarsi apačioje, tamsoje, vis dar kažką laikytų.
+
+![Rytas po audros: tuščias lizdas kabo tarp dygliuotų šakų, ant dyglio užsikabinusi rausva plunksnelė, o iš po lizdo į tamsą žemyn driekiasi įsitempęs raudonas siūlas](../img/scene-07.jpg)
