@@ -10,6 +10,8 @@ Jos dienos priklausė ramunėlei. Ši augo dilgyno pakraštyje, saulėkaitoje, i
 
 – Dar! – kikendavo ramunėlė.
 
+![Lyja, o notrelė palenkia lapą, ir lietaus lašai nurieda tiesiai ant ramunėlės žiedo](../img/scene-04.jpg)
+
 Dilgėlės to nemėgo.
 
 – Minkštoji, – šaipėsi jos. – Ją bet kas nuskabys. Ko tu su ja kalbiesi? Tu juk viena iš mūsų.
@@ -29,6 +31,8 @@ Notrelė jau buvo beišskleidžianti lapus, kai virš jos sušnarėjo:
 – Na, pažiūrėsim, kas tu.
 
 Tai buvo ne klausimas. Notrelė suprato tai iš karto, ir taip pat iš karto suprato, kad atsakyti reikia dabar. Ji patraukė lapus.
+
+![Sausra, žemė suskilinėjusi, ožka nukanda ramunėlės žiedą, o notrelė stovi šalia ir jos nepridengia](../img/scene-05.jpg)
 
 Vienas kąsnis. Pakraštyje liko nukąstas stiebelis ir kartokas sulčių kvapas. Dilgėlės pritariamai sušiureno, ir notrelė stovėjo tiesi kaip niekada. Tą naktį ji ilgai nežinojo, kur dėti lapus.
 
@@ -53,3 +57,5 @@ Ji ištraukė žiedelį ir pačiulpė, ir notrelė per ją, tarsi iš šalies, s
 Mergaitė nulaužė stiebą, įpynė notrelę į vainikėlį tarp ramunių ir apvyniojo galus raudonu siūlu. Dilgėlės šnypštė iš paskos, bet niekas jų nebeklausė. Ramunių žiedlapiai lietė notrelės lapus, ir viena jų kvepėjo lygiai taip, kaip ta, iš pakraščio. Gal tik pasirodė.
 
 Mergaitė užsidėjo vainikėlį ir nubėgo per pievą namo. Notrelė iškėlė baltus žiedus į vakaro saulę, nieko nebeslėpdama. Taip aukštai ji dar niekada nebuvo buvusi. Ir taip toli nuo savo šaknų.
+
+![Mergaitė su ramunių, rugiagėlių ir notrelės vainikėliu, perrištu raudonu siūlu, juokdamasi bėga per pievą nuo senos daržinės](../img/scene-03.jpg)

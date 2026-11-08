@@ -61,4 +61,5 @@ AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo l
 - Dilgėlės: tall, dark green, toothed pointed leaves, fine hairs on stems, thin hanging flower strings. Ramunėlė: viena balta ramunė saulėtame dilgyno pakraštyje. Kamanė: stora, rudai dryžuota.
 - Vieta: dilgynas prie senos medinės daržinės akmeniniu pamatu, surūdijusios akėčios (viršelis).
 - Mergaitė: about 9 to 10 years old, sun-tanned, freckles, long light blond loose hair, a simple faded light blue sleeveless summer dress, bare feet. Pavyzdys: `img/scene-02.jpg`. Svarbu nurodyti mastelį: notrelė jai iki kelių, dilgėlės iki juosmens.
-- Scenos: 01 kamanė prie notrelės žiedų, 02 mergaitė pritūpusi randa baltus žiedus, 03 mergaitė su vainikėliu ir raudonu siūlu bėga per pievą. 2–4 m.: 01, 02, 03.
+- Scenos: 01 kamanė prie notrelės žiedų, 02 mergaitė pritūpusi randa baltus žiedus, 03 mergaitė su vainikėliu ir raudonu siūlu bėga per pievą, 04 lietus, notrelė palenkia lapą ant ramunėlės, 05 sausra, ožka nukanda ramunėlę, 06 raudonas kaspinėlis ant stiebo, kamanė grįžta, naujas ramunėlės pumpuras. 2–4 m.: 01, 02, 03. 5–8 m.: 01, 04, 05, 02, 06. 9–12 m.: 01, 04, 05, 02, 03. Vyresniems: 04, 05, 03.
+- Ožka: calm curious white farm goat with a little beard. Sausrą rodyti tik suskilinėjusia žeme ir suglebusiais lapais, ne išblukusiomis spalvomis.
