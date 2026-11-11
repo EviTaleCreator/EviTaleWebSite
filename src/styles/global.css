@@ -318,7 +318,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 }
 
 /* ---------- Home: hero ---------- */
-.hero { padding: 0 0 8px; }
+.hero { position: relative; overflow: hidden; padding: 0 0 8px; }
+.hero-media { will-change: transform; }
 .hero-media {
   position: relative;
   margin: 0;
