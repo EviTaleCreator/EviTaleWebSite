@@ -580,28 +580,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 }
 
 @media (min-width: 1000px) {
-  /* Nuo planšetės: visas paveikslėlis be apkarpymo, kad mama su vaiku visada matytųsi */
-  .hero-media {
-    height: auto;
-    aspect-ratio: 1920 / 1072;
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  .hero-media img { object-position: 50% 50%; }
-  .hero-media::after { height: 16%; }
-  .hero-text { margin-top: -12px; }
+  .hero-text { margin-top: -48px; }
   .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .section { padding-top: 64px; }
   .section h2 { font-size: 34px; }
   .story-cover { margin-top: 28px; }
-}
-
-/* Labai platūs ekranai: paveikslėlio šonai ištirpsta fone */
-@media (min-width: 1480px) {
-  .hero-media {
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
