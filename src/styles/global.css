@@ -337,6 +337,34 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   background: linear-gradient(to bottom, transparent, var(--paper));
   pointer-events: none;
 }
+/* Jonvabaliai virš hero */
+.fireflies { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ff {
+  position: absolute;
+  animation: ffDrift 20s ease-in-out infinite;
+}
+.ff-dot {
+  display: block;
+  border-radius: 50%;
+  background: #fbe3a4;
+  box-shadow: 0 0 6px 2px rgba(251, 227, 164, 0.75), 0 0 18px 6px rgba(233, 180, 81, 0.35);
+  animation: ffGlow 3s ease-in-out infinite;
+}
+.fireflies.paused .ff,
+.fireflies.paused .ff-dot { animation-play-state: paused; }
+@keyframes ffDrift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(var(--dx1), var(--dy1)); }
+  50% { transform: translate(var(--dx2), var(--dy2)); }
+  75% { transform: translate(var(--dx3), var(--dy3)); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes ffGlow {
+  0%, 100% { opacity: 0.12; }
+  45% { opacity: 1; }
+  60% { opacity: 0.85; }
+}
+
 .hero-text {
   position: relative;
   max-width: 760px;
@@ -579,4 +607,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .card, .picker-btn svg, body, .cta { transition: none; }
+  .ff, .ff-dot { animation: none; }
+  .ff-dot { opacity: 0.6; }
 }

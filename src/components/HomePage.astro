@@ -14,6 +14,30 @@ const { lang } = Astro.props;
 const t = UI[lang];
 const stories = await getStories(lang);
 const latest = stories[0];
+
+// Jonvabaliai virš hero paveikslėlio: pastovus atsitiktinumas, kad kiekvieną kartą būtų tie patys.
+let seed = 7;
+const rnd = () => {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed / 233280;
+};
+const fireflies = Array.from({ length: 26 }, () => {
+  let x = rnd() * 96 + 2;
+  const y = rnd() * 80 + 6;
+  // Vengiame miško dvasios veido ir mamos su vaiku.
+  const inFace = x > 40 && x < 60 && y > 12 && y < 42;
+  const inPeople = x > 42 && x < 58 && y > 64;
+  if (inFace || inPeople) x = x < 50 ? x - 18 : x + 18;
+  const size = (2.5 + rnd() * 3.5).toFixed(1);
+  const d = () => `${((rnd() - 0.5) * 70).toFixed(0)}px`;
+  const drift = (14 + rnd() * 14).toFixed(1);
+  const glow = (2.2 + rnd() * 2.8).toFixed(1);
+  const delay = (-rnd() * 20).toFixed(1);
+  return {
+    outer: `left:${x.toFixed(1)}%;top:${y.toFixed(1)}%;--dx1:${d()};--dy1:${d()};--dx2:${d()};--dy2:${d()};--dx3:${d()};--dy3:${d()};animation-duration:${drift}s;animation-delay:${delay}s`,
+    inner: `width:${size}px;height:${size}px;animation-duration:${glow}s;animation-delay:${(-rnd() * 5).toFixed(1)}s`,
+  };
+});
 ---
 
 <Base lang={lang} title={t.homeTitle} alternates={{ lt: '/', en: '/en/' }}>
@@ -28,6 +52,15 @@ const latest = stories[0];
           loading="eager"
           fetchpriority="high"
         />
+        <div class="fireflies" aria-hidden="true" data-fireflies>
+          {
+            fireflies.map((f) => (
+              <span class="ff" style={f.outer}>
+                <span class="ff-dot" style={f.inner} />
+              </span>
+            ))
+          }
+        </div>
       </figure>
       <div class="wrap hero-text">
         <p class="eyebrow">{t.eyebrow}</p>
@@ -112,6 +145,16 @@ const latest = stories[0];
     </section>
   </main>
 </Base>
+
+<script>
+  // Jonvabaliai sustoja, kai hero nuslenkamas iš ekrano.
+  const flies = document.querySelector<HTMLElement>('[data-fireflies]');
+  if (flies && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      flies.classList.toggle('paused', !entry.isIntersecting);
+    }).observe(flies);
+  }
+</script>
 
 <script>
   import { initPicker, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
