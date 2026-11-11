@@ -162,7 +162,7 @@ const fireflies = Array.from({ length: 26 }, () => {
       }
       const limit = heroMedia.offsetHeight;
       const y = Math.min(window.scrollY, limit);
-      heroMedia.style.transform = `translate3d(0, ${(y * 0.45).toFixed(1)}px, 0)`;
+      heroMedia.style.transform = `translate3d(0, ${(y * 0.6).toFixed(1)}px, 0)`;
     };
     const onScroll = () => {
       if (!ticking) {
