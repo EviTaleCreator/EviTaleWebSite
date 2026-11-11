@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { LAYER_IDS } from './lib/i18n';
 
 // Kiekviena pasaka turi savo aplanką src/content/stories/<pasakos-adresas>/
 // su failu story.yaml (pavadinimas, data, viršelis) ir aplankais lt/ bei en/,
@@ -15,6 +16,8 @@ const stories = defineCollection({
       excerpt: text.optional(),
       cover: image().optional(),
       coverAlt: text.optional(),
+      // Sluoksniai, kurių pabaiga liūdnoka: prie jų rodomas trumpas įspėjimas tėvams.
+      sadEnding: z.array(z.enum(LAYER_IDS)).optional(),
     }),
 });
 

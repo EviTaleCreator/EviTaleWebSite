@@ -54,6 +54,7 @@ excerpt:
   lt: Trumpas aprašymas lentynai.
   en: Short description for the shelf.
 cover: ./cover.jpg
+sadEnding: [9-12, vyresniems]   # neprivaloma: sluoksniai su liūdnoka pabaiga
 coverAlt:
   lt: Ką vaizduoja iliustracija (neregintiems skaitytojams)
   en: What the illustration shows

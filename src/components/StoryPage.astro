@@ -67,6 +67,24 @@ const rendered = await Promise.all(
       {
         rendered.map(({ id, Content }) => (
           <section class={`layer layer-${id} l-${id}`} data-layer={id} hidden={id !== story.defaultLayer}>
+            {
+              story.sadEnding.includes(id) && (
+                <p class="ending-note">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />
+                  </svg>
+                  <span>
+                    {t.sadEnding}
+                    {story.layers.some((l) => l.id === 'giliau') && (
+                      <>
+                        {' '}
+                        <button type="button" class="link-btn" data-goto-layer="giliau">{t.sadEndingLink}</button>
+                      </>
+                    )}
+                  </span>
+                </p>
+              )
+            }
             <div class="prose">
               <Content />
             </div>
@@ -136,7 +154,38 @@ const rendered = await Promise.all(
     };
     pick();
     window.addEventListener('pageshow', pick);
+
+    // Nuoroda iš įspėjimo apie pabaigą atidaro „Giliau“.
+    document.querySelectorAll<HTMLButtonElement>('[data-goto-layer]').forEach((b) =>
+      b.addEventListener('click', () => {
+        const value = b.dataset.gotoLayer ?? '';
+        if (!picker.set(value)) return;
+        saveLayer(value);
+        show(value);
+        root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }),
+    );
   }
+
+  // Kol atidaryta pasaka, telefono ekranas neužgęsta (jei naršyklė tai leidžia).
+  type WakeLockSentinelLike = { release: () => Promise<void> };
+  let wakeLock: WakeLockSentinelLike | null = null;
+  async function keepAwake() {
+    const nav = navigator as Navigator & { wakeLock?: { request: (t: 'screen') => Promise<WakeLockSentinelLike> } };
+    if (!nav.wakeLock || wakeLock || document.visibilityState !== 'visible') return;
+    try {
+      wakeLock = await nav.wakeLock.request('screen');
+      (wakeLock as unknown as EventTarget).addEventListener?.('release', () => (wakeLock = null));
+    } catch {
+      wakeLock = null; // pvz., naršyklė prašo, kad žmogus pirmiau paliestų ekraną
+    }
+  }
+  keepAwake();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') keepAwake();
+  });
+  // Kai kurios naršyklės leidžia tik po prisilietimo: bandome dar kartą per pirmą sąveiką.
+  ['pointerdown', 'keydown', 'scroll'].forEach((ev) => window.addEventListener(ev, keepAwake, { passive: true }));
 
   // Raidžių dydis: penki žingsniai, įsimenamas šiame įrenginyje.
   const SCALES = [0.85, 1, 1.15, 1.3, 1.5];

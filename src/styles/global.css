@@ -318,8 +318,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 }
 
 /* ---------- Home: hero ---------- */
-.hero { position: relative; overflow: hidden; padding: 0 0 8px; }
-.hero-media { will-change: transform; }
+.hero { padding: 0 0 8px; }
 .hero-media {
   position: relative;
   margin: 0;
@@ -486,6 +485,31 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 .story .sticky-bar { border-bottom: 1px solid var(--line); padding: 12px 0; }
 
 .layer { padding: 24px 0 8px; }
+.ending-note {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--soft);
+  border: 1px solid var(--line-2);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.ending-note svg { flex: none; margin-top: 1px; color: var(--accent); }
+.link-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.link-btn:hover { color: var(--accent-hover); }
 .bar-row { display: flex; align-items: center; gap: 10px; }
 .bar-picker { flex: 1; min-width: 0; }
 .text-size {

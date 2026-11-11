@@ -10,6 +10,9 @@ excerpt:
   lt: Apie kikilį Čiūtą, kuris rado šiltą raudoną siūlą ir taip bijojo jį prarasti, kad pamiršo skraidyti.
   en: About Ciuta the chaffinch, who found a warm red thread and got so scared of losing it that he forgot how to fly.
 
+# Sluoksniai, kurių pabaiga liūdnoka: prie jų rodomas trumpas įspėjimas tėvams.
+sadEnding: [9-12, vyresniems]
+
 # Pagrindinė iliustracija, šalia šio failo.
 cover: ./cover.jpg
 coverAlt:

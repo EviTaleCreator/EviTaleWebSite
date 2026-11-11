@@ -17,6 +17,7 @@ export interface Story {
   coverAlt: string;
   layers: StoryLayer[];
   defaultLayer: LayerId;
+  sadEnding: LayerId[];
 }
 
 /** Visos pasakos, kurios turi bent vieną sluoksnį nurodyta kalba, nuo naujausios. */
@@ -45,6 +46,7 @@ export async function getStories(lang: Lang): Promise<Story[]> {
       cover: meta.data.cover ?? placeholderCover,
       coverAlt: meta.data.cover ? meta.data.coverAlt?.[lang] ?? '' : '',
       layers,
+      sadEnding: meta.data.sadEnding ?? [],
       defaultLayer: layers.some((l) => l.id === DEFAULT_LAYER) ? DEFAULT_LAYER : layers[0].id,
     });
   }
