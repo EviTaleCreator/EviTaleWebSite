@@ -52,8 +52,14 @@ const rendered = await Promise.all(
     </div>
 
     <div class="sticky-bar">
-      <div class="wrap narrow">
-        <LayerPicker lang={lang} layers={story.layers.map((l) => l.id)} selected={story.defaultLayer} caption={t.layer} id="story-picker" />
+      <div class="wrap narrow bar-row">
+        <div class="bar-picker">
+          <LayerPicker lang={lang} layers={story.layers.map((l) => l.id)} selected={story.defaultLayer} caption={t.layer} id="story-picker" />
+        </div>
+        <div class="text-size" role="group" aria-label={t.textSize}>
+          <button type="button" data-text-size="down" aria-label={t.textSmaller}>A−</button>
+          <button type="button" data-text-size="up" aria-label={t.textBigger} class="bigger">A+</button>
+        </div>
       </div>
     </div>
 
@@ -132,4 +138,37 @@ const rendered = await Promise.all(
     pick();
     window.addEventListener('pageshow', pick);
   }
+
+  // Raidžių dydis: penki žingsniai, įsimenamas šiame įrenginyje.
+  const SCALES = [0.85, 1, 1.15, 1.3, 1.5];
+  const docEl = document.documentElement;
+  const down = document.querySelector<HTMLButtonElement>('[data-text-size="down"]');
+  const up = document.querySelector<HTMLButtonElement>('[data-text-size="up"]');
+
+  function currentStep() {
+    const v = parseFloat(getComputedStyle(docEl).getPropertyValue('--read-scale')) || 1;
+    let best = 1;
+    SCALES.forEach((s, i) => {
+      if (Math.abs(s - v) < Math.abs(SCALES[best] - v)) best = i;
+    });
+    return best;
+  }
+
+  function setStep(i: number) {
+    const step = Math.max(0, Math.min(SCALES.length - 1, i));
+    docEl.style.setProperty('--read-scale', String(SCALES[step]));
+    if (down) down.disabled = step === 0;
+    if (up) up.disabled = step === SCALES.length - 1;
+    try {
+      localStorage.setItem('evitale-text', String(SCALES[step]));
+    } catch {
+      /* saugykla išjungta */
+    }
+  }
+
+  const startStep = currentStep();
+  if (down) down.disabled = startStep === 0;
+  if (up) up.disabled = startStep === SCALES.length - 1;
+  down?.addEventListener('click', () => setStep(currentStep() - 1));
+  up?.addEventListener('click', () => setStep(currentStep() + 1));
 </script>

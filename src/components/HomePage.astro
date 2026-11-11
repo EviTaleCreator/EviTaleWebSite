@@ -19,39 +19,27 @@ const latest = stories[0];
 <Base lang={lang} title={t.homeTitle} alternates={{ lt: '/', en: '/en/' }}>
   <main>
     <section class="hero">
-      <div class="wrap">
-        <figure class="hero-media">
-          <Image
-            src={hero}
-            alt=""
-            widths={[480, 800, 1200, 1600]}
-            sizes="(min-width: 1000px) 600px, 100vw"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </figure>
-        <div class="hero-text">
-          <p class="eyebrow">{t.eyebrow}</p>
-          <h1>{t.heroTitle}</h1>
-          <p class="hero-sub">{t.heroSub}</p>
-          {
-            latest && (
-              <a class="latest" href={storyUrl(lang, latest.slug)} data-keep-layer>
-                {latest.cover && <Image src={latest.cover} alt="" width={168} height={168} />}
-                <span class="latest-text">
-                  <span class="latest-kicker">{t.latest}</span>
-                  <span class="latest-title">{latest.title}</span>
-                  <span class="latest-cta">
-                    {t.read}
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </span>
-                </span>
-              </a>
-            )
-          }
-        </div>
+      <figure class="hero-media">
+        <Image
+          src={hero}
+          alt=""
+          widths={[480, 800, 1200, 1600, 2000]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+      <div class="wrap hero-text">
+        <p class="eyebrow">{t.eyebrow}</p>
+        <h1>{t.heroTitle}</h1>
+        <p class="hero-sub">{t.heroSub}</p>
+        {
+          latest && (
+            <a class="cta" href={storyUrl(lang, latest.slug)} data-keep-layer>
+              {t.latestCta}
+            </a>
+          )
+        }
       </div>
     </section>
 
@@ -119,20 +107,14 @@ const latest = stories[0];
       <div class="wrap">
         <h2 id="contact-title">{t.contactTitle}</h2>
         <p>{t.contactText}</p>
-        <a class="mail" href={`mailto:${EMAIL}`}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5" />
-            <path d="M3 5l7 6 7-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-          </svg>
-          {EMAIL}
-        </a>
+        <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
       </div>
     </section>
   </main>
 </Base>
 
 <script>
-  import { initPicker, layerFromUrl, syncLayerEverywhere } from '../scripts/picker';
+  import { initPicker, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
 
   const root = document.getElementById('shelf-picker');
   const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-card]'));
@@ -163,13 +145,17 @@ const latest = stories[0];
   }
 
   if (root) {
-    const picker = initPicker(root, applyFilter);
-    const fromUrl = layerFromUrl();
-    const start = fromUrl && picker.values.includes(fromUrl) ? fromUrl : 'all';
+    const picker = initPicker(root, (value) => {
+      saveLayer(value);
+      applyFilter(value);
+    });
+    // Pirmiausia adresas, tada įsimintas sluoksnis, kitaip „Visi“.
+    const startValue = () => [layerFromUrl(), loadLayer()].find((v) => v && picker.values.includes(v)) ?? 'all';
+    const start = startValue();
     picker.set(start);
     applyFilter(start);
     window.addEventListener('pageshow', () => {
-      const v = layerFromUrl() ?? 'all';
+      const v = startValue();
       if (picker.set(v)) applyFilter(v);
     });
   }

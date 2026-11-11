@@ -22,13 +22,42 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-theme="night">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
-    <meta name="theme-color" content="#f7f3ec" />
+    <meta name="theme-color" content="#0b1a17" id="theme-color" />
+    <script is:inline>
+      // Prieš piešiant puslapį: režimas, raidžių dydis ir įsiminta kalba.
+      (function () {
+        var d = document.documentElement;
+        try {
+          var lang = d.lang;
+          var savedLang = localStorage.getItem('evitale-lang');
+          if (location.pathname === '/' && savedLang === 'en') {
+            location.replace('/en/' + location.search + location.hash);
+            return;
+          }
+          localStorage.setItem('evitale-lang', lang);
+
+          var theme = localStorage.getItem('evitale-theme');
+          if (theme !== 'night' && theme !== 'day') {
+            var h = new Date().getHours();
+            var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            theme = dark || h >= 19 || h < 7 ? 'night' : 'day';
+          }
+          d.dataset.theme = theme;
+          document.getElementById('theme-color').content = theme === 'night' ? '#0b1a17' : '#f7f3ec';
+
+          var scale = parseFloat(localStorage.getItem('evitale-text') || '');
+          if (scale >= 0.8 && scale <= 1.6) d.style.setProperty('--read-scale', String(scale));
+        } catch (e) {
+          /* privatus langas: lieka naktinis režimas ir numatytas dydis */
+        }
+      })();
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -58,18 +87,36 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
         }
         <a class="logo" href={homeUrl(lang)}>
           <svg width="30" height="31" viewBox="10 6 100 104" aria-hidden="true">
-            <path d="M26 104 C34 98 36 88 36 72 C36 40 42 14 60 14 C78 14 84 40 84 72 C84 88 86 98 94 104 Z" fill="#2f5a43"></path>
-            <path d="M46 104 C46 80 50 62 60 62 C70 62 74 80 74 104 Z" fill="#f7f3ec"></path>
+            <path class="logo-trunk" d="M26 104 C34 98 36 88 36 72 C36 40 42 14 60 14 C78 14 84 40 84 72 C84 88 86 98 94 104 Z"></path>
+            <path class="logo-hollow" d="M46 104 C46 80 50 62 60 62 C70 62 74 80 74 104 Z"></path>
             <circle cx="60" cy="88" r="11" fill="#e0a83a" opacity="0.3"></circle>
             <circle cx="60" cy="88" r="6" fill="#e0a83a"></circle>
-            <path d="M18 104 L102 104" stroke="#17251e" stroke-width="5" stroke-linecap="round"></path>
+            <path class="logo-ground" d="M18 104 L102 104" stroke-width="5" stroke-linecap="round"></path>
           </svg>
           EviTale
         </a>
-        <nav class="lang" aria-label={t.language}>
-          <a href={alternates.lt} hreflang="lt" lang="lt" aria-current={String(lang === 'lt')} data-keep-layer>LT</a>
-          <a href={alternates.en} hreflang="en" lang="en" aria-current={String(lang === 'en')} data-keep-layer>EN</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="lang" aria-label={t.language}>
+            <a href={alternates.lt} hreflang="lt" lang="lt" aria-current={String(lang === 'lt')} data-keep-layer data-lang-link="lt">LT</a>
+            <a href={alternates.en} hreflang="en" lang="en" aria-current={String(lang === 'en')} data-keep-layer data-lang-link="en">EN</a>
+          </nav>
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            data-label-night={t.themeToNight}
+            data-label-day={t.themeToDay}
+            aria-label={t.themeToDay}
+          >
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path>
+            </svg>
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -87,3 +134,38 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
     </footer>
   </body>
 </html>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+  const meta = document.getElementById('theme-color') as HTMLMetaElement | null;
+
+  function applyTheme(theme: 'night' | 'day') {
+    root.dataset.theme = theme;
+    if (meta) meta.content = theme === 'night' ? '#0b1a17' : '#f7f3ec';
+    if (toggle) toggle.setAttribute('aria-label', (theme === 'night' ? toggle.dataset.labelDay : toggle.dataset.labelNight) ?? '');
+  }
+
+  applyTheme(root.dataset.theme === 'day' ? 'day' : 'night');
+
+  toggle?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'night' ? 'day' : 'night';
+    applyTheme(next);
+    try {
+      localStorage.setItem('evitale-theme', next);
+    } catch {
+      /* saugykla išjungta */
+    }
+  });
+
+  // Paspaudus kalbos jungiklį, kalba įsimenama dar prieš pereinant į kitą puslapį.
+  document.querySelectorAll<HTMLAnchorElement>('[data-lang-link]').forEach((a) =>
+    a.addEventListener('click', () => {
+      try {
+        localStorage.setItem('evitale-lang', a.dataset.langLink ?? 'lt');
+      } catch {
+        /* saugykla išjungta */
+      }
+    }),
+  );
+</script>
