@@ -31,17 +31,15 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
     <meta name="theme-color" content="#0b1a17" id="theme-color" />
     <script is:inline>
       // Prieš piešiant puslapį: režimas, raidžių dydis ir įsiminta kalba.
+      // Įrašoma tik tai, ką lankytojas pats pasirinko mygtuku; čia tik skaitoma.
       (function () {
         var d = document.documentElement;
         try {
-          var lang = d.lang;
           var savedLang = localStorage.getItem('evitale-lang');
           if (location.pathname === '/' && savedLang === 'en') {
             location.replace('/en/' + location.search + location.hash);
             return;
           }
-          localStorage.setItem('evitale-lang', lang);
-
           var theme = localStorage.getItem('evitale-theme');
           if (theme !== 'night' && theme !== 'day') {
             var h = new Date().getHours();
@@ -130,6 +128,9 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
           <a href={`${homeUrl(lang)}#sluoksniai`}>{t.layersNav}</a>
           <a href={`${homeUrl(lang)}#kontaktai`}>{t.contactNav}</a>
         </nav>
+      </div>
+      <div class="wrap">
+        <p class="privacy-note">{t.privacyNote}</p>
       </div>
     </footer>
   </body>

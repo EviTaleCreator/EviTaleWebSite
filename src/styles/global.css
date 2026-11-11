@@ -228,7 +228,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 .site-footer { margin-top: auto; border-top: 1px solid var(--line); }
 .site-footer .wrap {
   padding-top: 22px;
-  padding-bottom: 28px;
+  padding-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,6 +239,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 .site-footer .brand { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
 .site-footer nav { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
 .site-footer a { color: var(--muted); min-height: 44px; display: inline-flex; align-items: center; }
+.site-footer .privacy-note {
+  margin: 0;
+  padding-bottom: 24px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 40em;
+}
 
 /* ---------- Layer picker (dropdown) ---------- */
 .picker { position: relative; }

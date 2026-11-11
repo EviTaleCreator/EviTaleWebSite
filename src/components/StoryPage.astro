@@ -129,7 +129,6 @@ const rendered = await Promise.all(
     });
     const pick = () => {
       const fromUrl = layerFromUrl();
-      if (fromUrl && picker.values.includes(fromUrl)) saveLayer(fromUrl);
       const wanted = [fromUrl, loadLayer()].find((v) => v && picker.values.includes(v));
       const value = wanted ?? fallback;
       picker.set(value);
