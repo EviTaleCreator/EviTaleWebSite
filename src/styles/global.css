@@ -426,6 +426,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
 .card:hover { color: var(--ink); box-shadow: 0 12px 30px rgba(23, 37, 30, 0.12); transform: translateY(-2px); }
 .card-media { aspect-ratio: 16 / 9; background: var(--soft); overflow: hidden; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; }
+/* Kompiuteryje užvedus pelę paveikslėlis lėtai priartėja, tarsi įžengtum į sceną */
+@media (hover: hover) and (pointer: fine) {
+  .card-media img { transition: transform 1.6s cubic-bezier(0.2, 0.6, 0.2, 1); }
+  .card:hover .card-media img,
+  .card:focus-visible .card-media img { transform: scale(1.07); }
+}
 .card-body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .pills { display: flex; flex-wrap: wrap; gap: 6px; }
 .pill { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--tint); color: var(--ink); }
@@ -592,5 +598,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing:
   html { scroll-behavior: auto; }
   .card, .picker-btn svg, body, .cta { transition: none; }
   .ff, .ff-dot { animation: none; }
+  .card-media img { transition: none; transform: none !important; }
   .ff-dot { opacity: 0.6; }
 }
