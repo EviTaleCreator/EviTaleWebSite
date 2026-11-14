@@ -1,159 +1,211 @@
-# Notrelė: Gemini promptai visoms iliustracijoms
+# Notrelė: Gemini promptai
 
-Naujas stilius: **spalvoti pieštukai ir guašas** (svetainės paletė). Promptai angliškai, nes taip Gemini tiksliau laikosi stiliaus.
+Kiekvienam paveikslėliui yra **vienas pilnas promptas viename bloke**. Nukopijuokite visą bloką ir įklijuokite į Gemini. Nieko jungti nereikia.
 
-## Tvarka
+**Kad paveikslėliai būtų įdomesni,** kiekviena scena turi:
+- **kitokį žiūrėjimo kampą:** iš žemės, iš viršaus, iš labai arti ir t. t.;
+- **mažą istoriją kampe:** detalę, kurią vaikas atras tik įsižiūrėjęs;
+- **paslėptą boružėlę:** ji yra kiekviename paveikslėlyje, ir vaikas gali jos ieškoti.
 
-1. **Viršelis** (`cover.jpg`) – sugeneruokite pirmą. Kai patiks, jis taps **stiliaus pavyzdžiu** visoms kitoms.
-2. **Mergaitės lapas** – vieną kartą, kad mergaitė visose scenose būtų ta pati.
-3. **Scenos 01–06** – kiekvienai pridėkite viršelį (stiliui), o scenoms su mergaite ir mergaitės lapą.
-4. Viską darykite **viename Gemini pokalbyje**. Taisykite žodžiais („less detail in the background“, „make the bumblebee bigger“), užuot generavę iš naujo.
-5. Paveikslėlius išsaugokite tais pačiais pavadinimais (`cover.jpg`, `img/scene-01.jpg` …), iki 1600 px pločio, ir pakeiskite senuosius aplanke `src/content/stories/notrele/`. Tekstų keisti nereikės.
+**Tvarka:**
+1. Pirmiausia **Viršelis**. Kai patiks, jis bus stiliaus pavyzdys kitiems.
+2. Tada **Mergaitė**: vieną kartą, kad visose scenose ji būtų ta pati.
+3. Tada scenos 01–06, **tame pačiame Gemini pokalbyje**.
 
-Viršelis svetainėje apkerpamas skirtingai (pasakoje plačiau, pradiniame puslapyje siauriau), todėl pagrindinis objektas turi būti centre, su laisvu plotu aplink.
+Po kiekvienu pavadinimu parašyta, kokius paveikslėlius prisegti. Išsaugokite tais pačiais pavadinimais ir pakeiskite senuosius aplanke `src/content/stories/notrele/`.
 
 ---
 
-## Stiliaus blokas
+## Viršelis → `cover.jpg`
 
-Šis blokas kartojamas kiekviename prompte. Jei paveikslėlis nukrypsta, pirmiausia patikrinkite, ar blokas įklijuotas visas.
+Prisegti: nieko.
 
 ```
-STYLE: a hand-made children's picture book illustration, painted in opaque gouache and finished with colored pencil on warm off-white paper. Visible colored-pencil strokes and hatching, matte gouache areas with soft dry-brush edges, the paper grain showing through. Simple, gently stylized shapes, slightly naive, like a contemporary award-winning picture book. Calm, even daylight; no dramatic lighting.
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes, like a contemporary award-winning picture book. Even daylight, no dramatic lighting.
 
-PALETTE: build the picture from these colors: graphite blue-grey #2d3142 for the darkest shapes and pencil lines, sage green #8fa58c, poppy red #e2553e as the single bright accent, butter yellow #f3d58a, and the off-white paper #f7f5f0. Other natural colors (leaf greens, earth browns, sky) stay muted and pulled toward this palette. Lots of paper white.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted and pulled toward this palette. Leave lots of paper white.
 
-COMPOSITION: one clear main subject, large and readable on a small phone screen. Plenty of calm empty space. The background is simple: a few flat shapes, not a detailed scene.
+VIEWPOINT: a low, ground-level view, as if a small child is lying in the grass and looking up. The plants feel tall and important.
+
+SCENE: by the grey stone foundation of an old wooden barn grows a crowd of tall, dark, spiky stinging nettles, drawn like a stern little army with jagged leaves and fine pencil hairs. In the middle of them stands one white dead-nettle: a straight square stem with pairs of heart-shaped, toothed leaves that look almost exactly like the nettles, and rings of small white hooded flowers hidden under the leaves. It looks a little shy, slightly turned away, no face. At the sunny edge, a single white daisy with a butter-yellow center is in bloom. An old rusty harrow leans against the barn.
+
+STORY DETAILS TO DISCOVER: a curious barn cat peeks from behind the harrow but keeps its distance from the nettles; a small red ladybug sits on one dead-nettle leaf.
+
+COMPOSITION: the dead-nettle and the daisy in the center, large and clear; empty calm paper sky above. Interesting rhythm of tall nettle silhouettes on both sides.
+
+FORMAT: horizontal, 4:3. Keep the main subjects in the central area with space on all sides (the picture will be cropped differently on the website).
 
 AVOID: glow, sparkles, fireflies, light rays, mist, vignette, dark moody background, digital fantasy painting, airbrush, glossy 3D, photorealism, text, letters, signatures, frames.
 ```
 
 ---
 
-## Viršelis (`cover.jpg`)
+## Mergaitė (veikėjo lapas, svetainėje nenaudojamas)
+
+Prisegti: naują viršelį.
 
 ```
-[STYLE block]
+Use the attached image as the STYLE REFERENCE: the same gouache and colored-pencil technique on warm off-white paper, the same palette (graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e, butter yellow #f3d58a, paper #f7f5f0), the same simple, slightly naive picture book shapes.
 
-SCENE: by the stone foundation of an old wooden barn, a clump of tall dark stinging nettles grows next to an old rusty harrow. Among the nettles stands one white dead-nettle plant with small white flowers. At the sunny edge, a single white daisy is in bloom. Quiet summer morning.
+Create a character sheet of one girl, shown four times on plain off-white paper: standing from the front, crouching from the side, running, and laughing close-up. Keep her exactly the same in all four.
 
-MAIN SUBJECT: the white dead-nettle (Lamium album): a straight square stem with pairs of heart-shaped, toothed, wrinkled leaves that look almost exactly like nettle leaves, and rings of small white hooded two-lipped flowers around the stem. No face. It stands slightly in front of the nettles, in the center of the picture.
+GIRL: about 9 to 10 years old, sun-tanned, freckles, long light-blond loose hair that flies around when she moves, a simple faded light-blue sleeveless summer dress, bare feet, a small scratch plaster on one knee. Picture-book face: small dot eyes, rosy cheeks, a wide expressive smile. Lively, curious, a bit wild.
 
-NETTLES: tall, darker green with graphite shading, pointed toothed leaves, fine hairs on the stems drawn with colored pencil.
-
-FORMAT: horizontal, 4:3. Keep the dead-nettle and the daisy in the central area, with empty space on all sides.
-```
-
----
-
-## Mergaitės lapas
-
-```
-Use the attached image as the STYLE REFERENCE: the same gouache and colored-pencil technique, the same palette, the same simplicity.
-
-Create a character sheet of one girl, shown three times on plain off-white paper: standing from the front, crouching from the side, and running. Keep her identical in all three.
-
-GIRL: about 9 to 10 years old, sun-tanned, light freckles, long light-blond loose hair, a simple faded light-blue sleeveless summer dress, bare feet. Simple, kind face with small dot eyes and rosy cheeks, picture-book style, not realistic.
-
-No text, no labels.
+No text, no labels, no background scene.
 ```
 
 ---
 
-## Scena 01 – kamanė prie notrelės (`img/scene-01.jpg`)
+## Scena 01 → `img/scene-01.jpg`
 
-Naudojama: Mažyliams, Vaikams.
+Kamanė atskrenda prie notrelės. Naudojama: Mažyliams, Vaikams. Prisegti: naują viršelį.
 
 ```
-Use the attached image as the STYLE REFERENCE. Keep the dead-nettle exactly as in it.
+Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
-[STYLE block]
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Even daylight.
 
-SCENE: close-up of the white dead-nettle among the dark nettles by the old barn. A fat, round bumblebee with brown and butter-yellow stripes flies to its small white flowers to drink the nectar. Morning.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted. Lots of paper white.
 
-COMPOSITION: the dead-nettle flowers and the bumblebee large in the center; the barn wall only as a simple flat shape behind.
+VIEWPOINT: an extreme close-up, the size of a bumblebee's world. The dead-nettle flowers are huge, like white bells.
+
+SCENE: a fat, round, fuzzy bumblebee with brown and butter-yellow stripes flies in towards the small white hooded flowers of the dead-nettle, its little legs dangling, eager and a bit clumsy. A dotted pencil line shows the wobbly loop of its flight path. Behind, the dark spiky nettle leaves form a jagged frame.
+
+STORY DETAILS TO DISCOVER: a tiny drop of nectar shines inside one flower; a small red ladybug watches from the edge of a leaf.
+
+COMPOSITION: the bumblebee and the flowers fill the center; the flight-path loop leads the eye in from the left.
 
 FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
 
-## Scena 02 – mergaitė randa baltus žiedus (`img/scene-02.jpg`)
+---
 
-Naudojama: Mažyliams, Vaikams.
+## Scena 02 → `img/scene-02.jpg`
+
+Mergaitė randa baltus žiedus. Naudojama: Mažyliams, Vaikams. Prisegti: naują viršelį ir mergaitės lapą.
+
+```
+Use the FIRST attached image as the STYLE REFERENCE and the SECOND attached image as the CHARACTER REFERENCE. Keep the girl exactly as in the second image and the white dead-nettle as in the first.
+
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Even daylight.
+
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted. Lots of paper white.
+
+VIEWPOINT: we look from inside the nettle patch, between the leaves, towards the girl's face. Nettle leaves in the foreground frame the picture.
+
+SCENE: the barefoot girl crouches by the nettles near the old barn, holding a small bunch of daisies and cornflowers. She has just parted the leaves and discovered the hidden white dead-nettle flowers. Her eyes are wide, her mouth an open "oh!" of delight, one finger gently touching a flower. The dead-nettle reaches only to her knees, the nettles to her waist.
+
+STORY DETAILS TO DISCOVER: the barn cat sits on the stone foundation and watches her, surprised that she is not afraid; a small red ladybug crawls on her bare foot.
+
+COMPOSITION: the girl's face and the white flowers close together in the center, framed by dark jagged nettle leaves around the edges.
+
+FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, realistic face, text, signatures, frames.
+```
+
+---
+
+## Scena 03 → `img/scene-03.jpg`
+
+Mergaitė su vainikėliu bėga per pievą. Naudojama: Mažyliams, Vyresniems. Prisegti: naują viršelį ir mergaitės lapą.
 
 ```
 Use the FIRST attached image as the STYLE REFERENCE and the SECOND attached image as the CHARACTER REFERENCE. Keep the girl exactly as in the second image.
 
-[STYLE block]
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Even daylight.
 
-SCENE: the barefoot girl crouches by the nettles near the old barn, holding a small bunch of daisies and cornflowers. She has just found the white dead-nettle flowers hidden among the nettles and gently touches one, delighted.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted. Lots of paper white.
 
-SCALE: the dead-nettle reaches only to her knees, the nettles to her waist.
+VIEWPOINT: a high, wide view from above, like a bird flying over the meadow.
 
-COMPOSITION: the girl and the dead-nettle together in the lower two thirds; simple flat barn wall behind.
+SCENE: the girl runs and laughs across a big summer meadow, arms wide, hair flying. On her head is a small wreath of daisies, cornflowers and white dead-nettle flowers, tied with a thin poppy-red woollen thread whose long ends stream behind her like a kite tail. Her path through the tall grass is a curving trail of bent stems. The old barn with its nettle patch is small in the corner behind her.
 
-FORMAT: horizontal, 4:3.
-```
+STORY DETAILS TO DISCOVER: the bumblebee follows the wreath; a goat by the barn lifts its head to watch her run; a small red ladybug rides on the wreath.
 
-## Scena 03 – mergaitė su vainikėliu bėga per pievą (`img/scene-03.jpg`)
-
-Naudojama: Mažyliams, Vyresniems.
-
-```
-Use the FIRST attached image as the STYLE REFERENCE and the SECOND attached image as the CHARACTER REFERENCE. Keep the girl exactly as in the second image.
-
-[STYLE block]
-
-SCENE: the girl runs and laughs across a summer meadow, away from the old barn in the distance. On her head is a small wreath of daisies, cornflowers and white dead-nettle flowers, tied with a thin poppy-red woollen thread whose ends flutter behind her.
-
-COMPOSITION: the girl large, slightly left of center, running to the right; the meadow as one soft sage shape, the barn small and simple in the background.
+COMPOSITION: the girl at the end of a long S-shaped trail across the meadow, slightly right of center, with lots of open sage-green and paper-white space.
 
 FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
 
-## Scena 04 – lietus, notrelė pridengia ramunėlę (`img/scene-04.jpg`)
+---
 
-Naudojama: Vaikams, Vyresniems.
+## Scena 04 → `img/scene-04.jpg`
+
+Lietus, notrelė pridengia ramunėlę. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
 
 ```
-Use the attached image as the STYLE REFERENCE. Keep the dead-nettle exactly as in it.
+Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
-[STYLE block]
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes.
 
-SCENE: summer rain. The white dead-nettle bends one of its heart-shaped leaves over a small white daisy beside it, and the raindrops roll off the leaf and fall right next to the daisy's flower. The rain is drawn as short, light colored-pencil lines.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Rain gives the whole picture a cooler, greyer mood, but keep the palette. Lots of paper white.
 
-COMPOSITION: the bent leaf and the daisy large in the center; the nettles as darker shapes at the sides.
+VIEWPOINT: ground level, close, as if we are sheltering under the leaves too.
+
+SCENE: summer rain, drawn as many short, slanted graphite pencil lines. The white dead-nettle bends one big heart-shaped leaf over the small white daisy beside it, like an umbrella. The raindrops roll off the leaf's edge in a little row and fall just next to the daisy, which stays dry. The tall nettles around stand stiff and straight, letting the rain hit them.
+
+STORY DETAILS TO DISCOVER: a small red ladybug also shelters under the same leaf; a snail is enjoying the rain on a stone; a puddle reflects the bent leaf.
+
+COMPOSITION: the bent leaf-umbrella and the daisy large in the center; the stiff nettles as dark vertical shapes at the sides, contrasting with the curved, caring leaf.
 
 FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, very dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
 
-## Scena 05 – sausra, ožka nukanda ramunėlę (`img/scene-05.jpg`)
+---
 
-Naudojama: Vaikams, Vyresniems.
+## Scena 05 → `img/scene-05.jpg`
+
+Sausra, ožka nukanda ramunėlę. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
 
 ```
-Use the attached image as the STYLE REFERENCE. Keep the dead-nettle exactly as in it.
+Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
-[STYLE block]
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Strong, flat midday light.
 
-SCENE: a dry, hot summer day. The ground is cracked (drawn with fine graphite pencil lines), the leaves droop. A calm, curious white farm goat with a little beard bites off the daisy's flower. The white dead-nettle stands right next to it and does not cover it. Not scary: the goat looks gentle, just hungry.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Show the heat with a big butter-yellow sky area, not with faded or brown colors.
 
-COLOR NOTE: show the drought only through the cracked ground and drooping leaves, not with faded or brown colors; keep the palette.
+VIEWPOINT: a side view at the goat's eye level, slightly wide, so we see the goat, the daisy and the dead-nettle in one row.
+
+SCENE: a dry, hot summer day. The ground is cracked, drawn with fine graphite pencil lines; the leaves droop. A big, calm, curious white farm goat with a little beard leans in and nibbles off the daisy's flower. The goat is not scary: it looks gentle, just hungry, with half-closed happy eyes. Right next to it, the white dead-nettle stands upright and stiff, its leaves held close to itself, not covering the daisy this time.
+
+STORY DETAILS TO DISCOVER: the bumblebee sits resting in the shade under a leaf; a small red ladybug sits on the goat's horn.
+
+COMPOSITION: three characters in a clear row from left to right: goat, daisy, dead-nettle. Lots of empty yellow-white sky above.
 
 FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, scary animal, text, signatures, frames.
 ```
 
-## Scena 06 – raudonas siūlas, kamanė grįžta (`img/scene-06.jpg`)
+---
 
-Naudojama: Vaikams.
+## Scena 06 → `img/scene-06.jpg`
+
+Raudonas kaspinėlis, kamanė grįžta. Naudojama: Vaikams. Prisegti: naują viršelį.
 
 ```
-Use the attached image as the STYLE REFERENCE. Keep the dead-nettle exactly as in it.
+Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
-[STYLE block]
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Fresh early morning light, even and soft.
 
-SCENE: early morning. The white dead-nettle stands tall and proudly lifts its white flowers. A thin poppy-red woollen thread is tied in a small bow around its stem. The fat striped bumblebee flies back to the flowers. Beside it, on the bitten daisy stem, a tiny new green bud is just opening.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted. Lots of paper white.
 
-COMPOSITION: the dead-nettle with the red bow in the center, the bumblebee above, the small bud low in the foreground.
+VIEWPOINT: a slightly low view looking up at the dead-nettle, so it looks tall and proud.
+
+SCENE: early morning, dew on the leaves. The white dead-nettle stands tall and openly lifts all its white flowers, no longer hiding them under its leaves. A thin poppy-red woollen thread is tied in a small bow around its stem. The fat striped bumblebee flies back to the flowers, happy. Low in the foreground, on the bitten daisy stem, a tiny new green bud is just opening.
+
+STORY DETAILS TO DISCOVER: the barn cat now sits close to the dead-nettle, relaxed, eyes closed; dewdrops on the red thread drawn as tiny white dots; a small red ladybug climbs the stem towards the bow.
+
+COMPOSITION: the dead-nettle with the red bow tall in the center, the bumblebee above, the new daisy bud low and small in the front corner.
 
 FORMAT: horizontal, 4:3.
+
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
