@@ -136,24 +136,24 @@ AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fant
 
 ## Scena 04 → `img/scene-04.jpg`
 
-Lietus, notrelė ir ramunėlė palinkusios viena link kitos. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
+Lietus, notrelė ir ramunėlė palinkusios viena link kitos, o pusę paveikslėlio užima jų atspindys baloje. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
 
 ```
 Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
 Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes.
 
-PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Rain gives the whole picture a cooler, greyer mood, but keep the palette. Lots of paper white.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Rain gives the picture a cooler, greyer mood, but keep the palette. Lots of paper white.
 
-VIEWPOINT: ground level, close, at the height of the flowers.
+VIEWPOINT: the camera lies right at the surface of a rain puddle, almost touching the water. The picture is split in two by the water line: the top half shows the real plants, the bottom half shows their upside-down reflection in the puddle, slightly wobbly, with round ripple rings where raindrops hit.
 
-SCENE: summer rain, drawn as many short, slanted graphite pencil lines falling over the whole picture. The white dead-nettle stands on the left and the small white daisy on the right, close together, both rooted in the wet ground. In the rain they gently lean towards each other, their tops almost touching, like two friends standing close under the rain. Raindrops hang on the dead-nettle's leaves and the daisy's petals, drawn as small white dots. The tall nettles around stand stiff and straight.
+SCENE: summer rain, drawn as many short, slanted graphite pencil lines. The white dead-nettle on the left and the small white daisy on the right stand close together and gently lean towards each other, their tops almost touching, like two friends sharing the rain. Raindrops hang on their leaves and petals as small white dots. In the reflection below, the two leaning plants form a mirrored arch, so together the picture looks like a heart-shaped or oval frame.
 
 IMPORTANT: nothing covers the two plants. Above them there is only open grey-white sky and rain lines.
 
-STORY DETAILS TO DISCOVER: a small red ladybug sits on the daisy's petal; a snail is enjoying the rain on a stone; a puddle on the ground reflects the two leaning plants.
+STORY DETAILS TO DISCOVER: a small red ladybug sits on the daisy's petal and also appears in the reflection; a snail at the edge of the puddle looks at its own reflection; one big raindrop falls in the very front, drawn larger than all others.
 
-COMPOSITION: the two leaning plants large in the center, forming a soft arch together; open rainy sky above them; the stiff nettles as dark vertical shapes at the far left and right edges, contrasting with the two curved, friendly plants.
+COMPOSITION: the water line runs straight across the middle of the picture; the plants and their reflection fill the center; the stiff dark nettles only at the far edges.
 
 FORMAT: horizontal, 4:3.
 
@@ -164,50 +164,50 @@ AVOID: any leaf, umbrella, branch or canopy above the plants, glow, sparkles, li
 
 ## Scena 05 → `img/scene-05.jpg`
 
-Sausra, ožka nukanda ramunėlę. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
+Sausra, ožka nukanda ramunėlę, o mes žiūrime notrelės akimis, per jos petį. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
 
 ```
 Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
 Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Strong, flat midday light.
 
-PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Show the heat with a big butter-yellow sky area, not with faded or brown colors.
+PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Show the heat with a big butter-yellow sky, not with faded or brown colors.
 
-VIEWPOINT: a side view at the goat's eye level, slightly wide, so we see the goat, the daisy and the dead-nettle in one row.
+VIEWPOINT: an over-the-shoulder view from right behind the white dead-nettle. Its stem and a few of its leaves are very large in the left foreground, cut off by the picture edge, so we see the scene as if through the dead-nettle's own eyes.
 
-SCENE: a dry, hot summer day. The ground is cracked, drawn with fine graphite pencil lines; the leaves droop. A big, calm, curious white farm goat with a little beard leans in and nibbles off the daisy's flower. The goat is not scary: it looks gentle, just hungry, with half-closed happy eyes. Right next to it, the white dead-nettle stands upright and stiff, its leaves held close to itself, not covering the daisy this time.
+SCENE: a dry, hot summer day. The ground is cracked like a puzzle, drawn with fine graphite pencil lines; the leaves droop. A few steps away, a big white farm goat with a little beard leans in and nibbles off the daisy's flower, eyes half closed with pleasure. The goat is gentle, not scary, just hungry. The daisy's white petals fly off in the air. The dead-nettle in the foreground does not move to cover it: its big leaves stay still and close to its stem.
 
-STORY DETAILS TO DISCOVER: the bumblebee sits resting in the shade under a leaf; a small red ladybug sits on the goat's horn.
+STORY DETAILS TO DISCOVER: the goat's short shadow is a small dark puddle under its feet; the bumblebee hides from the heat in the shade under a nettle leaf; a small red ladybug sits on the goat's horn.
 
-COMPOSITION: three characters in a clear row from left to right: goat, daisy, dead-nettle. Lots of empty yellow-white sky above.
+COMPOSITION: the huge dead-nettle leaves on the left third, the goat and the daisy small in the middle distance on the right, framed by them; a big empty butter-yellow sky in the top half.
 
 FORMAT: horizontal, 4:3.
 
-AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, scary animal, text, signatures, frames.
+AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, scary animal, blood, text, signatures, frames.
 ```
 
 ---
 
 ## Scena 06 → `img/scene-06.jpg`
 
-Raudonas kaspinėlis, kamanė grįžta. Naudojama: Vaikams. Prisegti: naują viršelį.
+Rytas, raudonas kaspinėlis ant notrelės stiebo iš labai arti, kamanė grįžta. Naudojama: Vaikams. Prisegti: naują viršelį.
 
 ```
 Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
 
-Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Fresh early morning light, even and soft.
+Create a children's picture book illustration, hand-made in opaque gouache with colored-pencil details on warm off-white paper. Visible pencil strokes and hatching, matte gouache with dry-brush edges, paper grain showing through. Simplified, slightly naive, characterful shapes. Fresh early morning light, soft and even.
 
 PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Other colors muted. Lots of paper white.
 
-VIEWPOINT: a slightly low view looking up at the dead-nettle, so it looks tall and proud.
+VIEWPOINT: a very low worm's-eye view from the ground, looking straight up the dead-nettle's stem towards the morning sky, as if we were a tiny beetle at its roots. The stem rises from the bottom of the picture like a tall tower.
 
-SCENE: early morning, dew on the leaves. The white dead-nettle stands tall and openly lifts all its white flowers, no longer hiding them under its leaves. A thin poppy-red woollen thread is tied in a small bow around its stem. The fat striped bumblebee flies back to the flowers, happy. Low in the foreground, on the bitten daisy stem, a tiny new green bud is just opening.
+SCENE: early morning, dew on the leaves. The white dead-nettle stands tall and proudly lifts all its white flowers into the sky, no longer hiding them. In the middle of the stem, a thin poppy-red woollen thread is tied in a small bow, large and clear because we are so close. Higher up, the fat striped bumblebee flies in towards the flowers, small against a big flat butter-yellow morning sun disc. At the very bottom, close to us, a tiny new green bud is opening on the bitten daisy stem.
 
-STORY DETAILS TO DISCOVER: the barn cat now sits close to the dead-nettle, relaxed, eyes closed; dewdrops on the red thread drawn as tiny white dots; a small red ladybug climbs the stem towards the bow.
+STORY DETAILS TO DISCOVER: dewdrops on the red bow drawn as tiny white dots; a small red ladybug climbs the stem towards the bow; the barn cat's relaxed curled tail peeks in at one edge.
 
-COMPOSITION: the dead-nettle with the red bow tall in the center, the bumblebee above, the new daisy bud low and small in the front corner.
+COMPOSITION: a strong vertical line of the stem through the middle, the red bow at the center, flowers and bee at the top, the new bud at the bottom: the eye travels from the bud up to the sun.
 
 FORMAT: horizontal, 4:3.
 
-AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
+AVOID: sun rays, glow, sparkles, lens flare, mist, vignette, dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
