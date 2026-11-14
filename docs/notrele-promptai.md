@@ -147,15 +147,17 @@ PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as th
 
 VIEWPOINT: ground level, close, as if we are sheltering under the leaves too.
 
-SCENE: summer rain, drawn as many short, slanted graphite pencil lines. The white dead-nettle bends one big heart-shaped leaf over the small white daisy beside it, like an umbrella. The raindrops roll off the leaf's edge in a little row and fall just next to the daisy, which stays dry. The tall nettles around stand stiff and straight, letting the rain hit them.
+SCENE: summer rain, drawn as many short, slanted graphite pencil lines. The white dead-nettle stands on the left, the small white daisy grows right beside it on the right, both rooted in the ground. ONE of the dead-nettle's own lower leaves, still attached to its stem by a short leaf stalk, bends sideways over the daisy like an umbrella. The raindrops roll off this leaf's edge in a little row and fall just next to the daisy, which stays dry. The tall nettles around stand stiff and straight, letting the rain hit them.
 
-STORY DETAILS TO DISCOVER: a small red ladybug also shelters under the same leaf; a snail is enjoying the rain on a stone; a puddle reflects the bent leaf.
+IMPORTANT: the umbrella leaf must grow from the dead-nettle's stem and be clearly connected to it. There is NO other leaf, branch or roof above the dead-nettle and the daisy: above them there is only open sky and rain lines.
 
-COMPOSITION: the bent leaf-umbrella and the daisy large in the center; the stiff nettles as dark vertical shapes at the sides, contrasting with the curved, caring leaf.
+STORY DETAILS TO DISCOVER: a small red ladybug also shelters under that same leaf; a snail is enjoying the rain on a stone; a puddle on the ground reflects the bent leaf.
+
+COMPOSITION: the dead-nettle, its bent leaf and the daisy large in the center; open rainy sky above them; the stiff nettles as dark vertical shapes at the far left and right edges, contrasting with the curved, caring leaf.
 
 FORMAT: horizontal, 4:3.
 
-AVOID: glow, sparkles, light rays, mist, vignette, very dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
+AVOID: an extra or floating leaf above the plants, a separate big leaf or canopy over the scene, glow, sparkles, light rays, mist, vignette, very dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
 
 ---
