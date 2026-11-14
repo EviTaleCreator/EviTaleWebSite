@@ -94,7 +94,7 @@ Klausimai sąraše automatiškai tampa atskiromis kortelėmis.
 
 ## Kita
 
-- `en/` ir `archyvas/` aplankai pasakose svetainėje nerodomi. Ten liko angliški vertimai, senieji 9–12 m. tekstai ir senieji „Giliau“ failai.
+- `archyvas/` aplankas pasakose svetainėje nerodomas. Ten liko senieji 9–12 m. tekstai ir senieji „Giliau“ failai.
 - Šriftai (Bricolage Grotesque, Literata) laikomi pačioje svetainėje, ne Google serveriuose.
 - Svetainės užrašai: `src/lib/i18n.ts`. Spalvos ir išvaizda: `src/styles/global.css`.
 - `public/hero-banner.jpg` naudojamas, kai nuoroda dalinama socialiniuose tinkluose.

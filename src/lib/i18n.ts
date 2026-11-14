@@ -1,4 +1,4 @@
-// Svetainė kol kas tik lietuviška. Angliški tekstai (en/ aplankai) lieka repozitorijoje, bet nerodomi.
+// Svetainė tik lietuviška.
 export const LANGS = ['lt'] as const;
 export type Lang = (typeof LANGS)[number];
 

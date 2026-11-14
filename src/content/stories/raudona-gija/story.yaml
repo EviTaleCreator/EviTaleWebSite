@@ -4,11 +4,9 @@ date: 2026-11-02
 
 title:
   lt: Raudona gija gudobelių krūme
-  en: The Red Thread in the Hawthorn
 
 excerpt:
   lt: Apie kikilį Čiūtą, kuris rado šiltą raudoną siūlą ir taip bijojo jį prarasti, kad pamiršo skraidyti.
-  en: About Ciuta the chaffinch, who found a warm red thread and got so scared of losing it that he forgot how to fly.
 
 # Sluoksniai, kurių pabaiga liūdnoka: prie jų rodomas trumpas įspėjimas tėvams.
 sadEnding: [vyresniems]
@@ -17,4 +15,3 @@ sadEnding: [vyresniems]
 cover: ./cover.jpg
 coverAlt:
   lt: Kikilis Čiūta tupi lizde gudobelių krūme, apsikabinęs raudoną vilnonį siūlą, o draugė Guoda skrenda šalia ir kviečia jį prie upelio
-  en: Ciuta the chaffinch sits in his nest in a hawthorn bush, hugging a red woollen thread, while his friend Guoda flies beside him, calling him to the stream
