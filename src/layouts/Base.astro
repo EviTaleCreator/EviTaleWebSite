@@ -5,13 +5,15 @@ import { UI } from '../lib/i18n';
 interface Props {
   title: string;
   description?: string;
+  /** Paveikslėlis, rodomas dalinantis nuoroda (pasakos viršelis). */
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 const desc = description || UI.siteDescription;
 const fullTitle = title === 'EviTale' ? title : `${title} · EviTale`;
 const site = Astro.site;
-const ogImage = site ? new URL('/hero-banner.jpg', site).href : undefined;
+const ogImage = site && image ? new URL(image, site).href : undefined;
 const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 ---
 

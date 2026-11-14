@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/en/story/:slug/", "destination": "/istorija/:slug/", "permanent": true },
+    { "source": "/en/story/:slug", "destination": "/istorija/:slug/", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/", "permanent": true }
+  ]
+}

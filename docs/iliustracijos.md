@@ -2,38 +2,36 @@
 
 ## Taisyklės
 
-- Vienas stilius visai svetainei: kaip `public/hero-banner.jpg`. Generuojant visada pridėk jį kaip stiliaus pavyzdį.
+- Vienas stilius visai svetainei: spalvoti pieštukai ir guašas (svetainės paletė). Kol nauji paveikslėliai dar nesukurti, stiliaus pavyzdžiu naudok naują Notrelės viršelį. Visi Notrelės promptai: [notrele-promptai.md](notrele-promptai.md).
 - Proporcijos 4:3, horizontalūs. Į repozitoriją kelk iki 1600 px pločio JPG (Astro pats paverčia WebP ir sumažina).
 - Pagrindinė iliustracija: `src/content/stories/<adresas>/cover.jpg`, aprašymas `coverAlt` faile `story.yaml`.
 - Papildomos: `src/content/stories/<adresas>/img/scene-01.jpg`, `scene-02.jpg` ir t. t. Aplankas bendras visiems skaitymams.
 - Į tekstą įterpiamos atskira eilute po norimos pastraipos: `![Ką vaizduoja paveikslėlis](../img/scene-01.jpg)`. Kiekvienas skaitymas pats pasirenka, kurias scenas rodyti.
 - Didelius originalus laikyk ne čia, o diske.
-- Kai veikėjas jau nupieštas, vėlesnėms scenoms pridėk du paveikslėlius: hero (stilius) ir veikėjo iliustraciją, su prierašu „keep the main character exactly as in the second image".
+- Kai veikėjas jau nupieštas, vėlesnėms scenoms pridėk du paveikslėlius: stiliaus pavyzdį ir veikėjo iliustraciją, su prierašu „keep the main character exactly as in the second image".
 
 ## Universalus promptas (Gemini)
 
 Pakeisk laužtinių skliaustų vietas.
 
 ```
-Use the attached image as the STYLE REFERENCE. Match its art style, color palette, lighting and level of detail exactly, but create a completely new scene. Do not copy the tree, the face in the tree or the people from the reference.
+Use the attached image as the STYLE REFERENCE: the same technique, palette and simplicity, but a completely new scene.
 
-STYLE: digital fantasy painting, painterly brushwork with soft edges, semi-realistic but storybook-like, rich mossy and bark textures, magical and cozy atmosphere.
+STYLE: a hand-made children's picture book illustration, painted in opaque gouache and finished with colored pencil on warm off-white paper. Visible colored-pencil strokes and hatching, matte gouache areas with soft dry-brush edges, the paper grain showing through. Simple, gently stylized shapes, slightly naive, like a contemporary award-winning picture book. Calm, even daylight; no dramatic lighting.
 
-PALETTE: deep teal and emerald green shadows, misty blue-green background, warm amber and golden glowing lights as the main accents. Warm light always falls on the main character so it stands out from the cool background.
+PALETTE: build the picture from these colors: graphite blue-grey #2d3142 for the darkest shapes and pencil lines, sage green #8fa58c, poppy red #e2553e as the single bright accent, butter yellow #f3d58a, and the off-white paper #f7f5f0. Other natural colors stay muted and pulled toward this palette. Lots of paper white.
 
-LIGHTING: soft cinematic glow, light mist, gentle vignette darkening the edges.
-
-MOOD: magical, safe and warm, never scary. Faces are kind and expressive. Suitable for children aged 2 to 12.
+MOOD: safe and warm, never scary. Faces are simple and kind. For the whole family.
 
 SCENE: [kas vyksta: kas, kur, ką daro, 1–3 sakiniai]
 
 MAIN CHARACTER: [išvaizda, kuri turi būti vienoda visose iliustracijose]
 
-COMPOSITION: main character clearly visible in the center or lower third, readable at small size on a phone screen, uncluttered background behind the character.
+COMPOSITION: one clear main subject, large and readable on a small phone screen. Plenty of calm empty space. The background is simple: a few flat shapes, not a detailed scene.
 
-FORMAT: horizontal, 4:3 aspect ratio.
+FORMAT: horizontal, 4:3.
 
-AVOID: any text, letters, signatures, watermarks, frames; photorealistic photo look; glossy 3D/plastic cartoon look; horror elements, sharp teeth, dark threatening shadows.
+AVOID: glow, sparkles, fireflies, light rays, mist, vignette, dark moody background, digital fantasy painting, airbrush, glossy 3D, photorealism, text, letters, signatures, frames.
 ```
 
 ## Veikėjai

@@ -96,7 +96,8 @@ Klausimai sąraše automatiškai tampa atskiromis kortelėmis.
 
 - Šriftai (Bricolage Grotesque, Literata) laikomi pačioje svetainėje, ne Google serveriuose.
 - Svetainės užrašai: `src/lib/i18n.ts`. Spalvos ir išvaizda: `src/styles/global.css`.
-- `public/hero-banner.jpg` naudojamas, kai nuoroda dalinama socialiniuose tinkluose.
+- Dalinantis nuoroda socialiniuose tinkluose rodomas pasakos viršelis (pradinio puslapio – naujausios pasakos).
+- Senieji `/en/...` adresai nukreipiami į lietuviškus (`vercel.json`).
 - Kontaktinis el. paštas: evi.tale.creator@gmail.com
 
 ## Paleisti savo kompiuteryje

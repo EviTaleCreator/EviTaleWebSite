@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { getStories, type Story } from '../lib/stories';
@@ -17,9 +17,10 @@ const newer = index > 0 ? all[index - 1] : undefined;
 const older = index >= 0 && index < all.length - 1 ? all[index + 1] : undefined;
 
 const rendered = await Promise.all(story.layers.map(async (l) => ({ ...l, Content: (await render(l.entry)).Content })));
+const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
 ---
 
-<Base title={story.title} description={story.excerpt}>
+<Base title={story.title} description={story.excerpt} image={share.src}>
   <main class="story">
     <figure class="story-cover">
       <Image src={story.cover} alt={story.coverAlt} widths={[480, 800, 1200, 1600]} sizes="(min-width: 1100px) 1000px, 100vw" loading="eager" fetchpriority="high" />
@@ -36,7 +37,7 @@ const rendered = await Promise.all(story.layers.map(async (l) => ({ ...l, Conten
         <div class="seg" role="group" aria-label={UI.whoFor} data-story-seg>
           {
             story.layers.map((l) => (
-              <button type="button" data-value={l.id} aria-pressed={String(l.id === story.defaultLayer)}>
+              <button type="button" data-value={l.id} aria-pressed={l.id === story.defaultLayer ? 'true' : 'false'}>
                 {LAYERS[l.id].label}
                 <small>
                   {LAYERS[l.id].age} · ~{l.minutes} {UI.minutes}

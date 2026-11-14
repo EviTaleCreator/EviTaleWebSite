@@ -1,5 +1,9 @@
 const STORE_KEY = 'evitale-layer';
 
+// Senieji pavadinimai (seni adresai ir naršyklėje įsiminti pasirinkimai) verčiami į naujus.
+const LEGACY: Record<string, string> = { '2-4': 'mazyliams', '5-8': 'vaikams', '9-12': 'vyresniems', giliau: 'vaikams' };
+const normalize = (v: string | null) => (v && LEGACY[v]) || v;
+
 export function saveLayer(value: string) {
   try {
     localStorage.setItem(STORE_KEY, value);
@@ -10,14 +14,14 @@ export function saveLayer(value: string) {
 
 export function loadLayer(): string | null {
   try {
-    return localStorage.getItem(STORE_KEY);
+    return normalize(localStorage.getItem(STORE_KEY));
   } catch {
     return null;
   }
 }
 
 export function layerFromUrl(): string | null {
-  return new URLSearchParams(window.location.search).get('layer');
+  return normalize(new URLSearchParams(window.location.search).get('layer'));
 }
 
 /** Prideda (arba nuima) ?layer= prie nuorodos. */

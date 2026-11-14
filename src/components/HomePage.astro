@@ -1,29 +1,32 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { getStories } from '../lib/stories';
 import { LAYERS, LAYER_IDS, UI, EMAIL, formatDate, storyUrl, countText } from '../lib/i18n';
 
 const stories = await getStories();
 const latest = stories[0];
+const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 'jpg' }) : undefined;
 ---
 
-<Base title={UI.homeTitle}>
+<Base title={UI.homeTitle} image={share?.src}>
   <main>
     {
       latest && (
         <section class="wrap hero" aria-labelledby="hero-title">
           <div class="hero-text">
-            <p class="story-name">
-              <a id="hero-title" href={storyUrl(latest.slug)} data-keep-layer>{latest.title}</a>
+            <div class="story-name">
+              <h1>
+                <a id="hero-title" href={storyUrl(latest.slug)} data-keep-layer>{latest.title}</a>
+              </h1>
               <span>
                 {UI.latest} · {formatDate(latest.date)}
               </span>
-            </p>
+            </div>
 
             <div class="seg" role="group" aria-label={UI.whoFor} data-hero-seg>
               {latest.layers.map((l) => (
-                <button type="button" data-value={l.id} aria-pressed={String(l.id === latest.defaultLayer)}>
+                <button type="button" data-value={l.id} aria-pressed={l.id === latest.defaultLayer ? 'true' : 'false'}>
                   {LAYERS[l.id].label}
                   <small>{LAYERS[l.id].age}</small>
                 </button>

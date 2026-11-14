@@ -9,7 +9,7 @@
   --ink-2: #5a5f70;
   --soft: #ebe7dd;
   --surface: #ffffff;
-  --accent: #e2553e;
+  --accent: #c8432c; /* aguona, patamsinta: baltas tekstas ant jos skaitosi gerai */
   --on-accent: #ffffff;
   --butter: #f3d58a;
   --sage: #8fa58c;
@@ -117,7 +117,8 @@ h2 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1; }
 /* ---------- Pirmasis ekranas: gyvas sakinys ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(32px, 5vw, 80px); align-items: center; padding-top: clamp(24px, 4vw, 56px); padding-bottom: 80px; min-height: calc(100vh - 76px); }
 .story-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; font-size: 17px; color: var(--ink-2); }
-.story-name a { color: var(--ink); font-size: 22px; font-weight: 800; text-decoration: none; }
+.story-name h1 { font-size: 22px; letter-spacing: -0.02em; }
+.story-name a { color: var(--ink); text-decoration: none; }
 .story-name a:hover { text-decoration: underline; }
 .hero .seg { margin: 26px 0 30px; }
 .sentence-box { min-height: 11em; font-size: clamp(22px, 2.3vw, 32px); }
