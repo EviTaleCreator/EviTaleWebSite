@@ -136,7 +136,7 @@ AVOID: glow, sparkles, light rays, mist, vignette, dark background, digital fant
 
 ## Scena 04 → `img/scene-04.jpg`
 
-Lietus, notrelė pridengia ramunėlę. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
+Lietus, notrelė ir ramunėlė palinkusios viena link kitos. Naudojama: Vaikams, Vyresniems. Prisegti: naują viršelį.
 
 ```
 Use the attached image as the STYLE REFERENCE and keep the white dead-nettle exactly as in it.
@@ -145,19 +145,19 @@ Create a children's picture book illustration, hand-made in opaque gouache with 
 
 PALETTE: graphite blue-grey #2d3142, sage green #8fa58c, poppy red #e2553e as the one bright accent, butter yellow #f3d58a, off-white paper #f7f5f0. Rain gives the whole picture a cooler, greyer mood, but keep the palette. Lots of paper white.
 
-VIEWPOINT: ground level, close, as if we are sheltering under the leaves too.
+VIEWPOINT: ground level, close, at the height of the flowers.
 
-SCENE: summer rain, drawn as many short, slanted graphite pencil lines. The white dead-nettle stands on the left, the small white daisy grows right beside it on the right, both rooted in the ground. ONE of the dead-nettle's own lower leaves, still attached to its stem by a short leaf stalk, bends sideways over the daisy like an umbrella. The raindrops roll off this leaf's edge in a little row and fall just next to the daisy, which stays dry. The tall nettles around stand stiff and straight, letting the rain hit them.
+SCENE: summer rain, drawn as many short, slanted graphite pencil lines falling over the whole picture. The white dead-nettle stands on the left and the small white daisy on the right, close together, both rooted in the wet ground. In the rain they gently lean towards each other, their tops almost touching, like two friends standing close under the rain. Raindrops hang on the dead-nettle's leaves and the daisy's petals, drawn as small white dots. The tall nettles around stand stiff and straight.
 
-IMPORTANT: the umbrella leaf must grow from the dead-nettle's stem and be clearly connected to it. There is NO other leaf, branch or roof above the dead-nettle and the daisy: above them there is only open sky and rain lines.
+IMPORTANT: nothing covers the two plants. Above them there is only open grey-white sky and rain lines.
 
-STORY DETAILS TO DISCOVER: a small red ladybug also shelters under that same leaf; a snail is enjoying the rain on a stone; a puddle on the ground reflects the bent leaf.
+STORY DETAILS TO DISCOVER: a small red ladybug sits on the daisy's petal; a snail is enjoying the rain on a stone; a puddle on the ground reflects the two leaning plants.
 
-COMPOSITION: the dead-nettle, its bent leaf and the daisy large in the center; open rainy sky above them; the stiff nettles as dark vertical shapes at the far left and right edges, contrasting with the curved, caring leaf.
+COMPOSITION: the two leaning plants large in the center, forming a soft arch together; open rainy sky above them; the stiff nettles as dark vertical shapes at the far left and right edges, contrasting with the two curved, friendly plants.
 
 FORMAT: horizontal, 4:3.
 
-AVOID: an extra or floating leaf above the plants, a separate big leaf or canopy over the scene, glow, sparkles, light rays, mist, vignette, very dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
+AVOID: any leaf, umbrella, branch or canopy above the plants, glow, sparkles, light rays, mist, vignette, very dark background, digital fantasy painting, airbrush, 3D, photorealism, text, signatures, frames.
 ```
 
 ---

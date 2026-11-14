@@ -10,7 +10,7 @@ Jos dienos priklausė ramunėlei. Ši augo dilgyno pakraštyje, saulėkaitoje, i
 
 – Dar! – kikendavo ramunėlė.
 
-![Lyja, o notrelė palenkia lapą, ir lietaus lašai nurieda tiesiai ant ramunėlės žiedo](../img/scene-04.jpg)
+![Lyja, o notrelė ir ramunėlė palinkusios viena link kitos](../img/scene-04.jpg)
 
 Dilgėlės to nemėgo.
 

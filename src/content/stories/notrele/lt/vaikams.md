@@ -8,7 +8,7 @@ Dilgyno pakraštyje augo ramunėlė. Ji su notrele kalbėdavosi visą dieną, o 
 
 – Dar! – juokdavosi ramunėlė.
 
-![Lyja, o notrelė palenkia lapą, ir lietaus lašai nurieda tiesiai ant ramunėlės žiedo](../img/scene-04.jpg)
+![Lyja, o notrelė ir ramunėlė palinkusios viena link kitos](../img/scene-04.jpg)
 
 Bet dilgėlės iš ramunėlės šaipėsi:
 
