@@ -52,7 +52,7 @@ Notrelė gimsta su kauke: jos lapai panašūs į dilgėlės. Iš pradžių tai t
 
 Temos: noras priklausyti grupei, apsimetinėjimas, draugo išdavystė dėl naudos, melas, savęs praradimas.
 
-Pabaigos skiriasi. 5–8 m. versijoje notrelė lieka augti: ožka nukanda tik ramunėlės žiedą, ramunėlė išaugina naują pumpurą, o notrelė atsiprašo. Kitose versijose mergaitė atranda notrelę ir įpina ją į vainikėlį, o 9–12 m. ir „Vyresniems“ versijose ožka dar ir suėda ramunėlę.
+Pabaigos skiriasi. Vaikams skirtoje versijoje notrelė lieka augti: ožka nukanda tik ramunėlės žiedą, ramunėlė išaugina naują pumpurą, o notrelė atsiprašo. Mažyliams ir vyresniems skirtose versijose mergaitė atranda notrelę ir įpina ją į vainikėlį, o vyresniems skirtoje ožka dar ir suėda ramunėlę.
 
 ### Kaip kalbėtis
 

@@ -5,7 +5,6 @@ import { LAYER_IDS } from './lib/i18n';
 // Kiekviena pasaka turi savo aplanką src/content/stories/<pasakos-adresas>/
 // su failu story.yaml (pavadinimas, data, viršelis) ir aplanku lt/,
 // kuriame po vieną .md failą kiekvienam skaitymui: mazyliams.md, vaikams.md, vyresniems.md.
-// Aplankas archyvas/ svetainėje nerodomas.
 const text = z.object({ lt: z.string().optional() });
 
 const stories = defineCollection({

@@ -50,7 +50,7 @@ Paukštelis randa siūlą ir nenori jo palikti. Po šiuo paviršiumi slypi pasak
 
 Pasaka padeda pakalbėti apie prisirišimą prie daiktų, baimę prarasti, nesugebėjimą paleisti ir apie tai, kad šildo artimi, ne daiktai.
 
-Pabaigos skiriasi. 2–4 m. versijoje Čiūta pats paleidžia siūlą, 5–8 m. jį išlaisvina Guoda, o 9–12 m. ir „Vyresniems“ versijose Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią vaikas skaitė.
+Pabaigos skiriasi. Mažyliams skirtoje versijoje Čiūta pats paleidžia siūlą, vaikams skirtoje jį išlaisvina Guoda, o vyresniems skirtoje Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią skaitėte.
 
 ### Kaip kalbėtis
 

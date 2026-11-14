@@ -46,7 +46,7 @@ Upė buvo laiminga, kol neišgirdo, kad kita upė įdomesnė. Tai pasaka apie ly
 
 Antras sluoksnis yra apie sprendimus, kurių nebeatšauksi. Senoji kilpa išdžiūsta. Bet pabaiga nėra beviltiška: Alanta randa, kaip būti savimi naujoje vietoje.
 
-Pabaigos skiriasi. 2–4 m. versijoje senosios kilpos nėra, Alanta tiesiog vėl teka lėtai. 5–8 m., 9–12 m. ir „Vyresniems“ versijose senoji vieta išdžiūsta.
+Pabaigos skiriasi. Mažyliams skirtoje versijoje senosios kilpos nėra, Alanta tiesiog vėl teka lėtai. Vaikams ir vyresniems skirtose versijose senoji vieta išdžiūsta.
 
 ### Kaip kalbėtis
 
