@@ -2,89 +2,68 @@
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import LayerPicker from './LayerPicker.astro';
 import { getStories, type Story } from '../lib/stories';
-import { UI, homeUrl, storyUrl, formatDate, type Lang } from '../lib/i18n';
+import { LAYERS, UI, storyUrl, formatDate } from '../lib/i18n';
 
 interface Props {
-  lang: Lang;
   story: Story;
 }
 
-const { lang, story } = Astro.props;
-const t = UI[lang];
-const other: Lang = lang === 'lt' ? 'en' : 'lt';
+const { story } = Astro.props;
 
-const all = await getStories(lang);
+const all = await getStories();
 const index = all.findIndex((s) => s.slug === story.slug);
 const newer = index > 0 ? all[index - 1] : undefined;
 const older = index >= 0 && index < all.length - 1 ? all[index + 1] : undefined;
 
-// Jei pasaka išversta, kalbos jungiklis veda į tą pačią pasaką, jei ne – į kitos kalbos lentyną.
-const otherStories = await getStories(other);
-const otherHref = otherStories.some((s) => s.slug === story.slug) ? storyUrl(other, story.slug) : homeUrl(other);
-
-const rendered = await Promise.all(
-  story.layers.map(async (l) => ({ id: l.id, Content: (await render(l.entry)).Content })),
-);
+const rendered = await Promise.all(story.layers.map(async (l) => ({ ...l, Content: (await render(l.entry)).Content })));
 ---
 
-<Base
-  lang={lang}
-  title={story.title}
-  description={story.excerpt}
-  back
-  alternates={lang === 'lt' ? { lt: storyUrl('lt', story.slug), en: otherHref } : { lt: otherHref, en: storyUrl('en', story.slug) }}
->
+<Base title={story.title} description={story.excerpt}>
   <main class="story">
-    <div class="wrap narrow">
-      {
-        story.cover && (
-          <figure class="story-cover">
-            <Image src={story.cover} alt={story.coverAlt} widths={[480, 800, 1200]} sizes="(min-width: 720px) 690px, 100vw" loading="eager" fetchpriority="high" />
-          </figure>
-        )
-      }
-      <div class="story-head">
-        <span class="date">{formatDate(story.date, lang)}</span>
-        <h1>{story.title}</h1>
+    <figure class="story-cover">
+      <Image src={story.cover} alt={story.coverAlt} widths={[480, 800, 1200, 1600]} sizes="(min-width: 1100px) 1000px, 100vw" loading="eager" fetchpriority="high" />
+    </figure>
+
+    <div class="narrow story-head">
+      <span class="date">{formatDate(story.date)}</span>
+      <h1>{story.title}</h1>
+      {story.excerpt && <p class="excerpt">{story.excerpt}</p>}
+    </div>
+
+    <div class="read-bar">
+      <div class="narrow bar-row">
+        <div class="seg" role="group" aria-label={UI.whoFor} data-story-seg>
+          {
+            story.layers.map((l) => (
+              <button type="button" data-value={l.id} aria-pressed={String(l.id === story.defaultLayer)}>
+                {LAYERS[l.id].label}
+                <small>
+                  {LAYERS[l.id].age} · ~{l.minutes} {UI.minutes}
+                </small>
+              </button>
+            ))
+          }
+        </div>
+        <div class="text-size" role="group" aria-label={UI.textSize}>
+          <button type="button" data-text-size="down" aria-label={UI.textSmaller}>A−</button>
+          <button type="button" data-text-size="up" aria-label={UI.textBigger} class="bigger">A+</button>
+        </div>
       </div>
     </div>
 
-    <div class="sticky-bar">
-      <div class="wrap narrow bar-row">
-        <div class="bar-picker">
-          <LayerPicker lang={lang} layers={story.layers.map((l) => l.id)} selected={story.defaultLayer} caption={t.layer} id="story-picker" />
-        </div>
-        <div class="text-size" role="group" aria-label={t.textSize}>
-          <button type="button" data-text-size="down" aria-label={t.textSmaller}>A−</button>
-          <button type="button" data-text-size="up" aria-label={t.textBigger} class="bigger">A+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap narrow" data-default-layer={story.defaultLayer}>
+    <div class="narrow" data-default-layer={story.defaultLayer}>
       {
         rendered.map(({ id, Content }) => (
-          <section class={`layer layer-${id} l-${id}`} data-layer={id} hidden={id !== story.defaultLayer}>
-            {
-              story.sadEnding.includes(id) && (
-                <p class="ending-note">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />
-                  </svg>
-                  <span>
-                    {t.sadEnding}
-                    {story.layers.some((l) => l.id === 'giliau') && (
-                      <>
-                        {' '}
-                        <button type="button" class="link-btn" data-goto-layer="giliau">{t.sadEndingLink}</button>
-                      </>
-                    )}
-                  </span>
-                </p>
-              )
-            }
+          <section class={`layer layer-${id}`} data-layer={id} hidden={id !== story.defaultLayer}>
+            {story.sadEnding.includes(id) && (
+              <p class="ending-note">
+                {UI.sadEnding}{' '}
+                <button type="button" class="link-btn" data-open-talk>
+                  {UI.sadEndingLink}
+                </button>
+              </p>
+            )}
             <div class="prose">
               <Content />
             </div>
@@ -93,34 +72,24 @@ const rendered = await Promise.all(
       }
     </div>
 
-    <nav class="wrap narrow story-nav" aria-label={t.otherStories}>
+    <nav class="narrow story-nav" aria-label="Kitos pasakos">
       {
-        older && (
-          <a class="btn btn-light" href={storyUrl(lang, older.slug)} data-keep-layer>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            {t.older}
+        older ? (
+          <a class="nav-btn" href={storyUrl(older.slug)} data-keep-layer>
+            ← {older.title}
           </a>
+        ) : (
+          <span />
         )
       }
       {
-        newer && (
-          <a class="btn btn-dark" href={storyUrl(lang, newer.slug)} data-keep-layer>
-            {t.newer}
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+        newer ? (
+          <a class="nav-btn primary" href={storyUrl(newer.slug)} data-keep-layer>
+            {newer.title} →
           </a>
-        )
-      }
-      {
-        !older && !newer && (
-          <a class="btn btn-dark" href={`${homeUrl(lang)}#lentyna`} data-keep-layer>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            {t.toShelf}
+        ) : (
+          <a class="nav-btn primary" href="/#lentyna" data-keep-layer>
+            {UI.toShelf} →
           </a>
         )
       }
@@ -129,9 +98,9 @@ const rendered = await Promise.all(
 </Base>
 
 <script>
-  import { initPicker, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
+  import { initSeg, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
 
-  const root = document.getElementById('story-picker');
+  const root = document.querySelector<HTMLElement>('[data-story-seg]');
   const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-layer]'));
   const fallback = document.querySelector<HTMLElement>('[data-default-layer]')?.dataset.defaultLayer ?? '';
 
@@ -141,31 +110,29 @@ const rendered = await Promise.all(
   }
 
   if (root) {
-    const picker = initPicker(root, (value) => {
+    const seg = initSeg(root, (value) => {
       saveLayer(value);
       show(value);
     });
     const pick = () => {
-      const fromUrl = layerFromUrl();
-      const wanted = [fromUrl, loadLayer()].find((v) => v && picker.values.includes(v));
+      const wanted = [layerFromUrl(), loadLayer()].find((v) => v && seg.values.includes(v));
       const value = wanted ?? fallback;
-      picker.set(value);
+      seg.set(value);
       show(value);
     };
     pick();
     window.addEventListener('pageshow', pick);
-
-    // Nuoroda iš įspėjimo apie pabaigą atidaro „Giliau“.
-    document.querySelectorAll<HTMLButtonElement>('[data-goto-layer]').forEach((b) =>
-      b.addEventListener('click', () => {
-        const value = b.dataset.gotoLayer ?? '';
-        if (!picker.set(value)) return;
-        saveLayer(value);
-        show(value);
-        root.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }),
-    );
   }
+
+  // Nuoroda iš įspėjimo apie pabaigą atidaro „Pokalbiui“ to paties skaitymo gale.
+  document.querySelectorAll<HTMLButtonElement>('[data-open-talk]').forEach((b) =>
+    b.addEventListener('click', () => {
+      const talk = b.closest('section')?.querySelector<HTMLDetailsElement>('details.talk');
+      if (!talk) return;
+      talk.open = true;
+      talk.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }),
+  );
 
   // Kol atidaryta pasaka, telefono ekranas neužgęsta (jei naršyklė tai leidžia).
   type WakeLockSentinelLike = { release: () => Promise<void> };
@@ -184,7 +151,6 @@ const rendered = await Promise.all(
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') keepAwake();
   });
-  // Kai kurios naršyklės leidžia tik po prisilietimo: bandome dar kartą per pirmą sąveiką.
   ['pointerdown', 'keydown', 'scroll'].forEach((ev) => window.addEventListener(ev, keepAwake, { passive: true }));
 
   // Raidžių dydis: penki žingsniai, įsimenamas šiame įrenginyje.

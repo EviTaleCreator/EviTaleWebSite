@@ -1,151 +1,87 @@
-export const LANGS = ['lt', 'en'] as const;
+// Svetainė kol kas tik lietuviška. Angliški tekstai (en/ aplankai) lieka repozitorijoje, bet nerodomi.
+export const LANGS = ['lt'] as const;
 export type Lang = (typeof LANGS)[number];
 
-export const LAYER_IDS = ['2-4', '5-8', '9-12', 'vyresniems', 'giliau'] as const;
+export const LAYER_IDS = ['mazyliams', 'vaikams', 'vyresniems'] as const;
 export type LayerId = (typeof LAYER_IDS)[number];
 
-/** Sluoksnis, kuris atsidaro pirmas, jei skaitytojas dar nieko nepasirinko. */
-export const DEFAULT_LAYER: LayerId = '5-8';
+/** Skaitymas, kuris atsidaro pirmas, jei skaitytojas dar nieko nepasirinko. */
+export const DEFAULT_LAYER: LayerId = 'vaikams';
 
-type T = Record<Lang, string>;
-
-export const LAYERS: Record<LayerId, { label: T; short: T; about: T }> = {
-  '2-4': {
-    label: { lt: '2–4 m.', en: 'Ages 2–4' },
-    short: { lt: 'Trumpai, su paveikslėliais', en: 'Short, with pictures' },
-    about: {
-      lt: 'Trumpi sakiniai, garsai, ritmas ir paveikslėlis prie kiekvienos minties.',
-      en: 'Short sentences, sounds, rhythm and a picture for every idea.',
-    },
+export const LAYERS: Record<LayerId, { label: string; age: string; about: string; mood: string }> = {
+  mazyliams: {
+    label: 'Mažyliams',
+    age: 'iki 5 m.',
+    about: 'Trumpi sakiniai, garsai ir ritmas, paveikslėlis prie kiekvienos minties. Skaityti garsiai.',
+    mood: 'garsiai skaityti',
   },
-  '5-8': {
-    label: { lt: '5–8 m.', en: 'Ages 5–8' },
-    short: { lt: 'Vaizduotė ir pirmosios baimės', en: 'Imagination and first fears' },
-    about: {
-      lt: 'Vaizduotė, draugystė, pirmosios baimės.',
-      en: 'Imagination, friendship, first fears.',
-    },
-  },
-  '9-12': {
-    label: { lt: '9–12 m.', en: 'Ages 9–12' },
-    short: { lt: 'Ilgesnis nuotykis', en: 'A longer adventure' },
-    about: {
-      lt: 'Ilgesnis siužetas, pasirinkimai ir tikras nuotykis.',
-      en: 'A longer plot, choices and a real adventure.',
-    },
+  vaikams: {
+    label: 'Vaikams',
+    age: '5–8 m.',
+    about: 'Tas pats nuotykis su draugyste, pirmosiomis baimėmis ir daugiau žodžių.',
+    mood: 'prieš miegą',
   },
   vyresniems: {
-    label: { lt: 'Vyresniems', en: 'Older readers' },
-    short: { lt: 'Paaugliams ir suaugusiems', en: 'Teens and adults' },
-    about: {
-      lt: 'Ta pati istorija vyresniems skaitytojams: paaugliams ir suaugusiems.',
-      en: 'The same story for older readers: teens and adults.',
-    },
-  },
-  giliau: {
-    label: { lt: 'Giliau', en: 'Deeper' },
-    short: { lt: 'Tėvams: simbolika ir klausimai', en: 'For parents: symbols and questions' },
-    about: {
-      lt: 'Simbolika, prieraišumas ir klausimai pokalbiui su vaiku.',
-      en: 'Symbolism, attachment and questions to talk through with your child.',
-    },
+    label: 'Vyresniems',
+    age: 'suaugusiems',
+    about: 'Ta pati istorija kaip ilgesnė novelė, su viskuo, kas slypi po paviršiumi.',
+    mood: 'novelė',
   },
 };
 
 export const UI = {
-  lt: {
-    siteDescription:
-      'Virtualios rašytojos Evi pasakos vaikams ir tėvams. Kiekviena istorija turi kelis skaitymo sluoksnius: pagal amžių, vyresniems ir gilesnį skaitinį tėvams.',
-    homeTitle: 'Pasakos, kurios auga kartu su vaiku',
-    eyebrow: 'Virtualios rašytojos Evi pasakos',
-    heroTitle: 'Viena pasaka, keli skaitymo sluoksniai',
-    heroSub:
-      'Išsirink vaiko amžių ir skaityk tą pačią istoriją jam suprantama kalba. Skiltyje „Giliau“ – psichologinis sluoksnis ir klausimai vakaro pokalbiui.',
-    latest: 'Naujausia pasaka',
-    read: 'Skaityti',
-    shelf: 'Lentyna',
-    layersNav: 'Sluoksniai',
-    contactNav: 'Kontaktai',
-    show: 'Rodyti',
-    layer: 'Sluoksnis',
-    all: 'Visi',
-    allShort: 'Visos pasakos',
-    empty: 'Šiam sluoksniui pasakų dar nėra. Netrukus bus.',
-    layersTitle: 'Kaip veikia sluoksniai',
-    layersIntro: 'Kiekviena pasaka turi kelis sluoksnius. Atsidaręs pasaką, juos gali perjungti bet kada.',
-    contactTitle: 'Parašyk Evi',
-    contactText: 'Pasiūlyk temą būsimai pasakai arba papasakok, kaip istorija suskambėjo jūsų namuose.',
-    back: 'Lentyna',
-    older: 'Senesnė',
-    newer: 'Naujesnė',
-    toShelf: 'Grįžti į lentyną',
-    otherStories: 'Kitos pasakos',
-    write: 'Parašyti Evi',
-    language: 'Kalba',
-    latestCta: 'Skaityti naujausią pasaką',
-    sadEnding: 'Pabaiga liūdnoka, verta pasikalbėti.',
-    sadEndingLink: 'Klausimai pokalbiui – sluoksnyje „Giliau“',
-    privacyNote: 'Svetainė jūsų naršyklėje įsimena tik pasirinktą kalbą, režimą, raidžių dydį ir sluoksnį. Jokių slapukų, jokio sekimo.',
-    themeToNight: 'Įjungti naktinį režimą',
-    themeToDay: 'Įjungti dienos režimą',
-    textSize: 'Raidžių dydis',
-    textSmaller: 'Mažesnės raidės',
-    textBigger: 'Didesnės raidės',
-    count: ['pasaka', 'pasakos', 'pasakų'],
-  },
-  en: {
-    siteDescription:
-      'Stories for children and parents by the virtual author Evi. Every story has several reading layers: by age, for older readers, and a deeper read for parents.',
-    homeTitle: 'Stories that grow with your child',
-    eyebrow: 'Stories by the virtual author Evi',
-    heroTitle: 'One story, many ways to read it',
-    heroSub:
-      'Pick your child’s age and read the same story in words they understand. Under “Deeper”: a psychological layer and questions for a bedtime talk.',
-    latest: 'Newest story',
-    read: 'Read',
-    shelf: 'Bookshelf',
-    layersNav: 'Layers',
-    contactNav: 'Contact',
-    show: 'Show',
-    layer: 'Layer',
-    all: 'All',
-    allShort: 'Every story',
-    empty: 'No stories in this layer yet. Coming soon.',
-    layersTitle: 'How the layers work',
-    layersIntro: 'Every story has several layers. Once a story is open, you can switch between them at any time.',
-    contactTitle: 'Write to Evi',
-    contactText: 'Suggest a theme for a future story, or tell me how a story landed in your home.',
-    back: 'Shelf',
-    older: 'Older',
-    newer: 'Newer',
-    toShelf: 'Back to the shelf',
-    otherStories: 'Other stories',
-    write: 'Write to Evi',
-    language: 'Language',
-    latestCta: 'Read the newest story',
-    sadEnding: 'The ending is a little sad and worth talking about.',
-    sadEndingLink: 'Questions to talk it through are under “Deeper”',
-    privacyNote: 'This site only remembers, in your browser, the language, mode, text size and layer you chose. No cookies, no tracking.',
-    themeToNight: 'Switch to night mode',
-    themeToDay: 'Switch to day mode',
-    textSize: 'Text size',
-    textSmaller: 'Smaller text',
-    textBigger: 'Larger text',
-    count: ['story', 'stories', 'stories'],
-  },
+  siteDescription:
+    'Virtualios rašytojos Evi pasakos visai šeimai. Kiekviena pasaka parašyta tris kartus: mažyliams, vaikams ir suaugusiems.',
+  homeTitle: 'Pasakos, kurios auga kartu su vaiku',
+  latest: 'naujausia pasaka',
+  readOn: 'Skaityti toliau',
+  allStories: 'Visos pasakos',
+  shelf: 'Lentyna',
+  all: 'Visos',
+  empty: 'Šiam skaitymui pasakų dar nėra.',
+  howTitle: 'Viena pasaka, trys skaitymai',
+  howTalk:
+    'Kiekvieno skaitymo pabaigoje yra suskleista dalis „Pokalbiui“: apie ką ši pasaka, pastabos tėvams ir klausimai vakaro pokalbiui, pritaikyti tam amžiui.',
+  aboutTitle: 'Apie Evi',
+  aboutText: [
+    'Evi yra virtuali rašytoja. Kiekvieną pasaką ji rašo tris kartus, kad tą pačią istoriją galėtų skaityti visa šeima: mažylis prieš miegą, vyresnis vaikas pats, o tėvai sau.',
+    'Pasakos gimsta iš lietuviškos gamtos: dilgynų prie daržinės, lėtų upių, gudobelių krūmų.',
+  ],
+  contactTitle: 'Parašykite Evi',
+  contactText: 'Pasiūlykite temą būsimai pasakai arba papasakokite, kaip istorija suskambėjo jūsų namuose.',
+  older: 'Senesnė',
+  newer: 'Naujesnė',
+  toShelf: 'Į lentyną',
+  whoFor: 'Kam skaitome?',
+  sadEnding: 'Pabaiga liūdnoka, verta pasikalbėti.',
+  sadEndingLink: 'Klausimai pokalbiui',
+  talk: 'Pokalbiui',
+  talkSub: 'Apie ką ši pasaka, pastabos tėvams ir klausimai',
+  privacyNote: 'Svetainė jūsų naršyklėje įsimena tik pasirinktą režimą, raidžių dydį ir skaitymą. Jokių slapukų, jokio sekimo.',
+  themeToNight: 'Įjungti naktinį režimą',
+  themeToDay: 'Įjungti dienos režimą',
+  night: 'Naktis',
+  day: 'Diena',
+  textSize: 'Raidžių dydis',
+  textSmaller: 'Mažesnės raidės',
+  textBigger: 'Didesnės raidės',
+  minutes: 'min',
+  count: ['pasaka', 'pasakos', 'pasakų'],
 } as const;
 
 export const EMAIL = 'evi.tale.creator@gmail.com';
 
-export const homeUrl = (lang: Lang) => (lang === 'lt' ? '/' : '/en/');
-export const storyUrl = (lang: Lang, slug: string) =>
-  lang === 'lt' ? `/istorija/${slug}/` : `/en/story/${slug}/`;
+export const homeUrl = () => '/';
+export const storyUrl = (slug: string) => `/istorija/${slug}/`;
 
-export function formatDate(date: Date, lang: Lang) {
-  return new Intl.DateTimeFormat(lang === 'lt' ? 'lt-LT' : 'en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  }).format(date);
+export function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('lt-LT', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
+}
+
+export function countText(n: number) {
+  const [one, few, many] = UI.count;
+  const lastTwo = n % 100;
+  const last = n % 10;
+  const form = last === 1 && lastTwo !== 11 ? one : last === 0 || (lastTwo >= 10 && lastTwo <= 20) ? many : few;
+  return `${n} ${form}`;
 }

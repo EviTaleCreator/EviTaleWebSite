@@ -43,3 +43,27 @@ Guoda nusijuokė.
 – Skrendam. Pietuose upeliai šilti visą žiemą.
 
 O gudobelės krūme vėjas linguoja raudoną siūlą. Gal pavasarį jį ras kokia paukštelė ir įsipins į savo naują lizdą.
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Paukštelis randa siūlą ir nenori jo palikti. Po šiuo paviršiumi slypi pasakojimas apie tai, kaip daiktas pradeda atstoti saugumą. Iš pradžių siūlas Čiūtai tikrai padeda: nurimsta virpulys, vakarai nebebaisūs. Bėda prasideda tada, kai saugoti siūlą tampa svarbiau nei gyventi. Čiūta atsisako upelio, pameluoja draugei, nebeskrenda net iki pušies. Siūlas jau nebešildo, bet paleisti jį baisiau nei šalti.
+
+Pasaka padeda pakalbėti apie prisirišimą prie daiktų, baimę prarasti, nesugebėjimą paleisti ir apie tai, kad šildo artimi, ne daiktai.
+
+Pabaigos skiriasi. 2–4 m. versijoje Čiūta pats paleidžia siūlą, 5–8 m. jį išlaisvina Guoda, o 9–12 m. ir „Vyresniems“ versijose Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią vaikas skaitė.
+
+### Kaip kalbėtis
+
+Tema: ko netenkam, kai per daug saugom daiktą, ir kodėl kartais sakom ne tai, ką jaučiam.
+
+Šio amžiaus vaikai jau mato priežastis ir pasekmes ir atpažįsta melą. Čiūta sako „nenoriu“, nors labai nori. Tai gera vieta pasikalbėti, kodėl taip darom, pavyzdžiui, kai neinam žaisti, nes bijom, kad kas nors paims mūsų žaislą.
+
+### Klausimai
+
+- Ko Čiūta neteko, kol saugojo siūlą?
+- Kodėl jis pasakė Guodai „nenoriu“, nors labai norėjo? Ar tau taip yra buvę?
+- Kodėl Guoda grįžo? Ką tai sako apie tikrą draugą?
+
+Jei vaikas prisipažins, kad irgi taip darė, nebarkit. Paklauskit, kaip tada jautėsi. Prisipažinimas jau yra didelis žingsnis.

@@ -41,3 +41,27 @@ Plast, plast! Du paukščiukai pakilo aukštai aukštai, pro debesis, į saulę.
 ![Čiūta ir Guoda skrenda virš debesų į saulę, o toli apačioje liko gudobelių krūmas](../img/scene-04.jpg)
 
 Toli apačioje liko gudobelių krūmas, o krūme – raudonas siūlas. Gal pavasarį jį ras mažas paukštelis, kuriam reikės šilumos.
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Paukštelis randa siūlą ir nenori jo palikti. Po šiuo paviršiumi slypi pasakojimas apie tai, kaip daiktas pradeda atstoti saugumą. Iš pradžių siūlas Čiūtai tikrai padeda: nurimsta virpulys, vakarai nebebaisūs. Bėda prasideda tada, kai saugoti siūlą tampa svarbiau nei gyventi. Čiūta atsisako upelio, pameluoja draugei, nebeskrenda net iki pušies. Siūlas jau nebešildo, bet paleisti jį baisiau nei šalti.
+
+Pasaka padeda pakalbėti apie prisirišimą prie daiktų, baimę prarasti, nesugebėjimą paleisti ir apie tai, kad šildo artimi, ne daiktai.
+
+Pabaigos skiriasi. 2–4 m. versijoje Čiūta pats paleidžia siūlą, 5–8 m. jį išlaisvina Guoda, o 9–12 m. ir „Vyresniems“ versijose Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią vaikas skaitė.
+
+### Kaip kalbėtis
+
+Tema: mylimas daiktas ir tie, kurie apkabina.
+
+Šio amžiaus vaikui mylimas meškiukas ar skudurėlis yra normalus ir reikalingas dalykas, jis padeda nusiraminti. Tad nesakykit, kad daiktų mylėti negalima. Geriau parodykit, kad daiktas gali būti mylimas, bet kai šalta ir liūdna, labiausiai padeda apkabinimas.
+
+### Klausimai
+
+- Kodėl Čiūtai taip patiko raudonas siūlas?
+- Kas sušildė Čiūtą, kai siūlas nebešildė?
+- O kas tave apkabina, kai tau šalta ar liūdna?
+
+Vaikas greičiausiai atsakys tiesiog „Guoda“ arba „mama“. To užtenka. Galit apkabinti ir pasakyti: „Kaip Guoda.“

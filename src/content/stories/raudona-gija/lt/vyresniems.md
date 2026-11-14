@@ -27,3 +27,27 @@ Ir tada Čiūta suplasnojo paskutinį kartą. Jam pasigirdo tylus pokštelėjima
 O apačioje vėtra pamažu rimo. Gudobelės krūme kabojo apvirtęs, nuo vandens sunkus lizdas. Iš po jo žemyn driekėsi raudonas vilnonis siūlas, tvirtai prikabintas prie šakos ir įsitempęs lyg styga, tarsi apačioje, tamsoje, vis dar kažką laikytų.
 
 ![Rytas po audros: tuščias lizdas kabo tarp dygliuotų šakų, ant dyglio užsikabinusi rausva plunksnelė, o iš po lizdo į tamsą žemyn driekiasi įsitempęs raudonas siūlas](../img/scene-07.jpg)
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Paukštelis randa siūlą ir nenori jo palikti. Po šiuo paviršiumi slypi pasakojimas apie tai, kaip daiktas pradeda atstoti saugumą. Iš pradžių siūlas Čiūtai tikrai padeda: nurimsta virpulys, vakarai nebebaisūs. Bėda prasideda tada, kai saugoti siūlą tampa svarbiau nei gyventi. Čiūta atsisako upelio, pameluoja draugei, nebeskrenda net iki pušies. Siūlas jau nebešildo, bet paleisti jį baisiau nei šalti.
+
+Pasaka padeda pakalbėti apie prisirišimą prie daiktų, baimę prarasti, nesugebėjimą paleisti ir apie tai, kad šildo artimi, ne daiktai.
+
+Pabaigos skiriasi. 2–4 m. versijoje Čiūta pats paleidžia siūlą, 5–8 m. jį išlaisvina Guoda, o 9–12 m. ir „Vyresniems“ versijose Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią vaikas skaitė.
+
+### Kaip kalbėtis
+
+Tai pasaka apie tai, kaip saugumas virsta kalėjimu. Psichologijoje vaikystės mylimas daiktas vadinamas pereinamuoju objektu: jis padeda nusiraminti, kol vaikas išmoksta nusiraminti pats. Čiūtos siūlas iš pradžių kaip tik toks. Problema ne pats siūlas. Problema ta, kad Čiūta nustoja augti toliau už jo: nebeskraido, meluoja, lieka vienas.
+
+Tai atpažįsta ir suaugusieji. Darbas, kuris seniai nebetinka, bet atrodo saugus. Santykiai, kuriuose liekama iš baimės likti vienam. Daiktai, kuriuos saugom labiau, nei jais naudojamės. Čia veikia ir paprastas mechanizmas: prarasti mums skauda labiau, nei laimėti džiugina, todėl laikomės net to, kas jau nebešildo.
+
+Ir paskutinis vaizdas: siūlas vis dar įsitempęs, tarsi apačioje kažką laikytų. Mes laikom daiktus, o kartais jie laiko mus.
+
+### Pamąstymui
+
+- Kas mano gyvenime yra raudonas siūlas: kas kadaise šildė, bet dabar labiau laiko nei šildo?
+- Kokius „upelius“ praleidau, saugodamas tai, ką jau turiu?
+- Čiūta pirmiausia pameluoja draugei, o paskui sau. Kokį melą sau kartoju, kad nereikėtų nieko paleisti?

@@ -61,3 +61,27 @@ Kitą rytą notrelė nebeslėpė žiedų. Ji iškėlė juos aukštai, ir netruku
 – Atleisk, – tyliai pasakė notrelė savo balsu.
 
 Ramunėlė atsakė ne iš karto. Bet atsakė.
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Notrelė gimsta su kauke: jos lapai panašūs į dilgėlės. Iš pradžių tai tik apsauga, ir ji nieko blogo nedaro, tiesiog nepasako tiesos. Bet noras priklausyti stipriesiems pamažu ją keičia. Ji pradeda kalbėti kaip dilgėlės, juoktis iš silpnesnių, slėpti tai, kas joje švelniausia. Lūžis ateina tada, kai dėl vietos tarp „savų“ ji išduoda draugę, o paskui pameluoja jų balsu. Toliausiai ją nuveda ne melas, o pamiršimas: ji taip ilgai slėpė žiedus, kad pati nebeprisimena, kokia yra.
+
+Temos: noras priklausyti grupei, apsimetinėjimas, draugo išdavystė dėl naudos, melas, savęs praradimas.
+
+Pabaigos skiriasi. 5–8 m. versijoje notrelė lieka augti: ožka nukanda tik ramunėlės žiedą, ramunėlė išaugina naują pumpurą, o notrelė atsiprašo. Kitose versijose mergaitė atranda notrelę ir įpina ją į vainikėlį, o 9–12 m. ir „Vyresniems“ versijose ožka dar ir suėda ramunėlę.
+
+### Kaip kalbėtis
+
+Tema: kai nori būti su „kietaisiais“.
+
+Šiame amžiuje vaikams labai svarbu priklausyti: draugų ratui kieme, klasėje. Notrelė nėra bloga, ji tiesiog nori būti tarp stipriųjų, nes ten saugu. Verta pakalbėti, ką ji dėl to prarado, ir kad atsiprašyti niekada ne per vėlu, net jei atleidžia ne iš karto.
+
+### Klausimai
+
+- Kodėl notrelė norėjo būti panaši į dilgėles?
+- Ką ji prarado, kai paslėpė žiedus?
+- Kaip, tavo manymu, jautėsi ramunėlė, kai notrelė patraukė lapus?
+
+Jei vaikas papasakos, kad irgi kartą juokėsi kartu su kitais, nors nenorėjo, pagirkit, kad tai pastebėjo. Galima paklausti: „O ką būtum norėjęs padaryti?“

@@ -1,22 +1,20 @@
 # EviTale Creator
 
-Virtualios rašytojos Evi pasakų svetainė. Astro statinė svetainė, talpinama Vercel.
+Virtualios rašytojos Evi pasakų svetainė. Astro statinė svetainė, talpinama Vercel. Kol kas tik lietuviškai.
 
-Lietuviška versija: `/`, angliška: `/en/`. Pasaka: `/istorija/<adresas>/` ir `/en/story/<adresas>/`.
+Pasaka: `/istorija/<adresas>/`.
 
-## Sluoksniai
+## Trys skaitymai
 
-Kiekviena pasaka gali turėti iki penkių sluoksnių:
+Kiekviena pasaka gali turėti iki trijų skaitymų:
 
-| Failas | Sluoksnis |
+| Failas | Skaitymas |
 | --- | --- |
-| `2-4.md` | 2–4 m. |
-| `5-8.md` | 5–8 m. |
-| `9-12.md` | 9–12 m. |
-| `vyresniems.md` | Vyresniems (paaugliams ir suaugusiems) |
-| `giliau.md` | Giliau (tėvams) |
+| `mazyliams.md` | Mažyliams (iki 5 m.) |
+| `vaikams.md` | Vaikams (5–8 m.) |
+| `vyresniems.md` | Vyresniems (suaugusiems, ilgesnė novelė) |
 
-Nebūtina turėti visų. Svetainė pati rodo tik tuos sluoksnius, kurių failai yra.
+Nebūtina turėti visų. Svetainė pati rodo tik tuos skaitymus, kurių failai yra.
 
 ## Kaip įkelti naują pasaką
 
@@ -26,15 +24,11 @@ Viskas vienoje vietoje: `src/content/stories/<pasakos-adresas>/`. Adresas rašom
 src/content/stories/raudona-gija/
   story.yaml        pavadinimas, data, trumpas aprašymas, viršelis
   cover.jpg         pagrindinė iliustracija
-  img/              papildomos iliustracijos (bendros visoms kalboms)
+  img/              papildomos iliustracijos (bendros visiems skaitymams)
   lt/
-    2-4.md
-    5-8.md
-    9-12.md
+    mazyliams.md
+    vaikams.md
     vyresniems.md
-    giliau.md
-  en/
-    ... tie patys failai angliškai
 ```
 
 Per GitHub svetainę: atsidaryk `src/content/stories`, spausk **Add file → Upload files** ir įmesk visą pasakos aplanką. Po kelių minučių Vercel atnaujins svetainę.
@@ -49,20 +43,15 @@ Iliustracijų taisyklės, promptas ir veikėjų aprašymai: [docs/iliustracijos.
 date: 2026-11-05
 title:
   lt: Raudona gija gudobelių krūme
-  en: The Red Thread in the Hawthorn
 excerpt:
   lt: Trumpas aprašymas lentynai.
-  en: Short description for the shelf.
 cover: ./cover.jpg
-sadEnding: [9-12, vyresniems]   # neprivaloma: sluoksniai su liūdnoka pabaiga
+sadEnding: [vyresniems]   # neprivaloma: skaitymai su liūdnoka pabaiga
 coverAlt:
   lt: Ką vaizduoja iliustracija (neregintiems skaitytojams)
-  en: What the illustration shows
 ```
 
-Jei pasaka dar neturi savo iliustracijos, tiesiog nerašyk `cover:` ir `coverAlt:` eilučių. Tada lentynoje ir pasakoje bus rodomas laikinas viršelis `src/assets/cover-placeholder.jpg`. Kai iliustracija bus, įkelk ją kaip `cover.jpg` ir įrašyk tas eilutes.
-
-Jei angliško vertimo dar nėra, tiesiog nerašyk `en:` eilučių ir nekurk `en/` aplanko. Tada pasaka rodysis tik lietuviškoje lentynoje.
+Jei pasaka dar neturi savo iliustracijos, tiesiog nerašyk `cover:` ir `coverAlt:` eilučių. Tada lentynoje ir pasakoje bus rodomas laikinas viršelis `src/assets/cover-placeholder.jpg`.
 
 ### Tekstas su iliustracijomis
 
@@ -76,16 +65,26 @@ Pastraipos atskiriamos tuščia eilute. Iliustracija įterpiama taip:
 Krūme sužibo minkštas raudonas siūlas.
 ```
 
-Paveikslėliai laikomi pasakos aplanke `img/` (bendri visoms kalboms), todėl kelias prasideda `../img/`. Jie automatiškai paverčiami lengvesniu formatu, bet kelk iki 1600 px pločio.
+Paveikslėliai laikomi pasakos aplanke `img/`, todėl kelias prasideda `../img/`. Jie automatiškai paverčiami lengvesniu formatu, bet kelk iki 1600 px pločio.
 
-### Giliau
+Pirmoji pastraipa (ne paveikslėlis) rodoma pradiniame puslapyje, kai pasaka yra naujausia. Skaitymo trukmė apskaičiuojama automatiškai.
+
+### Pokalbiui
+
+Kiekvieno skaitymo failo gale gali būti skiltis tėvams. Viskas, kas po antrašte `## Pokalbiui`, svetainėje tampa suskleista kortele pasakos pabaigoje:
 
 ```md
-## Už pasakos šydo
+## Pokalbiui
 
-**Simbolika:** tekstas...
+### Apie ką ši pasaka
 
-### Klausimai vakaro pokalbiui
+Trumpai apie pasakos prasmę.
+
+### Kaip kalbėtis
+
+Tema ir pastabos šio amžiaus vaikui.
+
+### Klausimai
 
 - Pirmas klausimas?
 - Antras klausimas?
@@ -95,9 +94,10 @@ Klausimai sąraše automatiškai tampa atskiromis kortelėmis.
 
 ## Kita
 
-- Pagrindinis svetainės paveikslėlis: `src/assets/hero.jpg`. `public/hero-banner.jpg` naudojamas, kai nuoroda dalinama socialiniuose tinkluose.
-- Šriftai (Fraunces, Literata, Plus Jakarta Sans) laikomi pačioje svetainėje, ne Google serveriuose.
-- Svetainės užrašai abiem kalbomis: `src/lib/i18n.ts`.
+- `en/` ir `archyvas/` aplankai pasakose svetainėje nerodomi. Ten liko angliški vertimai, senieji 9–12 m. tekstai ir senieji „Giliau“ failai.
+- Šriftai (Bricolage Grotesque, Literata) laikomi pačioje svetainėje, ne Google serveriuose.
+- Svetainės užrašai: `src/lib/i18n.ts`. Spalvos ir išvaizda: `src/styles/global.css`.
+- `public/hero-banner.jpg` naudojamas, kai nuoroda dalinama socialiniuose tinkluose.
 - Kontaktinis el. paštas: evi.tale.creator@gmail.com
 
 ## Paleisti savo kompiuteryje

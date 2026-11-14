@@ -31,3 +31,27 @@ Ji švelniai pagavo laivelį. Leido jam apsisukti mažame sūkuryje, kad mergait
 Tik aukščiau slėnyje, ten, kur anksčiau vinguriavo senoji kilpa, dabar telkšojo kelios džiūstančios balutės. Senasis lieptelis po gluosniu stovėjo tylus ir sausas, pakibęs virš dugno, kuris pamažu želia žolėmis. Kai kurie keliai, kartą išgraužti, atgal nebeužželia. O kai kurie užželia visam laikui.
 
 ![Senasis lieptelis po gluosniu stovi virš išdžiūvusios upės vagos, kurioje liko tik kelios balutės ir pradeda želti žolė](../img/scene-06.jpg)
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Upė buvo laiminga, kol neišgirdo, kad kita upė įdomesnė. Tai pasaka apie lyginimąsi su kitais ir apie tai, kaip vienas atsitiktinis sakinys, net ne tau skirtas, gali pakeisti tai, kaip save matai. Alanta bando tapti Žvelsa ir trumpam tampa, bet praranda tai, kas jos gyvenimui teikė prasmę: lieptelį, vaikus, laivelius. Jos lėtumas buvo rūpestis kitais, tik ji to nematė, kol jo neprarado.
+
+Antras sluoksnis yra apie sprendimus, kurių nebeatšauksi. Senoji kilpa išdžiūsta. Bet pabaiga nėra beviltiška: Alanta randa, kaip būti savimi naujoje vietoje.
+
+Pabaigos skiriasi. 2–4 m. versijoje senosios kilpos nėra, Alanta tiesiog vėl teka lėtai. 5–8 m., 9–12 m. ir „Vyresniems“ versijose senoji vieta išdžiūsta.
+
+### Kaip kalbėtis
+
+Alantos bėda prasideda ne nuo Žvelsos. Žvelsa visada buvo šalia, ir jos sugyveno draugiškai. Bėda prasideda nuo trumpo svetimų žmonių sakinio, kuris net nebuvo jai skirtas. Taip veikia lyginimasis: kito sėkmė nieko iš mūsų neatima, bet staiga ima atrodyti, kad atima. Ypač kai lyginamės ne su žmogumi, o su jo vaizdu iš šalies, su ūžesiu už kalvos.
+
+Kitas sluoksnis yra apie tai, kas laikoma vertinga. Alantos lėtumas buvo jos rūpestis: ji laukdavo vaikų, saugojo laivelius. Bet rūpestis tylus, už kalvos jo negirdėti. Tai gerai pažįsta tėvai, mokytojai, slaugytojai, visi, kurių darbas pastebimas tik tada, kai jo nebėra.
+
+Ir pabaiga. Alanta negrįžta ten, kur buvo. Kilpa išdžiūsta, lieptelis lieka sausas. Pasaka nežada, kad viską galima pataisyti. Ji sako, kad net po neatšaukiamo sprendimo galima vėl rinktis, kuo būti.
+
+### Pamąstymui
+
+- Kas yra mano Žvelsa? Su kuo lyginuosi, ir ar iš tikrųjų pažįstu tą žmogų, ar girdžiu tik jo ūžesį?
+- Kurią savo „lėtą“ savybę laikau trūkumu, nors kitiems ji yra rūpestis?
+- Ar mano gyvenime yra išdžiūvusi kilpa? Ką galiu daryti dabar, naujoje vietoje?

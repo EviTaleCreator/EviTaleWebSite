@@ -37,3 +37,27 @@ Alanta vėl turėjo ką nešti. Ir suprato, kad jos lėtumas buvo ne nuobodumas,
 O aukščiau, kur kadaise vingiavo senoji kilpa, liko tik kelios balutės. Senasis lieptelis stovi tylus ir sausas. Gal kada nors aplink jį pražys gėlės.
 
 ![Senasis lieptelis po gluosniu stovi virš išdžiūvusios upės vagos, kurioje liko tik kelios balutės ir pradeda želti žolė](../img/scene-06.jpg)
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Upė buvo laiminga, kol neišgirdo, kad kita upė įdomesnė. Tai pasaka apie lyginimąsi su kitais ir apie tai, kaip vienas atsitiktinis sakinys, net ne tau skirtas, gali pakeisti tai, kaip save matai. Alanta bando tapti Žvelsa ir trumpam tampa, bet praranda tai, kas jos gyvenimui teikė prasmę: lieptelį, vaikus, laivelius. Jos lėtumas buvo rūpestis kitais, tik ji to nematė, kol jo neprarado.
+
+Antras sluoksnis yra apie sprendimus, kurių nebeatšauksi. Senoji kilpa išdžiūsta. Bet pabaiga nėra beviltiška: Alanta randa, kaip būti savimi naujoje vietoje.
+
+Pabaigos skiriasi. 2–4 m. versijoje senosios kilpos nėra, Alanta tiesiog vėl teka lėtai. 5–8 m., 9–12 m. ir „Vyresniems“ versijose senoji vieta išdžiūsta.
+
+### Kaip kalbėtis
+
+Tema: kai kito pagyrimas skauda.
+
+Šio amžiaus vaikai jau girdi, kai giriamas kitas, ir dažnai išgirsta tai kaip „vadinasi, aš blogesnis“. Atkreipkit dėmesį: keliautojai Alantos nė nepeikė. Jie tik pagyrė Žvelsą. Visa kita Alanta pasakė sau pati.
+
+### Klausimai
+
+- Ar keliautojai pasakė, kad Alanta bloga? Kodėl ji taip pasijuto?
+- Kodėl berniuko laivelis įstrigo nendrėse? Kaip jis turėjo jaustis?
+- Ką Alanta moka, ko nemoka Žvelsa?
+
+Jei vaikas pasakoja, kad kažkas kitas geresnis, nesakykit iškart „tu irgi geras“. Pirma paklauskit, kaip jis tada jautėsi, o paskui kartu paieškokit, kas jam pačiam sekasi.

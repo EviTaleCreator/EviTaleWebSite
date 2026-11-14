@@ -1,20 +1,14 @@
 ---
 import '../styles/global.css';
-import { UI, homeUrl, type Lang } from '../lib/i18n';
+import { UI } from '../lib/i18n';
 
 interface Props {
-  lang: Lang;
   title: string;
   description?: string;
-  /** Tos pačios lentynos ar pasakos adresai abiem kalbomis */
-  alternates: Record<Lang, string>;
-  /** Pasakos puslapyje rodoma nuoroda „← Lentyna“ */
-  back?: boolean;
 }
 
-const { lang, title, description, alternates, back = false } = Astro.props;
-const t = UI[lang];
-const desc = description || t.siteDescription;
+const { title, description } = Astro.props;
+const desc = description || UI.siteDescription;
 const fullTitle = title === 'EviTale' ? title : `${title} · EviTale`;
 const site = Astro.site;
 const ogImage = site ? new URL('/hero-banner.jpg', site).href : undefined;
@@ -22,37 +16,29 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 ---
 
 <!doctype html>
-<html lang={lang} data-theme="night">
+<html lang="lt" data-theme="day">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />
-    <meta name="theme-color" content="#0b1a17" id="theme-color" />
+    <meta name="theme-color" content="#f7f5f0" id="theme-color" />
     <script is:inline>
-      // Prieš piešiant puslapį: režimas, raidžių dydis ir įsiminta kalba.
-      // Įrašoma tik tai, ką lankytojas pats pasirinko mygtuku; čia tik skaitoma.
+      // Prieš piešiant puslapį: režimas ir raidžių dydis. Čia tik skaitoma, įrašoma tik paspaudus mygtuką.
       (function () {
         var d = document.documentElement;
         try {
-          var savedLang = localStorage.getItem('evitale-lang');
-          if (location.pathname === '/' && savedLang === 'en') {
-            location.replace('/en/' + location.search + location.hash);
-            return;
-          }
           var theme = localStorage.getItem('evitale-theme');
           if (theme !== 'night' && theme !== 'day') {
             var h = new Date().getHours();
-            var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            theme = dark || h >= 19 || h < 7 ? 'night' : 'day';
+            theme = h >= 20 || h < 7 ? 'night' : 'day';
           }
           d.dataset.theme = theme;
-          document.getElementById('theme-color').content = theme === 'night' ? '#0b1a17' : '#f7f3ec';
-
+          document.getElementById('theme-color').content = theme === 'night' ? '#1c1f2b' : '#f7f5f0';
           var scale = parseFloat(localStorage.getItem('evitale-text') || '');
           if (scale >= 0.8 && scale <= 1.6) d.style.setProperty('--read-scale', String(scale));
         } catch (e) {
-          /* privatus langas: lieka naktinis režimas ir numatytas dydis */
+          /* privatus langas: lieka dienos režimas ir numatytas dydis */
         }
       })();
     </script>
@@ -60,77 +46,46 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {canonical && <link rel="canonical" href={canonical} />}
-    {site && <link rel="alternate" hreflang="lt" href={new URL(alternates.lt, site).href} />}
-    {site && <link rel="alternate" hreflang="en" href={new URL(alternates.en, site).href} />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="EviTale" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={desc} />
-    <meta property="og:locale" content={lang === 'lt' ? 'lt_LT' : 'en_GB'} />
+    <meta property="og:locale" content="lt_LT" />
     {ogImage && <meta property="og:image" content={ogImage} />}
     {ogImage && <meta name="twitter:card" content="summary_large_image" />}
   </head>
   <body>
-    <header class:list={['site-header', { 'with-back': back }]}>
+    <a class="skip" href="#turinys">Pereiti prie turinio</a>
+    <header class="site-header">
       <div class="wrap">
-        {
-          back && (
-            <a class="back-link" href={`${homeUrl(lang)}#lentyna`} data-keep-layer>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M12.5 4.5L7 10l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              {t.back}
-            </a>
-          )
-        }
-        <a class="logo" href={homeUrl(lang)}>
+        <a class="logo" href="/">
           <svg width="30" height="31" viewBox="10 6 100 104" aria-hidden="true">
             <path class="logo-trunk" d="M26 104 C34 98 36 88 36 72 C36 40 42 14 60 14 C78 14 84 40 84 72 C84 88 86 98 94 104 Z"></path>
             <path class="logo-hollow" d="M46 104 C46 80 50 62 60 62 C70 62 74 80 74 104 Z"></path>
-            <circle cx="60" cy="88" r="11" fill="#e0a83a" opacity="0.3"></circle>
-            <circle cx="60" cy="88" r="6" fill="#e0a83a"></circle>
+            <circle class="logo-light" cx="60" cy="88" r="6"></circle>
             <path class="logo-ground" d="M18 104 L102 104" stroke-width="5" stroke-linecap="round"></path>
           </svg>
           EviTale
         </a>
-        <div class="header-tools">
-          <nav class="lang" aria-label={t.language}>
-            <a href={alternates.lt} hreflang="lt" lang="lt" aria-current={String(lang === 'lt')} data-keep-layer data-lang-link="lt">LT</a>
-            <a href={alternates.en} hreflang="en" lang="en" aria-current={String(lang === 'en')} data-keep-layer data-lang-link="en">EN</a>
-          </nav>
-          <button
-            type="button"
-            class="theme-toggle"
-            data-theme-toggle
-            data-label-night={t.themeToNight}
-            data-label-day={t.themeToDay}
-            aria-label={t.themeToDay}
-          >
-            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path>
-            </svg>
-            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"></circle>
-              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
-            </svg>
+        <nav class="site-nav" aria-label="Pagrindinis meniu">
+          <a href="/#lentyna" class="hide-s">{UI.shelf}</a>
+          <a href="/#apie" class="hide-s">{UI.aboutTitle}</a>
+          <a href="/#kontaktai" class="hide-s">Kontaktai</a>
+          <button type="button" class="theme-toggle" data-theme-toggle data-label-night={UI.themeToNight} data-label-day={UI.themeToDay}>
+            <span class="when-day">{UI.night}</span><span class="when-night">{UI.day}</span>
           </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <slot />
+    <div id="turinys">
+      <slot />
+    </div>
 
     <footer class="site-footer">
       <div class="wrap">
-        <span class="brand">EviTale · {new Date().getFullYear()}</span>
-        <nav aria-label="EviTale">
-          <a href={`${homeUrl(lang)}#lentyna`}>{t.shelf}</a>
-          <a href={`${homeUrl(lang)}#sluoksniai`}>{t.layersNav}</a>
-          <a href={`${homeUrl(lang)}#kontaktai`}>{t.contactNav}</a>
-        </nav>
-      </div>
-      <div class="wrap">
-        <p class="privacy-note">{t.privacyNote}</p>
+        <span><b>EviTale</b> · pasakos, kurios auga kartu su vaiku</span>
+        <span>{UI.privacyNote}</span>
       </div>
     </footer>
   </body>
@@ -143,11 +98,11 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 
   function applyTheme(theme: 'night' | 'day') {
     root.dataset.theme = theme;
-    if (meta) meta.content = theme === 'night' ? '#0b1a17' : '#f7f3ec';
+    if (meta) meta.content = theme === 'night' ? '#1c1f2b' : '#f7f5f0';
     if (toggle) toggle.setAttribute('aria-label', (theme === 'night' ? toggle.dataset.labelDay : toggle.dataset.labelNight) ?? '');
   }
 
-  applyTheme(root.dataset.theme === 'day' ? 'day' : 'night');
+  applyTheme(root.dataset.theme === 'night' ? 'night' : 'day');
 
   toggle?.addEventListener('click', () => {
     const next = root.dataset.theme === 'night' ? 'day' : 'night';
@@ -158,15 +113,4 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
       /* saugykla išjungta */
     }
   });
-
-  // Paspaudus kalbos jungiklį, kalba įsimenama dar prieš pereinant į kitą puslapį.
-  document.querySelectorAll<HTMLAnchorElement>('[data-lang-link]').forEach((a) =>
-    a.addEventListener('click', () => {
-      try {
-        localStorage.setItem('evitale-lang', a.dataset.langLink ?? 'lt');
-      } catch {
-        /* saugykla išjungta */
-      }
-    }),
-  );
 </script>

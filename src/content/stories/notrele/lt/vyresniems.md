@@ -59,3 +59,27 @@ Mergaitė nulaužė stiebą, įpynė notrelę į vainikėlį tarp ramunių ir ap
 Mergaitė užsidėjo vainikėlį ir nubėgo per pievą namo. Notrelė iškėlė baltus žiedus į vakaro saulę, nieko nebeslėpdama. Taip aukštai ji dar niekada nebuvo buvusi. Ir taip toli nuo savo šaknų.
 
 ![Mergaitė su ramunių, rugiagėlių ir notrelės vainikėliu, perrištu raudonu siūlu, juokdamasi bėga per pievą nuo senos daržinės](../img/scene-03.jpg)
+
+## Pokalbiui
+
+### Apie ką ši pasaka
+
+Notrelė gimsta su kauke: jos lapai panašūs į dilgėlės. Iš pradžių tai tik apsauga, ir ji nieko blogo nedaro, tiesiog nepasako tiesos. Bet noras priklausyti stipriesiems pamažu ją keičia. Ji pradeda kalbėti kaip dilgėlės, juoktis iš silpnesnių, slėpti tai, kas joje švelniausia. Lūžis ateina tada, kai dėl vietos tarp „savų“ ji išduoda draugę, o paskui pameluoja jų balsu. Toliausiai ją nuveda ne melas, o pamiršimas: ji taip ilgai slėpė žiedus, kad pati nebeprisimena, kokia yra.
+
+Temos: noras priklausyti grupei, apsimetinėjimas, draugo išdavystė dėl naudos, melas, savęs praradimas.
+
+Pabaigos skiriasi. 5–8 m. versijoje notrelė lieka augti: ožka nukanda tik ramunėlės žiedą, ramunėlė išaugina naują pumpurą, o notrelė atsiprašo. Kitose versijose mergaitė atranda notrelę ir įpina ją į vainikėlį, o 9–12 m. ir „Vyresniems“ versijose ožka dar ir suėda ramunėlę.
+
+### Kaip kalbėtis
+
+Notrelės kaukė nėra jos sugalvota. Ji tokia gimė, ir kurį laiką tai tiesiog patogu: nieko nemeluoji, tik nepasakai. Bet kaukė veikia į abi puses: saugo nuo kitų ir atskiria nuo savęs. Kuo daugiau notrelė prisitaiko, tuo sunkiau jai prieiti prie to, kas joje švelniausia, kol galiausiai ji net nebeatsimena, kad tai turi.
+
+Svarbiausia vieta yra ne pati išdavystė, o po jos ištarti žodžiai „ne mano reikalas“. Notrelė išsigąsta ne melo, o to, kaip natūraliai jis išėjo jos naujuoju balsu. Taip dažnai ir būna: iš pradžių vaidini, o paskui nepastebi, kad vaidmuo jau kalba už tave.
+
+Pabaiga dviprasmiška. Notrelę pagaliau pamato tokią, kokia ji yra, bet tik tada, kai nuskina. Ar būti pamatytai verta tokios kainos, ar tai paskutinė jos iliuzija, pasaka neatsako.
+
+### Pamąstymui
+
+- Kokioje grupėje ar santykiuose kalbu ne savo balsu?
+- Ką savyje slepiu taip ilgai, kad pats nebeprisimenu, jog tai turiu?
+- Kada paskutinį kartą „patraukiau lapus“, kad išlaikyčiau savo vietą tarp savų?
