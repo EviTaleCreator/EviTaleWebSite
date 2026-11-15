@@ -173,6 +173,11 @@ h2 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1; }
 .contact { background: var(--butter); color: #2d3142; padding: clamp(28px, 4vw, 48px); border-radius: 4px; scroll-margin-top: 24px; }
 .about .contact p { color: #2d3142; }
 .mail { display: inline-block; margin-top: 26px; font-family: var(--font-read); font-size: clamp(20px, 2vw, 28px); color: #2d3142; text-decoration-thickness: 2px; overflow-wrap: anywhere; }
+.mail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 18px; }
+.copy-btn { font: 600 15px var(--font-ui); color: #2d3142; background: transparent; border: 1.5px solid #2d3142; border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer; }
+.copy-btn:hover { background: rgba(45, 49, 66, 0.08); }
+.copy-btn:focus-visible { outline-color: #2d3142; }
+.about .contact .copy-hint { font-family: var(--font-ui); font-size: 14px; line-height: 1.4; margin: 0; max-width: 28em; color: #2d3142; }
 
 /* ---------- Apačia ---------- */
 .site-footer { border-top: 1.5px solid var(--ink); }

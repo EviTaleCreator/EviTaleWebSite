@@ -132,6 +132,12 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
           <h2>{UI.contactTitle}</h2>
           <p>{UI.contactText}</p>
           <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <div class="mail-actions">
+            <button type="button" class="copy-btn" data-copy={EMAIL}>
+              <span data-copy-label>Kopijuoti adresą</span>
+            </button>
+            <span class="copy-hint">Jei el. pašto programa neatsidaro, nukopijuokite adresą ir parašykite iš savo pašto.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -193,4 +199,32 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
   }
   start();
   window.addEventListener('pageshow', start);
+
+  // El. pašto adreso kopijavimas: ne visuose kompiuteriuose mailto nuoroda atidaro pašto programą.
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    const label = btn.querySelector<HTMLElement>('[data-copy-label]');
+    const original = label?.textContent ?? '';
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy ?? '';
+      let ok = false;
+      try {
+        await navigator.clipboard.writeText(text);
+        ok = true;
+      } catch {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'absolute';
+        area.style.left = '-9999px';
+        document.body.appendChild(area);
+        area.select();
+        ok = document.execCommand('copy');
+        area.remove();
+      }
+      if (label) {
+        label.textContent = ok ? 'Nukopijuota' : 'Nepavyko, pažymėkite adresą';
+        window.setTimeout(() => (label.textContent = original), 2200);
+      }
+    });
+  });
 </script>
