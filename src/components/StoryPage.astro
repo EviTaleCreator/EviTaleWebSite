@@ -39,9 +39,7 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
             story.layers.map((l) => (
               <button type="button" data-value={l.id} aria-pressed={l.id === story.defaultLayer ? 'true' : 'false'}>
                 {LAYERS[l.id].label}
-                <small>
-                  {LAYERS[l.id].age} · ~{l.minutes} {UI.minutes}
-                </small>
+                <small>{[LAYERS[l.id].age, `~${l.minutes} ${UI.minutes}`].filter(Boolean).join(' · ')}</small>
               </button>
             ))
           }

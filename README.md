@@ -11,8 +11,8 @@ Kiekviena pasaka gali turėti iki trijų skaitymų:
 | Failas | Skaitymas |
 | --- | --- |
 | `mazyliams.md` | Mažyliams (iki 5 m.) |
-| `vaikams.md` | Vaikams (5–8 m.) |
-| `vyresniems.md` | Vyresniems (suaugusiems, ilgesnė novelė) |
+| `vaikams.md` | Vaikams (5–9 m.) |
+| `vyresniems.md` | Vyresniems (suaugusiems, ilgesnė pasaka ar novelė) |
 
 Nebūtina turėti visų. Svetainė pati rodo tik tuos skaitymus, kurių failai yra.
 

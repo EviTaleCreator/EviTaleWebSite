@@ -28,7 +28,7 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
               {latest.layers.map((l) => (
                 <button type="button" data-value={l.id} aria-pressed={l.id === latest.defaultLayer ? 'true' : 'false'}>
                   {LAYERS[l.id].label}
-                  <small>{LAYERS[l.id].age}</small>
+                  {LAYERS[l.id].age && <small>{LAYERS[l.id].age}</small>}
                 </button>
               ))}
             </div>
@@ -111,9 +111,7 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
             LAYER_IDS.map((id) => (
               <li>
                 <b>{LAYERS[id].label}</b>
-                <span>
-                  {LAYERS[id].age}. {LAYERS[id].about}
-                </span>
+                <span>{[LAYERS[id].age, LAYERS[id].about].filter(Boolean).join(' ')}</span>
               </li>
             ))
           }

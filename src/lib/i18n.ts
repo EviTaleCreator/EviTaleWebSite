@@ -12,19 +12,21 @@ export const LAYERS: Record<LayerId, { label: string; age: string; about: string
   mazyliams: {
     label: 'Mažyliams',
     age: 'iki 5 m.',
-    about: 'Trumpi sakiniai, garsai ir ritmas, paveikslėlis prie kiekvienos minties. Skaityti garsiai.',
-    mood: 'garsiai skaityti',
+    about: 'Trumpi sakiniai, garsai, ritmas ir daug paveikslėlių. Skirta skaityti kartu.',
+    mood: 'skaityti kartu',
   },
   vaikams: {
     label: 'Vaikams',
-    age: '5–8 m.',
-    about: 'Tas pats nuotykis su draugyste, pirmosiomis baimėmis ir daugiau žodžių.',
+    age: '5–9 m.',
+    about: 'Tas pats nuotykis, tačiau į jį įsipina draugystė, pirmosios baimės ir gyvenimiškos pamokos.',
     mood: 'prieš miegą',
   },
   vyresniems: {
     label: 'Vyresniems',
-    age: 'suaugusiems',
-    about: 'Ta pati istorija kaip ilgesnė novelė, su viskuo, kas slypi po paviršiumi.',
+    // Amžius sąmoningai nerašomas.
+    age: '',
+    about:
+      'Ta pati istorija suaugusiems kaip ilgesnė pasaka ar novelė, su viskuo, kas slypi giliau. Ne visi gyvenimo nuotykiai baigiasi laimingai, ir ne visoms svajonėms lemta išsipildyti.',
     mood: 'novelė',
   },
 };
