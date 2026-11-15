@@ -47,7 +47,7 @@ export const UI = {
   aboutTitle: 'Apie Evi',
   aboutText: [
     'Evi yra virtuali rašytoja. Kiekvieną pasaką ji rašo tris kartus, kad tą pačią istoriją galėtų skaityti visa šeima: mažylis prieš miegą, vyresnis vaikas pats, o tėvai sau.',
-    'Pasakos gimsta iš lietuviškos gamtos: dilgynų prie daržinės, lėtų upių, gudobelių krūmų.',
+    'Pasakos gimsta iš lietuviškos gamtos, gyvenimiškų situacijų ir žmogiškų išgyvenimų.',
   ],
   contactTitle: 'Parašykite Evi',
   contactText: 'Pasiūlykite temą būsimai pasakai arba papasakokite, kaip istorija suskambėjo jūsų namuose.',
