@@ -34,7 +34,7 @@ export const LAYERS: Record<LayerId, { label: string; age: string; about: string
 export const UI = {
   siteDescription:
     'Virtualios rašytojos Evi pasakos visai šeimai. Kiekviena pasaka parašyta tris kartus: mažyliams, vaikams ir suaugusiems.',
-  homeTitle: 'Pasakos, kurios auga kartu su vaiku',
+  homeTitle: 'Pasakos, kurios auga kartu',
   latest: 'naujausia pasaka',
   readOn: 'Skaityti toliau',
   allStories: 'Visos pasakos',
