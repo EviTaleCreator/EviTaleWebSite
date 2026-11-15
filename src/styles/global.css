@@ -172,9 +172,8 @@ h2 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1; }
 .about p { font-family: var(--font-read); font-size: 19px; line-height: 1.65; color: var(--ink-2); max-width: 32em; margin-top: 20px; }
 .contact { background: var(--butter); color: #2d3142; padding: clamp(28px, 4vw, 48px); border-radius: 4px; scroll-margin-top: 24px; }
 .about .contact p { color: #2d3142; }
-.mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 26px; }
+.mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 26px; }
 .mail { font-family: var(--font-read); font-size: clamp(20px, 2vw, 28px); color: #2d3142; text-decoration-thickness: 2px; overflow-wrap: anywhere; }
-.star { font-family: var(--font-read); font-size: clamp(18px, 1.6vw, 22px); color: #2d3142; align-self: flex-start; margin-right: 6px; }
 .copy-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: transparent; color: #2d3142; cursor: pointer; }
 .copy-btn:hover { background: rgba(45, 49, 66, 0.1); }
 .copy-btn:focus-visible { outline-color: #2d3142; }
