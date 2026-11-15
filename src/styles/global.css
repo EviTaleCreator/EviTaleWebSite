@@ -172,12 +172,16 @@ h2 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1; }
 .about p { font-family: var(--font-read); font-size: 19px; line-height: 1.65; color: var(--ink-2); max-width: 32em; margin-top: 20px; }
 .contact { background: var(--butter); color: #2d3142; padding: clamp(28px, 4vw, 48px); border-radius: 4px; scroll-margin-top: 24px; }
 .about .contact p { color: #2d3142; }
-.mail { display: inline-block; margin-top: 26px; font-family: var(--font-read); font-size: clamp(20px, 2vw, 28px); color: #2d3142; text-decoration-thickness: 2px; overflow-wrap: anywhere; }
-.mail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 18px; }
-.copy-btn { font: 600 15px var(--font-ui); color: #2d3142; background: transparent; border: 1.5px solid #2d3142; border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer; }
-.copy-btn:hover { background: rgba(45, 49, 66, 0.08); }
+.mail-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 26px; }
+.mail { font-family: var(--font-read); font-size: clamp(20px, 2vw, 28px); color: #2d3142; text-decoration-thickness: 2px; overflow-wrap: anywhere; }
+.star { font-family: var(--font-read); font-size: clamp(18px, 1.6vw, 22px); color: #2d3142; align-self: flex-start; margin-right: 6px; }
+.copy-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: transparent; color: #2d3142; cursor: pointer; }
+.copy-btn:hover { background: rgba(45, 49, 66, 0.1); }
 .copy-btn:focus-visible { outline-color: #2d3142; }
-.about .contact .copy-hint { font-family: var(--font-ui); font-size: 14px; line-height: 1.4; margin: 0; max-width: 28em; color: #2d3142; }
+.copy-btn .icon-done, .copy-btn.done .icon-copy { display: none; }
+.copy-btn.done .icon-done { display: block; }
+.about .contact .copy-hint { font-family: var(--font-ui); font-size: 13px; line-height: 1.4; margin-top: 10px; color: #4a4e5e; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ---------- Apačia ---------- */
 .site-footer { border-top: 1.5px solid var(--ink); }

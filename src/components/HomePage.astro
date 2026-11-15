@@ -129,13 +129,20 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
         <div class="contact" id="kontaktai">
           <h2>{UI.contactTitle}</h2>
           <p>{UI.contactText}</p>
-          <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          <div class="mail-actions">
-            <button type="button" class="copy-btn" data-copy={EMAIL}>
-              <span data-copy-label>Kopijuoti adresą</span>
+          <div class="mail-row">
+            <a class="mail" href={`mailto:${EMAIL}`}>{EMAIL}</a><span class="star" aria-hidden="true">*</span>
+            <button type="button" class="copy-btn" data-copy={EMAIL} aria-label="Kopijuoti el. pašto adresą" title="Kopijuoti adresą">
+              <svg class="icon-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                <path d="M5 15V6a2 2 0 0 1 2-2h9"></path>
+              </svg>
+              <svg class="icon-done" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12.5l4.5 4.5L19 7"></path>
+              </svg>
             </button>
-            <span class="copy-hint">Jei el. pašto programa neatsidaro, nukopijuokite adresą ir parašykite iš savo pašto.</span>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
           </div>
+          <p class="copy-hint">* Jei pašto programa neatsidaro, nukopijuokite adresą.</p>
         </div>
       </div>
     </section>
@@ -200,8 +207,7 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
 
   // El. pašto adreso kopijavimas: ne visuose kompiuteriuose mailto nuoroda atidaro pašto programą.
   document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
-    const label = btn.querySelector<HTMLElement>('[data-copy-label]');
-    const original = label?.textContent ?? '';
+    const status = btn.parentElement?.querySelector<HTMLElement>('[data-copy-status]');
     btn.addEventListener('click', async () => {
       const text = btn.dataset.copy ?? '';
       let ok = false;
@@ -219,9 +225,15 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
         ok = document.execCommand('copy');
         area.remove();
       }
-      if (label) {
-        label.textContent = ok ? 'Nukopijuota' : 'Nepavyko, pažymėkite adresą';
-        window.setTimeout(() => (label.textContent = original), 2200);
+      if (status) status.textContent = ok ? 'Adresas nukopijuotas' : 'Nepavyko nukopijuoti, pažymėkite adresą';
+      if (ok) {
+        btn.classList.add('done');
+        btn.title = 'Nukopijuota';
+        window.setTimeout(() => {
+          btn.classList.remove('done');
+          btn.title = 'Kopijuoti adresą';
+          if (status) status.textContent = '';
+        }, 2000);
       }
     });
   });
