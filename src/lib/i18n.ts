@@ -26,7 +26,7 @@ export const LAYERS: Record<LayerId, { label: string; age: string; about: string
     // Amžius sąmoningai nerašomas.
     age: '',
     about:
-      'Ta pati istorija suaugusiems kaip ilgesnė pasaka ar novelė, su viskuo, kas slypi giliau. Ne visi gyvenimo nuotykiai baigiasi laimingai, ir ne visoms svajonėms lemta išsipildyti.',
+      'Istorija suaugusiems kaip ilgesnė pasaka ar novelė, su viskuo, kas slypi giliau. Ne visi gyvenimo nuotykiai baigiasi laimingai, ir ne visoms svajonėms lemta išsipildyti.',
     mood: 'novelė',
   },
 };
