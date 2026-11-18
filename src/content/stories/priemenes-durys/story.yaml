@@ -1,0 +1,17 @@
+# Pasakos informacija. Data rašoma metai-mėnuo-diena.
+# Lentynoje naujausia pasaka rodoma pirma.
+date: 2026-11-15
+
+title:
+  lt: Priemenės durys
+
+excerpt:
+  lt: Apie seną namą vienkiemyje, kuris laukia savo žmonių ir neįsileidžia kregždės, nors ši tik nori susilipdyti lizdą.
+
+# Skaitymai, kurių pabaiga liūdnoka: prie jų rodomas trumpas įspėjimas tėvams.
+sadEnding: [vyresniems]
+
+# Pagrindinė iliustracija, šalia šio failo.
+cover: ./cover.jpg
+coverAlt:
+  lt: Kregždė skrenda per rasotą pievą link seno medinio namo mėlynomis langinėmis, apsupto aukštų liepų

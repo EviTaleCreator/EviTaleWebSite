@@ -61,3 +61,11 @@ AVOID: glow, sparkles, fireflies, light rays, mist, vignette, dark moody backgro
 - Mergaitė: about 9 to 10 years old, sun-tanned, freckles, long light blond loose hair, a simple faded light blue sleeveless summer dress, bare feet. Pavyzdys: `img/scene-02.jpg`. Svarbu nurodyti mastelį: notrelė jai iki kelių, dilgėlės iki juosmens.
 - Scenos: 01 kamanė prie notrelės žiedų, 02 mergaitė pritūpusi randa baltus žiedus, 03 mergaitė su vainikėliu ir raudonu siūlu bėga per pievą, 04 lietus, notrelė ir ramunėlė palinkusios viena link kitos, 05 sausra, ožka nukanda ramunėlę, 06 raudonas kaspinėlis ant stiebo, kamanė grįžta, naujas ramunėlės pumpuras. Mažyliams: 01, 02, 03. Vaikams: 01, 04, 05, 02, 06. Vyresniems: 04, 05, 03.
 - Ožka: calm curious white farm goat with a little beard. Sausrą rodyti tik suskilinėjusia žeme ir suglebusiais lapais, ne išblukusiomis spalvomis.
+
+### Priemenės durys
+
+- Namas: an old Lithuanian wooden farmhouse: a log house clad in weathered vertical planks with faded butter-yellow paint, muted sky-blue window shutters with peeling paint, a steep grey roof with patches of sage-green moss, a muted brick chimney, a small entrance porch with a plank door, an old black iron door handle and a worn clay threshold; very tall old linden trees around it. Be veido: jausmus rodo tik langinės, durys ir laikysena.
+- Kregždė (Žvitra vaikų versijoje): small barn swallow, glossy graphite blue-black back and wings, poppy-red throat and forehead, cream-white belly, long deeply forked tail whose left streamer is a little shorter, small round dark kind eyes. Veikėjo lapas: atskirai, svetainėje nenaudojamas.
+- Daiktai: senas geležinis lopšio kablys priemenėje su išblukusiu raudonu vilnoniu siūlu (scena 10), molinis lizdas ant sijos.
+- Scenos: 01 namelis linksmai dūduoja, 02 liūdnas namelis pro vartelius vakare, 03 atskrenda kregždutė, 04 beldžia į duris, 05 smunka į kaminą, 06 čiaudulys ir juoda kregždutė, 07 juoda kregždutė purtosi ant stulpo, 08 šlapia kregždutė lietuje, 09 durys prasiveria, 10 jaunikliai lizde ir kablys su siūlu, 11 vakare namelis dūduoja, jaunikliai pritaria, 12 apgriuvęs namas po daugelio metų. Mažyliams: 01–11. Vaikams: 04, 07, 09, 10, 11. Vyresniems: 12.
+- Promptai: [priemenes-durys-promptai.md](priemenes-durys-promptai.md).
