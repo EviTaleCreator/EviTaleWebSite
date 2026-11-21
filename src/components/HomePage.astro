@@ -22,6 +22,7 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
               <span>
                 {UI.latest} · {formatDate(latest.date)}
               </span>
+              {latest.upcoming && <span class="upcoming">Dar nepaskelbta · matoma tik čia, localhost</span>}
             </div>
 
             <div class="seg" role="group" aria-label={UI.whoFor} data-hero-seg>

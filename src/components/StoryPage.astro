@@ -28,6 +28,7 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
 
     <div class="narrow story-head">
       <span class="date">{formatDate(story.date)}</span>
+      {story.upcoming && <span class="upcoming">Dar nepaskelbta · pasirodys {formatDate(story.date)}</span>}
       <h1>{story.title}</h1>
       {story.excerpt && <p class="excerpt">{story.excerpt}</p>}
     </div>

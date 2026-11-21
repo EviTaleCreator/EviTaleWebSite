@@ -1,0 +1,46 @@
+# Kas naktį paprašo Vercel iš naujo sudėti svetainę,
+# kad pasakos, kurių data tą dieną atėjo, pasirodytų pačios.
+#
+# Reikia vieną kartą: Vercel projekte susikurti Deploy Hook
+# (Settings → Git → Deploy Hooks) ir jo nuorodą įdėti į GitHub
+# kaip slaptą reikšmę VERCEL_DEPLOY_HOOK
+# (Settings → Secrets and variables → Actions → New repository secret).
+#
+# Paleisti rankiniu būdu: GitHub → Actions → „Kasdienis atnaujinimas“ → Run workflow.
+
+name: Kasdienis atnaujinimas
+
+on:
+  schedule:
+    # 00:05 Lietuvos laiku: žiemą tai 22:05 UTC, vasarą 21:05 UTC.
+    - cron: '5 21 * * *'
+    - cron: '5 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ar jau Lietuvoje vidurnaktis praėjo?
+        id: check
+        run: |
+          hour=$(TZ=Europe/Vilnius date +%H)
+          echo "Lietuvos laikas: $(TZ=Europe/Vilnius date '+%Y-%m-%d %H:%M')"
+          # Praleidžiamas tik paleidimas, kuris Lietuvoje dar prieš vidurnaktį (23 val.).
+          # GitHub kartais vėluoja, todėl tinka 00–02 val.; vasarą svetainė susidės du kartus, tai nekenkia.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$hour" = "00" ] || [ "$hour" = "01" ] || [ "$hour" = "02" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Dar ne vidurnaktis Lietuvoje, praleidžiu."
+          fi
+
+      - name: Paprašyti Vercel atnaujinti svetainę
+        if: steps.check.outputs.go == 'true'
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::Nėra slaptos reikšmės VERCEL_DEPLOY_HOOK. Žr. instrukciją šio failo viršuje."
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK"

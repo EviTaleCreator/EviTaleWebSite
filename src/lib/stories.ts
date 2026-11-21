@@ -22,6 +22,18 @@ export interface Story {
   layers: StoryLayer[];
   defaultLayer: LayerId;
   sadEnding: LayerId[];
+  /** Data dar neatėjo: viešoje svetainėje pasaka nerodoma, localhost rodoma su žyma. */
+  upcoming: boolean;
+}
+
+/** Šiandienos data Lietuvos laiku, pvz. „2026-11-27“. */
+function todayInLithuania() {
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Vilnius' }).format(new Date());
+}
+
+/** Ar pasakos data dar neatėjo (pagal Lietuvos laiką). */
+function isUpcoming(date: Date) {
+  return date.toISOString().slice(0, 10) > todayInLithuania();
 }
 
 /** Tekstas be skilties „Pokalbiui“ ir be iliustracijų. */
@@ -42,7 +54,12 @@ function minutes(body: string) {
   return Math.max(1, Math.round(words / 110));
 }
 
-/** Visos pasakos, kurios turi bent vieną skaitymą, nuo naujausios. */
+/**
+ * Visos pasakos, kurios turi bent vieną skaitymą, nuo naujausios.
+ * Pasakos, kurių data dar neatėjo, viešoje svetainėje praleidžiamos: jos pasirodo,
+ * kai svetainė susidedama iš naujo tą dieną (kas naktį tai daro .github/workflows/kasdien.yml).
+ * Kuriant (npm run dev) jos rodomos, kad būtų galima peržiūrėti iš anksto.
+ */
 export async function getStories(): Promise<Story[]> {
   const metas = await getCollection('stories');
   const layerEntries = await getCollection('layers');
@@ -52,6 +69,9 @@ export async function getStories(): Promise<Story[]> {
     const slug = meta.id.split('/')[0];
     const title = meta.data.title.lt;
     if (!title) continue;
+
+    const upcoming = isUpcoming(meta.data.date);
+    if (upcoming && !import.meta.env.DEV) continue;
 
     const layers: StoryLayer[] = [];
     for (const id of LAYER_IDS) {
@@ -69,6 +89,7 @@ export async function getStories(): Promise<Story[]> {
       coverAlt: meta.data.cover ? meta.data.coverAlt?.lt ?? '' : '',
       layers,
       sadEnding: meta.data.sadEnding ?? [],
+      upcoming,
       defaultLayer: layers.some((l) => l.id === DEFAULT_LAYER) ? DEFAULT_LAYER : layers[0].id,
     });
   }

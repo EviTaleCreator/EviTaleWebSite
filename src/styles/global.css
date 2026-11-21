@@ -188,6 +188,8 @@ h2 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1; }
 .story-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; background: var(--soft); }
 .story-head { padding-top: 36px; }
 .story-head .date { font-size: 15px; color: var(--ink-2); }
+/* Žyma pasakoms, kurių data dar neatėjo (matoma tik localhost). */
+.upcoming { display: inline-block; margin-left: 10px; padding: 2px 10px; border: 1px dashed var(--accent); border-radius: 999px; color: var(--accent); font-size: 13px; font-weight: 600; }
 .story-head h1 { font-size: clamp(38px, 5.4vw, 68px); line-height: 1; margin-top: 10px; text-wrap: balance; }
 .excerpt { font-family: var(--font-read); font-size: 19px; line-height: 1.6; color: var(--ink-2); margin-top: 18px; }
 
