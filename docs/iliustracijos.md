@@ -69,3 +69,12 @@ AVOID: glow, sparkles, fireflies, light rays, mist, vignette, dark moody backgro
 - Daiktai: senas geležinis lopšio kablys priemenėje su išblukusiu raudonu vilnoniu siūlu (scena 10), molinis lizdas ant sijos.
 - Scenos: 01 namelis linksmai dūduoja, 02 liūdnas namelis pro vartelius vakare, 03 atskrenda kregždutė, 04 beldžia į duris, 05 smunka į kaminą, 06 čiaudulys ir juoda kregždutė, 07 juoda kregždutė purtosi ant stulpo, 08 šlapia kregždutė lietuje, 09 durys prasiveria, 10 jaunikliai lizde ir kablys su siūlu, 11 vakare namelis dūduoja, jaunikliai pritaria, 12 apgriuvęs namas po daugelio metų. Mažyliams: 01–11. Vaikams: 04, 07, 09, 10, 11. Vyresniems: 12.
 - Promptai: [priemenes-durys-promptai.md](priemenes-durys-promptai.md).
+
+### Pienių pūkas
+
+- Pienė (mama): the mother dandelion: a common dandelion plant at the corner post of the fence, a flat rosette of deeply toothed lion-tooth leaves in sage green, hollow pale stems; no face, it shows feelings only by how it leans and bends.
+- Pūkė: one dandelion seed a little bigger than the others, a feathery white parachute on a thin stalk with a small brown seed below; no face, it shows feelings only by tilt and movement.
+- Vieta: an old weathered wooden plank fence, silver-grey with yellow lichen spots and rusty nails, one board missing; a white dusty gravel road beside it; a low green meadow beyond; far away two rows of very old dark linden trees (an alley to a manor park).
+- Katė: a fluffy grey-and-white farm cat. Bitė: Zyzė, a small round honeybee with golden-brown stripes and tiny wings.
+- Scenos: 01 pienė užsimerkusi, Pūkė kyšo, 02 Pūkė mojuoja skėtuku, 03 katė uosto, Pūkė ant nosies, 04 katė čiaudi, 05 sėklos virš pievos, 06 Pūkė nusileidžia tvoros gale, 07 daigelis po sniegu, 08 dvi geltonos pienės, 09 Pūkė susipainioja, 10 bitė neša Pūkę, 11 iš tvoros galo tuščias stiebas ir liepos, 12 vakare abi užsiveria. Mažyliams: 01–08. Vaikams: 01, 09, 10, 04, 06, 08. Vyresniems: 11, 12.
+- Promptai: [pienes-pukas-promptai.md](pienes-pukas-promptai.md).
