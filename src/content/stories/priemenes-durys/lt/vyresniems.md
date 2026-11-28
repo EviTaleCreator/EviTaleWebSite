@@ -132,8 +132,6 @@ Iš pirmo žvilgsnio tai istorija apie seną namą, kuris neįsileidžia kregžd
 
 Tai ir pasaka apie Lietuvos vienkiemius, kurių senoliai lieka vieni, o vaikai išvažiuoja į miestus ir užsienį. Apie tėvus, kurie sako „viskas gerai, nevažiuok“, ir apie vaikus, kurie atvažiuoja, pastovi prie vartelių ir neužeina. Namas įtiki, kad šeimininkas „išvažiavo“, nes taip lengviau. Durys, kurias jis galiausiai praveria, nereiškia, kad jis pamiršo ar nustojo laukti. Jos reiškia, kad jis pagaliau leidžia gyvenimui tekėti toliau.
 
-Mažylių ir vaikų versijose vienišas namas susiranda draugų, ir pabaiga šilta. Versijoje Vyresniems namas taip pat atveria duris, bet šeimininko jis nesulauks, o atvažiavusio sūnaus jau nebeatpažino.
-
 ### Kaip kalbėtis
 
 Pasakos temos: beviltiškas laukimas to, kas jau nebegrįš, susvetimėjimas, netektis ir nenoras paleisti, net kai nebėra vilties.

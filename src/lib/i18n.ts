@@ -2,25 +2,13 @@
 export const LANGS = ['lt'] as const;
 export type Lang = (typeof LANGS)[number];
 
-export const LAYER_IDS = ['mazyliams', 'vaikams', 'vyresniems'] as const;
+// Svetainėje liko vienas skaitymas: Vyresniems.
+export const LAYER_IDS = ['vyresniems'] as const;
 export type LayerId = (typeof LAYER_IDS)[number];
 
-/** Skaitymas, kuris atsidaro pirmas, jei skaitytojas dar nieko nepasirinko. */
-export const DEFAULT_LAYER: LayerId = 'vaikams';
+export const DEFAULT_LAYER: LayerId = 'vyresniems';
 
 export const LAYERS: Record<LayerId, { label: string; age: string; about: string; mood: string }> = {
-  mazyliams: {
-    label: 'Mažyliams',
-    age: 'iki 5 m.',
-    about: 'Trumpi sakiniai, garsai, ritmas ir daug paveikslėlių. Skirta skaityti kartu.',
-    mood: 'skaityti kartu',
-  },
-  vaikams: {
-    label: 'Vaikams',
-    age: '5–9 m.',
-    about: 'Tas pats nuotykis, tačiau į jį įsipina draugystė, pirmosios baimės ir gyvenimiškos pamokos.',
-    mood: 'prieš miegą',
-  },
   vyresniems: {
     label: 'Vyresniems',
     // Amžius sąmoningai nerašomas.
@@ -33,20 +21,15 @@ export const LAYERS: Record<LayerId, { label: string; age: string; about: string
 
 export const UI = {
   siteDescription:
-    'Virtualios rašytojos Evi pasakos visai šeimai. Kiekviena pasaka parašyta tris kartus: mažyliams, vaikams ir suaugusiems.',
-  homeTitle: 'Pasakos, kurios auga kartu',
+    'Virtualios rašytojos Evi pasakos suaugusiems: ilgesnės istorijos apie tai, kas slypi giliau, su klausimais pamąstymui.',
+  homeTitle: 'Pasakos tau',
   latest: 'naujausia pasaka',
   readOn: 'Skaityti toliau',
   allStories: 'Visos pasakos',
   shelf: 'Lentyna',
-  all: 'Visos',
-  empty: 'Šiam skaitymui pasakų dar nėra.',
-  howTitle: 'Viena pasaka, trys skaitymai',
-  howTalk:
-    'Kiekvieno skaitymo pabaigoje yra suskleista dalis „Pokalbiui“: apie ką ši pasaka, pastabos tėvams ir klausimai vakaro pokalbiui, pritaikyti tam amžiui.',
   aboutTitle: 'Apie Evi',
   aboutText: [
-    'Evi yra virtuali rašytoja. Kiekvieną pasaką ji rašo tris kartus, kad tą pačią istoriją galėtų skaityti visa šeima: mažylis prieš miegą, vyresnis vaikas pats, o tėvai sau.',
+    'Evi yra virtuali rašytoja. Ji rašo pasakas suaugusiems: ilgesnes istorijas, kurias gera perskaityti sau, o paskui apie jas pamąstyti ar pasikalbėti.',
     'Pasakos gimsta iš lietuviškos gamtos, gyvenimiškų situacijų ir žmogiškų išgyvenimų.',
   ],
   contactTitle: 'Parašykite Evi',
@@ -54,12 +37,11 @@ export const UI = {
   older: 'Senesnė',
   newer: 'Naujesnė',
   toShelf: 'Į lentyną',
-  whoFor: 'Kam skaitome?',
-  sadEnding: 'Pabaiga liūdnoka, verta pasikalbėti.',
-  sadEndingLink: 'Klausimai pokalbiui',
-  talk: 'Pokalbiui',
-  talkSub: 'Apie ką ši pasaka, pastabos tėvams ir klausimai',
-  privacyNote: 'Svetainė jūsų naršyklėje įsimena tik pasirinktą režimą, raidžių dydį ir skaitymą. Jokių slapukų, jokio sekimo.',
+  sadEnding: 'Pabaiga liūdnoka.',
+  sadEndingLink: 'Pamąstymai',
+  talk: 'Pamąstymai',
+  talkSub: 'Apie ką ši pasaka',
+  privacyNote: 'Svetainė jūsų naršyklėje įsimena tik pasirinktą režimą ir raidžių dydį. Jokių slapukų, jokio sekimo.',
   themeToNight: 'Įjungti naktinį režimą',
   themeToDay: 'Įjungti dienos režimą',
   night: 'Naktis',

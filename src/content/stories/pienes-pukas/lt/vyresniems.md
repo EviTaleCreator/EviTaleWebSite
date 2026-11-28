@@ -138,8 +138,6 @@ Pienė saugo savo sėklytes, kol jos užauga, ir sunkiai jas paleidžia. Pūkė 
 
 Temos: auginimas ir paleidimas, noras būti kitokiam, panašumas į tėvus, kartų ratas.
 
-Pabaigos skiriasi. Mažyliams Pūkė nusileidžia netoli ir džiugiai šaukia mamai „Aš čia!“. Vaikams skirtoje versijoje mama prisipažįsta, kad savo mamai sakė lygiai tą patį. Vyresniems skirtoje abi tyliai pripažįsta, kad čia „tik laikinai“, o mama prisimena, kaip kadaise pati nesugebėjo nuskristi toliau nei penkis žingsnius nuo savo mamos.
-
 ### Kaip kalbėtis
 
 Pienė laiko galvą užvertą, kiek tik gali, bet paleidimas nėra jos sprendimas: vieną rytą galva atsiveria pati, nes atėjo laikas. Kai mergaitės kvėpavimas Pūkės nepaima, pienei gėda, kad ji džiaugiasi. Naktį ji negali Pūkės sušildyti, gali tik būti šalia. Daug tėvų atpažins šį jausmą: vaikas auga, ir vis mažiau tavo rankose, o meilė lieka tokia pati, tik nebeturi kur dėtis.

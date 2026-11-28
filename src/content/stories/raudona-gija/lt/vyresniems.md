@@ -36,8 +36,6 @@ Paukštelis randa siūlą ir nenori jo palikti. Po šiuo paviršiumi slypi pasak
 
 Pasaka padeda pakalbėti apie prisirišimą prie daiktų, baimę prarasti, nesugebėjimą paleisti ir apie tai, kad šildo artimi, ne daiktai.
 
-Pabaigos skiriasi. Mažyliams skirtoje versijoje Čiūta pats paleidžia siūlą, vaikams skirtoje jį išlaisvina Guoda, o vyresniems skirtoje Čiūta neišsigelbsti. Klausimai pritaikyti tai versijai, kurią skaitėte.
-
 ### Kaip kalbėtis
 
 Tai pasaka apie tai, kaip saugumas virsta kalėjimu. Psichologijoje vaikystės mylimas daiktas vadinamas pereinamuoju objektu: jis padeda nusiraminti, kol vaikas išmoksta nusiraminti pats. Čiūtos siūlas iš pradžių kaip tik toks. Problema ne pats siūlas. Problema ta, kad Čiūta nustoja augti toliau už jo: nebeskraido, meluoja, lieka vienas.

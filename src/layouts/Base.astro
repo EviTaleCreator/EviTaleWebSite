@@ -39,8 +39,20 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
           document.getElementById('theme-color').content = theme === 'night' ? '#1c1f2b' : '#f7f5f0';
           var scale = parseFloat(localStorage.getItem('evitale-text') || '');
           if (scale >= 0.8 && scale <= 1.6) d.style.setProperty('--read-scale', String(scale));
+          // Senas skaitymo pasirinkimas nebereikalingas.
+          localStorage.removeItem('evitale-layer');
         } catch (e) {
           /* privatus langas: lieka dienos režimas ir numatytas dydis */
+        }
+        // Seni adresai su ?layer=... veda į tą patį puslapį, tik be šio priedo.
+        try {
+          var u = new URL(location.href);
+          if (u.searchParams.has('layer')) {
+            u.searchParams.delete('layer');
+            history.replaceState(null, '', u.pathname + u.search + u.hash);
+          }
+        } catch (e) {
+          /* sena naršyklė */
         }
       })();
     </script>
@@ -83,7 +95,7 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 
     <footer class="site-footer">
       <div class="wrap">
-        <span><b>EviTale</b> · pasakos, kurios auga kartu</span>
+        <span><b>EviTale</b> · pasakos tau</span>
         <span>{UI.privacyNote}</span>
       </div>
     </footer>

@@ -3,7 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { getStories, type Story } from '../lib/stories';
-import { LAYERS, UI, storyUrl, formatDate } from '../lib/i18n';
+import { UI, storyUrl, formatDate } from '../lib/i18n';
 
 interface Props {
   story: Story;
@@ -35,16 +35,7 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
 
     <div class="read-bar">
       <div class="narrow bar-row">
-        <div class="seg" role="group" aria-label={UI.whoFor} data-story-seg>
-          {
-            story.layers.map((l) => (
-              <button type="button" data-value={l.id} aria-pressed={l.id === story.defaultLayer ? 'true' : 'false'}>
-                {LAYERS[l.id].label}
-                <small>{[LAYERS[l.id].age, `~${l.minutes} ${UI.minutes}`].filter(Boolean).join(' · ')}</small>
-              </button>
-            ))
-          }
-        </div>
+        <span class="read-time">~{story.layers[0].minutes} {UI.minutes}</span>
         <div class="text-size" role="group" aria-label={UI.textSize}>
           <button type="button" data-text-size="down" aria-label={UI.textSmaller}>A−</button>
           <button type="button" data-text-size="up" aria-label={UI.textBigger} class="bigger">A+</button>
@@ -52,10 +43,10 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
       </div>
     </div>
 
-    <div class="narrow" data-default-layer={story.defaultLayer}>
+    <div class="narrow">
       {
         rendered.map(({ id, Content }) => (
-          <section class={`layer layer-${id}`} data-layer={id} hidden={id !== story.defaultLayer}>
+          <section class={`layer layer-${id}`}>
             {story.sadEnding.includes(id) && (
               <p class="ending-note">
                 {UI.sadEnding}{' '}
@@ -75,7 +66,7 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
     <nav class="narrow story-nav" aria-label="Kitos pasakos">
       {
         older ? (
-          <a class="nav-btn" href={storyUrl(older.slug)} data-keep-layer>
+          <a class="nav-btn" href={storyUrl(older.slug)}>
             ← {older.title}
           </a>
         ) : (
@@ -84,11 +75,11 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
       }
       {
         newer ? (
-          <a class="nav-btn primary" href={storyUrl(newer.slug)} data-keep-layer>
+          <a class="nav-btn primary" href={storyUrl(newer.slug)}>
             {newer.title} →
           </a>
         ) : (
-          <a class="nav-btn primary" href="/#lentyna" data-keep-layer>
+          <a class="nav-btn primary" href="/#lentyna">
             {UI.toShelf} →
           </a>
         )
@@ -98,32 +89,6 @@ const share = await getImage({ src: story.cover, width: 1200, format: 'jpg' });
 </Base>
 
 <script>
-  import { initSeg, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
-
-  const root = document.querySelector<HTMLElement>('[data-story-seg]');
-  const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-layer]'));
-  const fallback = document.querySelector<HTMLElement>('[data-default-layer]')?.dataset.defaultLayer ?? '';
-
-  function show(value: string) {
-    sections.forEach((s) => (s.hidden = s.dataset.layer !== value));
-    syncLayerEverywhere(value);
-  }
-
-  if (root) {
-    const seg = initSeg(root, (value) => {
-      saveLayer(value);
-      show(value);
-    });
-    const pick = () => {
-      const wanted = [layerFromUrl(), loadLayer()].find((v) => v && seg.values.includes(v));
-      const value = wanted ?? fallback;
-      seg.set(value);
-      show(value);
-    };
-    pick();
-    window.addEventListener('pageshow', pick);
-  }
-
   // Nuoroda iš įspėjimo apie pabaigą atidaro „Pokalbiui“ to paties skaitymo gale.
   document.querySelectorAll<HTMLButtonElement>('[data-open-talk]').forEach((b) =>
     b.addEventListener('click', () => {

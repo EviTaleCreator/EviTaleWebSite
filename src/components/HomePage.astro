@@ -2,22 +2,23 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { getStories } from '../lib/stories';
-import { LAYERS, LAYER_IDS, UI, EMAIL, formatDate, storyUrl, countText } from '../lib/i18n';
+import { LAYERS, UI, EMAIL, formatDate, storyUrl, countText } from '../lib/i18n';
 
 const stories = await getStories();
 const latest = stories[0];
+const latestLayer = latest?.layers[0];
 const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 'jpg' }) : undefined;
 ---
 
 <Base title={UI.homeTitle} image={share?.src}>
   <main>
     {
-      latest && (
+      latest && latestLayer && (
         <section class="wrap hero" aria-labelledby="hero-title">
           <div class="hero-text">
             <div class="story-name">
               <h1>
-                <a id="hero-title" href={storyUrl(latest.slug)} data-keep-layer>{latest.title}</a>
+                <a id="hero-title" href={storyUrl(latest.slug)}>{latest.title}</a>
               </h1>
               <span>
                 {UI.latest} · {formatDate(latest.date)}
@@ -25,29 +26,16 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
               {latest.upcoming && <span class="upcoming">Dar nepaskelbta · matoma tik čia, localhost</span>}
             </div>
 
-            <div class="seg" role="group" aria-label={UI.whoFor} data-hero-seg>
-              {latest.layers.map((l) => (
-                <button type="button" data-value={l.id} aria-pressed={l.id === latest.defaultLayer ? 'true' : 'false'}>
-                  {LAYERS[l.id].label}
-                  {LAYERS[l.id].age && <small>{LAYERS[l.id].age}</small>}
-                </button>
-              ))}
-            </div>
-
-            <div class="sentence-box" aria-live="polite">
-              {latest.layers.map((l) => (
-                <div class="sentence" data-sentence={l.id} hidden={l.id !== latest.defaultLayer}>
-                  <p>{l.firstParagraph}</p>
-                  <p class="meta">
-                    <span>~{l.minutes} {UI.minutes}</span>
-                    <span>{LAYERS[l.id].mood}</span>
-                  </p>
-                </div>
-              ))}
+            <div class="sentence">
+              <p>{latestLayer.firstParagraph}</p>
+              <p class="meta">
+                <span>~{latestLayer.minutes} {UI.minutes}</span>
+                <span>{LAYERS[latestLayer.id].mood}</span>
+              </p>
             </div>
 
             <div class="actions">
-              <a class="btn" href={storyUrl(latest.slug)} data-keep-layer data-hero-read>
+              <a class="btn" href={storyUrl(latest.slug)}>
                 {UI.readOn}
               </a>
               <a class="text-link" href="#lentyna">
@@ -56,7 +44,7 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
             </div>
           </div>
 
-          <a class="hero-art" href={storyUrl(latest.slug)} data-keep-layer tabindex="-1" aria-hidden="true">
+          <a class="hero-art" href={storyUrl(latest.slug)} tabindex="-1" aria-hidden="true">
             <Image src={latest.cover} alt="" widths={[480, 800, 1200]} sizes="(min-width: 900px) 42vw, 100vw" loading="eager" fetchpriority="high" />
           </a>
         </section>
@@ -67,57 +55,24 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
       <div class="wrap">
         <div class="sec-head">
           <h2 id="shelf-title">
-            {UI.shelf} <span class="count" data-count>{countText(stories.length)}</span>
+            {UI.shelf} <span class="count">{countText(stories.length)}</span>
           </h2>
-          <div class="chips" role="group" aria-label="Rodyti pasakas" data-shelf-seg>
-            <button type="button" data-value="all" aria-pressed="true">{UI.all}</button>
-            {LAYER_IDS.map((id) => (
-              <button type="button" data-value={id} aria-pressed="false">
-                {LAYERS[id].label}
-              </button>
-            ))}
-          </div>
         </div>
 
         <div class="books">
           {
             stories.map((s, i) => (
-              <a class="book" href={storyUrl(s.slug)} data-card data-layers={s.layers.map((l) => l.id).join(' ')} data-keep-layer>
+              <a class="book" href={storyUrl(s.slug)}>
                 <div class="book-cover">
                   <Image src={s.cover} alt="" widths={[400, 700]} sizes="(min-width: 1000px) 380px, (min-width: 700px) 50vw, 100vw" />
                   {i === 0 && <span class="tag">Nauja</span>}
                 </div>
                 <h3>{s.title}</h3>
                 {s.excerpt && <p>{s.excerpt}</p>}
-                <div class="ages">
-                  {s.layers.map((l) => (
-                    <span class={`age age-${l.id}`}>{LAYERS[l.id].label}</span>
-                  ))}
-                </div>
               </a>
             ))
           }
         </div>
-        <p class="empty" data-empty hidden={stories.length > 0}>
-          {UI.empty}
-        </p>
-      </div>
-    </section>
-
-    <section class="how" id="kaip" aria-labelledby="how-title">
-      <div class="wrap how-grid">
-        <h2 id="how-title">{UI.howTitle}</h2>
-        <ol>
-          {
-            LAYER_IDS.map((id) => (
-              <li>
-                <b>{LAYERS[id].label}</b>
-                <span>{[LAYERS[id].age, LAYERS[id].about].filter(Boolean).join(' ')}</span>
-              </li>
-            ))
-          }
-        </ol>
-        <p class="talk-note">{UI.howTalk}</p>
       </div>
     </section>
 
@@ -151,61 +106,6 @@ const share = latest ? await getImage({ src: latest.cover, width: 1200, format: 
 </Base>
 
 <script>
-  import { initSeg, layerFromUrl, loadLayer, saveLayer, syncLayerEverywhere } from '../scripts/picker';
-  import { countText } from '../lib/i18n';
-
-  // Pirmasis ekranas: tas pats sakinys skirtingiems skaitymams.
-  const heroSeg = document.querySelector<HTMLElement>('[data-hero-seg]');
-  const sentences = Array.from(document.querySelectorAll<HTMLElement>('[data-sentence]'));
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function showSentence(value: string, animate: boolean) {
-    const next = sentences.find((s) => s.dataset.sentence === value);
-    if (!next) return;
-    const current = sentences.find((s) => !s.hidden);
-    if (current === next) return;
-    if (!animate || reduce || !current) {
-      sentences.forEach((s) => (s.hidden = s !== next));
-      return;
-    }
-    current.classList.add('out');
-    window.setTimeout(() => {
-      current.hidden = true;
-      current.classList.remove('out');
-      next.hidden = false;
-    }, 260);
-  }
-
-  // Lentyna: pasakos pagal skaitymą.
-  const shelfSeg = document.querySelector<HTMLElement>('[data-shelf-seg]');
-  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-card]'));
-  const empty = document.querySelector<HTMLElement>('[data-empty]');
-  const count = document.querySelector<HTMLElement>('[data-count]');
-
-  function applyFilter(value: string) {
-    let visible = 0;
-    cards.forEach((card) => {
-      const show = value === 'all' || (card.dataset.layers ?? '').split(' ').includes(value);
-      card.hidden = !show;
-      if (show) visible++;
-    });
-    if (empty) empty.hidden = visible > 0;
-    if (count) count.textContent = countText(visible);
-  }
-
-  const hero = heroSeg ? initSeg(heroSeg, (v) => { saveLayer(v); showSentence(v, true); shelf?.set(v); applyFilter(v); syncLayerEverywhere(v, false); }) : null;
-  const shelf = shelfSeg ? initSeg(shelfSeg, (v) => { applyFilter(v); if (v !== 'all') { saveLayer(v); hero?.set(v); showSentence(v, true); } syncLayerEverywhere(v === 'all' ? null : v, false); }) : null;
-
-  function start() {
-    const wanted = [layerFromUrl(), loadLayer()].find((v) => v && ['mazyliams', 'vaikams', 'vyresniems'].includes(v));
-    if (wanted) {
-      if (hero?.set(wanted)) showSentence(wanted, false);
-      syncLayerEverywhere(wanted, false);
-    }
-  }
-  start();
-  window.addEventListener('pageshow', start);
-
   // El. pašto adreso kopijavimas: ne visuose kompiuteriuose mailto nuoroda atidaro pašto programą.
   document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
     const status = btn.parentElement?.querySelector<HTMLElement>('[data-copy-status]');

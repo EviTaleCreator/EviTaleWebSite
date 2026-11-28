@@ -40,8 +40,6 @@ Upė buvo laiminga, kol neišgirdo, kad kita upė įdomesnė. Tai pasaka apie ly
 
 Antras sluoksnis yra apie sprendimus, kurių nebeatšauksi. Senoji kilpa išdžiūsta. Bet pabaiga nėra beviltiška: Alanta randa, kaip būti savimi naujoje vietoje.
 
-Pabaigos skiriasi. Mažyliams skirtoje versijoje senosios kilpos nėra, Alanta tiesiog vėl teka lėtai. Vaikams ir vyresniems skirtose versijose senoji vieta išdžiūsta.
-
 ### Kaip kalbėtis
 
 Alantos bėda prasideda ne nuo Žvelsos. Žvelsa visada buvo šalia, ir jos sugyveno draugiškai. Bėda prasideda nuo trumpo svetimų žmonių sakinio, kuris net nebuvo jai skirtas. Taip veikia lyginimasis: kito sėkmė nieko iš mūsų neatima, bet staiga ima atrodyti, kad atima. Ypač kai lyginamės ne su žmogumi, o su jo vaizdu iš šalies, su ūžesiu už kalvos.

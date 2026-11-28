@@ -13,8 +13,8 @@ export default function rehypePokalbiui() {
     const rest = kids.slice(i + 1);
     const details = el('details', { className: ['talk'], id: 'pokalbiui' }, [
       el('summary', {}, [
-        el('span', { className: ['talk-title'] }, [t('Pokalbiui')]),
-        el('small', {}, [t('Apie ką ši pasaka, pastabos tėvams ir klausimai')]),
+        el('span', { className: ['talk-title'] }, [t('Pamąstymai')]),
+        el('small', {}, [t('Apie ką ši pasaka')]),
       ]),
       el('div', { className: ['talk-body'] }, rest),
     ]);
